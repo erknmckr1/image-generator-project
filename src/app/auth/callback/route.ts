@@ -20,5 +20,5 @@ export async function GET(request: Request) {
   }
 
   // Başarılı girişten sonra yönlendir
-  return NextResponse.redirect(`${origin}/generate-image`)
+  return NextResponse.redirect(`${origin}/dashboard/generate-image`)
 }

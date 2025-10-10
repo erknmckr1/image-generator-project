@@ -5,10 +5,11 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Upload, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FormData } from "@/lib/types/form";
 
 interface AddImagesFieldProps {
-  formData: { image_url: string };
-  setFormData: (value: any) => void;
+  formData: FormData;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
 }
 
 export default function AddImagesField({ formData, setFormData }: AddImagesFieldProps) {

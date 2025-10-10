@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ImageData } from "@/lib/types/form";
 interface ImagePreviewProps {
-  images: ImageData;
+  images: ImageData | null;
   isLoading: boolean;
 }
 
@@ -81,11 +81,10 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
             <ImageIcon className="w-7 h-7" />
           </div>
           <h1 className="text-4xl font-semibold text-foreground tracking-tight">
-            Image Editor
+            Show Image
           </h1>
           <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-            Transform your images effortlessly with AI. Describe the change you
-            want — we’ll handle the rest.
+           Here is your AI-generated image. You can download it or copy its link below.
           </p>
         </div>
 
@@ -164,7 +163,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
                 alt="Generated"
                 width={512}
                 height={512}
-                className="object-contain h-[500px] rounded-2xl transition-transform duration-300 hover:scale-[1.02]"
+                className="object-contain h-[450px] rounded-2xl transition-transform duration-300 hover:scale-[1.02]"
               />
             </div>
 

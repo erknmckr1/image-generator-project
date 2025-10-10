@@ -1,4 +1,4 @@
-import ImageEditorForm from "./components/ImageEditorForm";
+
 export default function Home() {
-  return <ImageEditorForm />;
+  return <div className="h-screen w-screen max-w-7xl mx-auto ">NABER</div>;
 }

@@ -24,9 +24,9 @@ export default function ImageEditorForm() {
   });
 
   const [isLoading, setIsLoading] = useState(false);
-  const [generatedImages, setGeneratedImages] = useState<ImageData | null>(
-    null
-  );
+  const [generatedImages, setGeneratedImages] = useState<ImageData | null>({
+    image_url: "/file.svg",
+  });
   const [error, setError] = useState<string>("");
 
   //! create ımage function
@@ -48,11 +48,18 @@ export default function ImageEditorForm() {
     setGeneratedImages(null);
 
     try {
-      const response = await fetch("/api/n8n-route", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `https://wouro4lw.rpcld.net/webhook/07f580c3-ece9-4015-bd65-ab257a26ffec`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "https://wouro4lw.rpcld.net/webhook/07f580c3-ece9-4015-bd65-ab257a26ffec",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -60,9 +67,7 @@ export default function ImageEditorForm() {
       }
       const data = await response.json();
 
-      const parsed =
-        typeof data.data === "string" ? JSON.parse(data.data) : data.data;
-      setGeneratedImages(parsed);
+      setGeneratedImages(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred");
     } finally {
@@ -154,7 +159,7 @@ export default function ImageEditorForm() {
       <div className="sm:w-1/2  max-h-screen px-4 py-16 relative ">
         {/* Result */}
 
-        <div className="fixed">
+        <div className=" flex flex-col sm:fixed">
           <ImagePreview images={generatedImages} isLoading={isLoading} />
         </div>
       </div>

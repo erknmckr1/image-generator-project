@@ -19,6 +19,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: "mylamp.com.tr",
+      },
+      {
+        protocol: "https",
+        hostname: "rptmfkedvzdlmsctnijq.supabase.co",
+      },
     ],
   },
 };

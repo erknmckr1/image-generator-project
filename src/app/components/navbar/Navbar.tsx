@@ -3,7 +3,7 @@
 import { ChevronDown, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button"; // shadcn button
 import { cn } from "@/lib/utils"; // shadcn yardımcı fonksiyon (opsiyonel)
-
+import Link from "next/link";
 export default function Navbar() {
   return (
     <header
@@ -47,7 +47,7 @@ export default function Navbar() {
             variant="outline"
             className="rounded-full px-4 py-1.5 text-sm border-border"
           >
-            Log in
+            <Link href={"/login"}>Log in</Link>
           </Button>
 
           <Button className="rounded-full px-4 py-1.5 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90">

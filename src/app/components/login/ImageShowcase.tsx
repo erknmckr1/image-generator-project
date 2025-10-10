@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 export default function ImageShowcase() {
   return (
     <div className="relative hidden   md:flex justify-center items-center">

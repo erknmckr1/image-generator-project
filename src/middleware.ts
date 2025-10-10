@@ -41,7 +41,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // Korumalı sayfalar için kontrol (isteğe bağlı)
-  if (!user && request.nextUrl.pathname.startsWith("/generate-image")) {
+  if (!user && request.nextUrl.pathname.startsWith("/dashboard/generate-image")) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = "/login";
     return NextResponse.redirect(redirectUrl);
