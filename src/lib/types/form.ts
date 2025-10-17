@@ -1,5 +1,6 @@
 export interface FormData {
   prompt: string;
+  image_category: string;
   image_url: string;
   image_size: string;
   num_inference_steps: number;

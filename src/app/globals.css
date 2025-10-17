@@ -5,6 +5,46 @@
 
 @import "tailwindcss";
 
+
+@keyframes float-smooth {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) translateX(4px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(5px) translateX(-4px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-6px) translateX(3px) rotate(0.5deg);
+  }
+}
+
+@keyframes float-smooth-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(6px) translateX(-5px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-8px) translateX(5px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(4px) translateX(-3px) rotate(-0.5deg);
+  }
+}
+
+/* Tailwind utilities */
+.animate-float-smooth {
+  animation: float-smooth 12s ease-in-out infinite;
+}
+
+.animate-float-smooth-slow {
+  animation: float-smooth-reverse 18s ease-in-out infinite;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

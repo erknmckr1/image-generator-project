@@ -5,6 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader as Loader2, ImageIcon } from "lucide-react";
+import {
+  SelectContent,
+  SelectItem,
+  Select,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import AdvancedSettings from "./AdvancedSettings";
 import ImagePreview from "./ImagePreview";
 import AddImagesField from "./AddImagesField";
@@ -12,6 +19,7 @@ import { FormData, ImageData } from "@/lib/types/form";
 export default function ImageEditorForm() {
   const [formData, setFormData] = useState<FormData>({
     prompt: "",
+    image_category: "",
     image_url: "",
     image_size: "square_hd",
     num_inference_steps: 30,
@@ -99,6 +107,43 @@ export default function ImageEditorForm() {
             className="backdrop-blur-sm bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
           >
             <div className="space-y-6">
+              <div className="space-y-6">
+                <div>
+                  <Label
+                    htmlFor="image_category"
+                    className="text-sm font-medium text-slate-900"
+                  >
+                    Image Type
+                  </Label>
+                  <Select
+                    value={formData.image_category}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, image_category: value })
+                    }
+                  >
+                    <SelectTrigger className="mt-2 rounded-lg border-slate-300">
+                      <SelectValue placeholder="Select a category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="resolution">Resolution</SelectItem>
+                      <SelectItem value="product_placement">
+                        Product Placement
+                      </SelectItem>
+                      <SelectItem value="linkedin_visual">
+                        LinkedIn Visual
+                      </SelectItem>
+                      <SelectItem value="object_placement">
+                        Object Placement
+                      </SelectItem>
+                      <SelectItem value="background">Background</SelectItem>
+                      <SelectItem value="outfit_generation">
+                        Outfit Generation
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
               {/* Prompt */}
               <div>
                 <Label

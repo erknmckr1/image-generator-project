@@ -46,7 +46,7 @@ export function AvatarButton() {
             {user_metadata?.name || "User"}
           </div>
           <span className="text-sm text-foreground px-2 hover:underline-offset-3 hover:underline">
-            <Link href={"/dashboard/account"}>Account</Link>
+            <Link href={"/dashboard"}>Account</Link>
           </span>
           <Button onClick={handleLogout} className="w-full text-sm">
             Logout

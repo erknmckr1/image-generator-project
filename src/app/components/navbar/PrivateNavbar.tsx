@@ -16,7 +16,6 @@ export default function PrivateNavbar() {
   const navLinks = [
     { href: "/dashboard/generate-image", label: "Generate Image" },
     { href: "/dashboard/my-images", label: "My Images" },
-    { href: "/pricing", label: "Pricing" },
   ];
 
   return (
@@ -25,14 +24,14 @@ export default function PrivateNavbar() {
         "fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md"
       )}
     >
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+      <nav className=" flex items-center justify-between px-6 py-3">
         {/* Sol taraf - Logo */}
-        <div className="flex items-center space-x-2">
+        <Link className="flex items-center space-x-2" href={"/"}>
           <div className="bg-primary text-primary-foreground font-bold text-lg px-2 py-1 rounded-md">
             V
           </div>
           <span className="font-semibold text-lg text-foreground">EGA</span>
-        </div>
+        </Link>
 
         {/* Desktop Menü */}
         <ul className="hidden md:flex items-center space-x-6 text-sm font-medium">

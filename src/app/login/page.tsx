@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ImageShowcase from "../components/login/ImageShowcase";
-import { createClient } from "@/lib/supabase/client"; // ÖNEMLİ: Bu import
+import { createClient } from "@/lib/supabase/client";
 import { useState } from "react";
-
+import Link from "next/link";
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const supabase = createClient(); // Client component içinde oluştur
@@ -42,7 +42,7 @@ export default function LoginPage() {
       <Card className="md:w-[400px] shadow-2xl border border-border/40 bg-card/90 backdrop-blur-xl rounded-2xl">
         <CardHeader className="space-y-2 text-center">
           <h1 className="text-3xl font-semibold text-foreground">
-            Log in / Sign up
+            <Link href={"/"}>Log in / Sign up</Link>
           </h1>
           <p className="text-sm text-muted-foreground">
             Welcome back! Please sign in to continue.

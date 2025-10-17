@@ -1,4 +1,18 @@
-
+import Hero from "./components/home/Hero";
+import PricingSection from "./components/home/PricingSection";
+import ImageComparisonSection from "./components/home/ImageComparisonSection";
+import Footer from "./components/home/footer/Footer";
+import FAQSection from "./components/home/FAQSection";
+import DemoImageGenerator from "./components/home/imageGenerationSection/GenerationProgress";
 export default function Home() {
-  return <div className="h-screen w-screen max-w-7xl mx-auto ">NABER</div>;
+  return (
+    <div className="overflow-hidden">
+      <Hero />
+      <ImageComparisonSection />
+      <DemoImageGenerator/>
+      <PricingSection />
+      <FAQSection />
+      <Footer />
+    </div>
+  );
 }

@@ -1,5 +1,5 @@
 "use client";
-
+import { FormData } from "@/lib/types/form";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,21 +19,6 @@ import {
 } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-
-interface FormData {
-  prompt: string;
-  image_url: string;
-  image_size: string;
-  num_inference_steps: number;
-  seed?: number;
-  guidance_scale: number;
-  num_images: number;
-  enable_safety_checker: boolean;
-  output_format: string;
-  negative_prompt?: string;
-  acceleration: string;
-  strength: number;
-}
 
 interface AdvancedSettingsProps {
   formData: FormData;
@@ -72,7 +57,10 @@ export default function AdvancedSettings({
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mt-4 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <Label htmlFor="image_size" className="text-sm font-medium text-slate-900">
+              <Label
+                htmlFor="image_size"
+                className="text-sm font-medium text-slate-900"
+              >
                 Image Size
               </Label>
               <Select
@@ -94,7 +82,10 @@ export default function AdvancedSettings({
             </div>
 
             <div>
-              <Label htmlFor="num_inference_steps" className="text-sm font-medium text-slate-900">
+              <Label
+                htmlFor="num_inference_steps"
+                className="text-sm font-medium text-slate-900"
+              >
                 Inference Steps
               </Label>
               <Input
@@ -114,7 +105,10 @@ export default function AdvancedSettings({
             </div>
 
             <div>
-              <Label htmlFor="seed" className="text-sm font-medium text-slate-900">
+              <Label
+                htmlFor="seed"
+                className="text-sm font-medium text-slate-900"
+              >
                 Seed
               </Label>
               <Input
@@ -133,7 +127,10 @@ export default function AdvancedSettings({
             </div>
 
             <div>
-              <Label htmlFor="num_images" className="text-sm font-medium text-slate-900">
+              <Label
+                htmlFor="num_images"
+                className="text-sm font-medium text-slate-900"
+              >
                 Number of Images
               </Label>
               <Input
@@ -186,7 +183,10 @@ export default function AdvancedSettings({
           </div>
 
           <div>
-            <Label htmlFor="acceleration" className="text-sm font-medium text-slate-900">
+            <Label
+              htmlFor="acceleration"
+              className="text-sm font-medium text-slate-900"
+            >
               Acceleration
             </Label>
             <Select
@@ -242,7 +242,10 @@ export default function AdvancedSettings({
 
           <div className="flex items-center justify-between">
             <div>
-              <Label htmlFor="safety_checker" className="text-sm font-medium text-slate-900">
+              <Label
+                htmlFor="safety_checker"
+                className="text-sm font-medium text-slate-900"
+              >
                 Enable Safety Checker
               </Label>
               <p className="text-xs text-slate-500 mt-1">
@@ -259,7 +262,10 @@ export default function AdvancedSettings({
           </div>
 
           <div>
-            <Label htmlFor="negative_prompt" className="text-sm font-medium text-slate-900">
+            <Label
+              htmlFor="negative_prompt"
+              className="text-sm font-medium text-slate-900"
+            >
               Negative Prompt
             </Label>
             <Textarea
