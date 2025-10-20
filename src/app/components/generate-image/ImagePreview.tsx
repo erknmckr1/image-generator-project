@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, Copy, Check, Loader2, ImageIcon } from "lucide-react";
+import { Download, Copy, Check, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
@@ -73,21 +73,8 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
   };
 
   return (
-    <div className="flex flex-col items-center  w-full h-screen  bg-gradient-to-b from-muted/30 via-background to-muted overflow-auto">
+    <div className="flex flex-col items-center  w-full  bg-gradient-to-b from-muted/30 via-background to-muted overflow-auto">
       <div className="w-full max-w-lg">
-        {/* Header */}
-        <div className="text-center mb-12 space-y-3">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary text-primary-foreground shadow-md">
-            <ImageIcon className="w-7 h-7" />
-          </div>
-          <h1 className="text-4xl font-semibold text-foreground tracking-tight">
-            Show Image
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-           Here is your AI-generated image. You can download it or copy its link below.
-          </p>
-        </div>
-
         {isLoading ? (
           // 🔹 Çok aşamalı vertical progress görünümü
           <div className="bg-card/70 border border-border rounded-2xl shadow-sm p-8 backdrop-blur-sm text-center">

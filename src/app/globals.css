@@ -5,6 +5,16 @@
 
 @import "tailwindcss";
 
+/* Scrollbar'ı gizler ama scroll özelliğini aktif bırakır */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
 
 @keyframes float-smooth {
   0%, 100% {

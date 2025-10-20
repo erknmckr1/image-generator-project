@@ -12,6 +12,42 @@ const steps = [
 ];
 
 export default function DemoImageGenerator() {
+  const [visibleImages, setVisibleImages] = useState(Array(7).fill(false));
+  console.log(visibleImages);
+  const floatImages = [
+    {
+      src: "/image1.jpg",
+      style:
+        "absolute md:top-40 top-10 md:left-50 flex flex-col gap-4 rotate-[-8deg]",
+    },
+    {
+      src: "/image1.jpg",
+      style:
+        "absolute md:top-0 top-10 md:left-30 flex flex-col gap-4 rotate-[-8deg]",
+    },
+    {
+      src: "/image1.jpg",
+      style:
+        "absolute top-20 right-30 md:w-[260px] md:h-[250px] rotate-[10deg]",
+    },
+    {
+      src: "/image1.jpg",
+      style: "absolute bottom-0 right-60 w-[130px] h-[150px] rotate-[6deg]",
+    },
+    {
+      src: "/image1.jpg",
+      style: "absolute bottom-30 right-20 w-[130px] h-[150px] rotate-[6deg]",
+    },
+    {
+      src: "/image1.jpg",
+      style: "absolute bottom-0 left-40 w-[260px] h-[160px] rotate-[-4deg]",
+    },
+    {
+      src: "/image1.jpg",
+      style: "absolute top-0 left-1/2 w-[220px] h-[150px] rotate-[3deg]",
+    },
+  ];
+
   const [phase, setPhase] = useState<"before" | "generating" | "after">(
     "before"
   );
@@ -23,7 +59,7 @@ export default function DemoImageGenerator() {
 
     if (phase === "before") {
       // 3 saniye sonra generate başlasın
-      const timer = setTimeout(() => setPhase("generating"), 3000);
+      const timer = setTimeout(() => setPhase("generating"), 1000);
       return () => clearTimeout(timer);
     }
 
@@ -32,30 +68,39 @@ export default function DemoImageGenerator() {
         setCurrentStep((prev) => {
           if (prev < steps.length) return prev + 1;
           clearInterval(interval);
-          setTimeout(() => setPhase("after"), 1000); // adımlar bitti → after
+          setTimeout(() => setPhase("after"), 500);
           return prev;
         });
-      }, 1200);
+      }, 1000);
     }
 
     if (phase === "after") {
-      // after gösterimi bitince yeniden başa dön
       loopTimeout = setTimeout(() => {
+        setVisibleImages((prev) => {
+          const next = [...prev];
+          const nextIndex = prev.findIndex((v) => v === false); // sıradaki görünmeyen
+          if (nextIndex !== -1) next[nextIndex] = true; // sıradakini göster
+          if (nextIndex === -1) {
+            return Array(7).fill(false); // tekrar başa dön
+          }
+
+          return next;
+        });
         setPhase("before");
         setCurrentStep(0);
-      }, 4000); // after 4 saniye ekranda kalacak
+      }, 2000);
     }
 
     return () => {
       clearInterval(interval);
       clearTimeout(loopTimeout);
     };
-  }, [phase]);
+  }, [phase, floatImages]);
 
   return (
     <div className="relative max-w-7xl mx-auto py-16 ">
       <div className="relative z-40 w-full flex flex-col items-center justify-center">
-        <h2 className="text-3xl font-bold mb-12 text-center">
+        <h2 className=" relative z-40 text-3xl font-bold mb-12 text-center">
           Watch AI Work Its Magic ✨
         </h2>
         <div className="relative z-40 w-[360px] h-[360px] md:w-[560px] md:h-[460px] rounded-xl overflow-hidden shadow-2xl border border-border bg-muted">
@@ -170,65 +215,23 @@ export default function DemoImageGenerator() {
         {/* Renkli parlayan blob */}
         <div className="absolute -bottom-20 -right-10 w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-gradient-to-tr from-blue-500 via-purple-600 to-pink-500 blur-3xl opacity-40 animate-pulse z-10" />
 
-        {/* Üst solda küçük görseller */}
-        <div className="absolute md:top-0 top-10  md:left-30 flex flex-col gap-4 rotate-[-8deg]">
-          <div className="relative w-[110px] h-[80px] md:w-[140px] md:h-[100px] rotate-3 animate-float-smooth-slow">
-            <Image
-              src="/image4.jpg"
-              alt="float1"
-              fill
-              className="object-cover rounded-md shadow-xl"
-            />
+        {floatImages.map((img, i) => (
+          <div
+            key={i}
+            className={`${img.style} transition-opacity duration-700 ${
+              visibleImages[i] ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div className="relative z-0 w-[140px] h-[100px] md:w-[160px] md:h-[120px]">
+              <Image
+                src={img.src}
+                alt={`float-${i}`}
+                fill
+                className="object-cover rounded-xl shadow-xl"
+              />
+            </div>
           </div>
-          <div className="relative z-40 w-[110px] h-[80px] md:w-[140px] md:h-[100px] -rotate-6 animate-float-smooth">
-            <Image
-              src="/image3.jpg"
-              alt="float2"
-              fill
-              className="object-cover rounded-md shadow-lg opacity-95"
-            />
-          </div>
-        </div>
-
-        {/* Sağ üstte hafif büyük görsel */}
-        <div className="absolute top-0 right-0 md:w-[260px] md:h-[250px]  rotate-[10deg] animate-float-smooth-slow">
-          <Image
-            src="/image2.jpg"
-            alt="float3"
-            fill
-            className="object-cover rounded-lg shadow-2xl opacity-85"
-          />
-        </div>
-
-        {/* Sağ altta dikey pozisyonlu görseller */}
-        <div className="absolute z-40  bottom-0 right-0 flex flex-col gap-5 rotate-[6deg]">
-          <div className="relative w-[100px] h-[120px] md:w-[130px] md:h-[150px] animate-float-smooth">
-            <Image
-              src="/image2.jpg"
-              alt="float4"
-              fill
-              className="object-cover rounded-xl shadow-lg "
-            />
-          </div>
-          <div className="relative w-[100px] h-[120px] md:w-[130px] md:h-[150px] animate-float-smooth-slow">
-            <Image
-              src="/image3.jpg"
-              alt="float5"
-              fill
-              className="object-cover rounded-xl shadow-lg "
-            />
-          </div>
-        </div>
-
-        {/* Alt sol - geniş görsel */}
-        <div className="absolute bottom-0 sm:bottom-0 left-0 w-[200px] h-[120px] md:w-[260px] md:h-[160px] rotate-[-4deg] animate-float-smooth-slow">
-          <Image
-            src="/image4.jpg"
-            alt="float6"
-            fill
-            className="object-cover rounded-xl shadow-2xl opacity-85"
-          />
-        </div>
+        ))}
       </div>
     </div>
   );

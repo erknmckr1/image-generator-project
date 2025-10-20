@@ -1,7 +1,7 @@
 import React from "react";
-import ImageEditorForm from "@/app/components/ImageEditorForm";
+import GenerateImageWrapper from "@/app/components/generate-image/GenerateImageWrapper";
 function page() {
-  return <ImageEditorForm />;
+  return <GenerateImageWrapper />;
 }
 
 export default page;
