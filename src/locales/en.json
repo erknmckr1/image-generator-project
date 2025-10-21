@@ -1,0 +1,296 @@
+{
+  "navbar": {
+    "pricing": "Pricing",
+    "usecases": "Use Cases",
+    "faq": "FAQ",
+    "login": "Log in",
+    "get_started": "Get Started",
+    "my_account": "My Account"
+  },
+  "hero": {
+    "badge": "Boost Your Creativity with ImageAI",
+    "title_part1": "The Most",
+    "title_highlight": "Photorealistic",
+    "title_part2": "AI Image Generator",
+    "description": "Create studio-quality visuals without a photoshoot. Upload your photo and let our AI generate professional, customizable images within seconds.",
+    "cta_primary": "Try For Free",
+    "cta_secondary": "Learn More",
+    "users": "{count}+ happy creators",
+    "info_box_title": "How It Works",
+    "info_box_text": "Upload your image → Let AI work its magic → Download your studio-quality visuals."
+  },
+  "usecases": {
+    "badge": "One Platform. Limitless AI Creativity.",
+    "title_part1": "Imagine,",
+    "title_highlight": "Visualize,",
+    "title_part2": "and Bring Ideas to Life with AI.",
+    "description": "Whether it’s product shots, professional portraits, or social media visuals—ImageAI offers all-in-one tools for upscaling, background redesign, object placement, and creative generation. Achieve studio-quality results in minutes.",
+    "cta_primary": "Try For Free",
+    "cta_secondary": "Learn More",
+    "users": "{count} creative users"
+  },
+  "comparison_image": {
+    "before": "Before",
+    "after": "AI Generated",
+    "slide_to_compare": "Slide to compare the photos",
+    "select_avatar": "Select one of the avatars above to try different AI styles",
+    "reset_tooltip": "Reset comparison"
+  },
+
+  "featuresSection": {
+    "title": "AI Features",
+    "subtitle": "Explore our powerful generation tools",
+    "powered": "Powered by AI Generator",
+    "next": "Next",
+    "step": "Step {current} of {total}",
+    "mobileTitle": "AI Features",
+    "exploreTools": "Explore our powerful generation tools"
+  },
+  "features": {
+    "resolution": {
+      "name": "Resolution",
+      "description": "Enhance and upscale your images to higher resolutions with AI-powered detail reconstruction.",
+      "steps": {
+        "0": {
+          "label": "Low Resolution",
+          "desc": "Original low-quality or small image"
+        },
+        "1": {
+          "label": "AI Enhancement",
+          "desc": "Neural network reconstructing details"
+        },
+        "2": {
+          "label": "High Resolution",
+          "desc": "Crystal clear enhanced image"
+        }
+      }
+    },
+    "product-placement": {
+      "name": "Product Placement",
+      "description": "Automatically place your product into real-world environments for stunning marketing visuals.",
+      "steps": {
+        "0": {
+          "label": "Original Image",
+          "desc": "Upload your product and target environment"
+        },
+        "1": {
+          "label": "AI Analysis",
+          "desc": "Advanced lighting, shadow & perspective detection"
+        },
+        "2": {
+          "label": "Final Result",
+          "desc": "Seamlessly integrated product placement"
+        }
+      }
+    },
+    "linkedin-visual": {
+      "name": "Profile Visual",
+      "description": "Create professional LinkedIn visuals optimized for engagement and personal branding.",
+      "steps": {
+        "0": {
+          "label": "Content Input",
+          "desc": "Add your professional photo and message"
+        },
+        "1": {
+          "label": "Layout Design",
+          "desc": "AI optimizes composition for LinkedIn"
+        },
+        "2": {
+          "label": "Ready to Post",
+          "desc": "Professional visual ready for engagement"
+        }
+      }
+    },
+    "object-placement": {
+      "name": "Object Placement",
+      "description": "Intelligently place and integrate objects into scenes with realistic lighting and shadows.",
+      "steps": {
+        "0": {
+          "label": "Select Object",
+          "desc": "Choose object to place in scene"
+        },
+        "1": {
+          "label": "Scene Analysis",
+          "desc": "AI analyzes depth and lighting conditions"
+        },
+        "2": {
+          "label": "Integrated",
+          "desc": "Object naturally placed with perfect shadows"
+        }
+      }
+    },
+    "background-remove": {
+      "name": "Background",
+      "description": "Remove and replace backgrounds with pixel-perfect precision using advanced AI.",
+      "steps": {
+        "0": {
+          "label": "Original",
+          "desc": "Your image with existing background"
+        },
+        "1": {
+          "label": "Processing",
+          "desc": "AI segmentation and edge refinement"
+        },
+        "2": {
+          "label": "Complete",
+          "desc": "Clean removal or stunning new background"
+        }
+      }
+    },
+    "outfit-generation": {
+      "name": "Outfit Generation",
+      "description": "Transform your style with AI-powered virtual clothing and fashion generation.",
+      "steps": {
+        "0": {
+          "label": "Upload Photo",
+          "desc": "Start with your original photo"
+        },
+        "1": {
+          "label": "Style Selection",
+          "desc": "AI detects body structure and clothing segments"
+        },
+        "2": {
+          "label": "New Look",
+          "desc": "Your new AI-generated outfit applied perfectly"
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "Your Intelligent AI Virtual Assistant",
+    "explore": {
+      "title": "Explore",
+      "links": {
+        "home": "Home",
+        "about": "About Us",
+        "features": "Features",
+        "pricing": "Pricing"
+      }
+    },
+    "services": {
+      "title": "Services",
+      "items": {
+        "automation": "Task Automation",
+        "scheduling": "Intelligent Scheduling",
+        "communication": "Communication Assistance",
+        "data": "Data Organization",
+        "support": "Personalized Support"
+      }
+    },
+    "resources": {
+      "title": "Resources",
+      "items": {
+        "blog": "Blog",
+        "cases": "Case Studies",
+        "integrations": "Integrations",
+        "developers": "Developers",
+        "sitemap": "Sitemap"
+      }
+    },
+    "contact": {
+      "phone": "(+90) 505 005 0505",
+      "email": "hi@vega.com"
+    },
+    "bottom": {
+      "rights": "© 2025 Vega",
+      "design": "Design by Vega",
+      "terms": "Terms of Use",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "faq": {
+  "title": "Frequently Asked Questions",
+  "items": [
+    {
+      "question": "Can I use my photos anywhere?",
+      "answer": "Yes! You have full rights to use the photos you generate for personal and commercial purposes, as long as they comply with our usage policy."
+    },
+    {
+      "question": "What images should I upload for the best results?",
+      "answer": "We recommend uploading clear, well-lit images where your face is fully visible. Avoid heavy filters or dark lighting for optimal AI results."
+    },
+    {
+      "question": "Is my data secure?",
+      "answer": "Absolutely. All uploads and generated images are stored securely and deleted automatically after processing unless you choose to save them."
+    },
+    {
+      "question": "Can I request a refund for my purchase?",
+      "answer": "Refunds can be requested within 7 days if there is a technical issue preventing delivery of your AI images. Please contact our support team."
+    },
+    {
+      "question": "Which image file types can I upload?",
+      "answer": "We currently support JPG, JPEG, and PNG formats up to 10MB per image."
+    },
+    {
+      "question": "Is it possible to request manual edits for my headshot photos?",
+      "answer": "Yes, premium users can request one round of manual edits per order directly from their dashboard."
+    },
+    {
+      "question": "Can I request a redo for my headshot order?",
+      "answer": "Yes. If you are unsatisfied, you can request a redo once within 48 hours of delivery."
+    }
+  ]
+},
+"pricing": {
+  "plans": [
+    {
+      "id": 1,
+      "title": "Basic Plan",
+      "price": 19,
+      "period": "Mo",
+      "description": "Perfect for individuals starting their creative journey.",
+      "features": [
+        { "text": "Access to all AI tools", "included": true },
+        { "text": "500 monthly generations", "included": true },
+        { "text": "Standard support", "included": true },
+        { "text": "Community access", "included": true },
+        { "text": "No commercial usage rights", "included": false }
+      ],
+      "get_started":"Get Started"
+    },
+    {
+      "id": 2,
+      "title": "Pro Plan",
+      "price": 39,
+      "period": "Mo",
+      "description": "For creators and professionals who need more power.",
+      "features": [
+        { "text": "Unlimited generations", "included": true },
+        { "text": "Priority support", "included": true },
+        { "text": "Custom AI style options", "included": true },
+        { "text": "Team sharing tools", "included": true },
+        { "text": "Commercial usage rights", "included": true }
+      ],
+      "get_started":"Get Started"
+    },
+    {
+      "id": 3,
+      "title": "Enterprise Plan",
+      "price": 79,
+      "period": "Mo",
+      "description": "Best for teams and companies needing scalability.",
+      "features": [
+        { "text": "Dedicated account manager", "included": true },
+        { "text": "Unlimited AI renderings", "included": true },
+        { "text": "Custom model training", "included": true },
+        { "text": "Advanced analytics", "included": true },
+        { "text": "Custom API integrations", "included": true }
+      ],
+      "get_started":"Get Started"
+    }
+  ]
+},
+"demo_generator": {
+  "title": "Watch AI Work Its Magic ✨",
+  "loading": "Generating your image...",
+  "done": "Done! Your AI image is ready",
+  "steps": [
+    "Initializing engine...",
+    "Loading AI model...",
+    "Processing input prompt...",
+    "Generating image...",
+    "Finalizing output..."
+  ]
+}
+
+}

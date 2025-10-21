@@ -13,6 +13,7 @@ type PricingPlan = {
     text: string;
     included: boolean;
   }[];
+  get_started: string;
 };
 
 export default function PriceCard({ props }: { props: PricingPlan }) {
@@ -40,7 +41,7 @@ export default function PriceCard({ props }: { props: PricingPlan }) {
         variant="outline"
         className="w-full justify-center rounded-full transition border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
       >
-        Get Started <ArrowRight className="ml-2 w-4 h-4" />
+        {props.get_started} <ArrowRight className="ml-2 w-4 h-4" />
       </Button>
 
       {/* Özellikler */}

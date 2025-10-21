@@ -17,6 +17,5 @@ export default function UserProvider({
     if (user) dispatch(setUser(user));
     else dispatch(clearUser());
   }, [user, dispatch]);
-
   return <>{children}</>;
 }

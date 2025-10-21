@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { Providers } from "@/lib/redux/Providers";
 import { createClient } from "@/lib/supabase/server";
 import UserProvider from "@/lib/providers/UserProvider";
+import CreditProvider from "@/lib/providers/CreditProvider";
 const inter = Inter({ subsets: ["latin"] });
 import NavbarWrapper from "./components/navbar/NavbarWrapper";
 export const metadata: Metadata = {
@@ -29,8 +30,10 @@ export default async function RootLayout({
       >
         <Providers>
           <UserProvider user={user}>
-            <NavbarWrapper user={user} />
-            <main className="mx-auto">{children}</main>
+            <CreditProvider user={user}>
+              <NavbarWrapper user={user} />
+              <main className="mx-auto">{children}</main>
+            </CreditProvider>
           </UserProvider>
         </Providers>
       </body>

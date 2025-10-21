@@ -1,31 +1,36 @@
+"use client";
 import React from "react";
 import ImageComparisonSlider from "./ImageComparison";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import FadeInSection from "./motion/FadeInSection";
+import FadeInSection from "../motion/FadeInSection";
 import Link from "next/link";
+import { useTranslation } from "@/lib/hooks/useTranslation";
+
 function ImageComparisonSection() {
+  const { t } = useTranslation();
+
   return (
     <FadeInSection>
-      <section id="usecases" className="w-full  h-full sm:py-16 pt-16">
-        <div className="w-full max-w-7xl mx-auto h-full  gap-6 space-y-10 flex flex-col md:flex-row items-center sm:justify-between">
-          {/* right area */}
+      <section id="usecases" className="w-full h-full sm:py-16 pt-16">
+        <div className="w-full max-w-7xl mx-auto h-full gap-6 space-y-10 flex flex-col md:flex-row items-center sm:justify-between">
+          {/* Left side (text area) */}
           <div className="md:w-[55%] w-full flex items-center">
             <div className="flex-1 gap-y-10 flex flex-col px-4 text-center md:text-left">
-              <span className="text-sm font-medium text-primary bg-primary/10 px-4  py-1 rounded-full w-fit mx-auto md:mx-0">
-                One Platform. Endless AI Image Possibilities.
+              <span className="text-sm font-medium text-primary bg-primary/10 px-4 py-1 rounded-full w-fit mx-auto md:mx-0">
+                {t("usecases.badge")}
               </span>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight text-foreground">
-                Create <span className="text-primary">Any Visual</span> —
-                Powered by AI
+                {t("usecases.title_part1")}{" "}
+                <span className="text-primary">
+                  {t("usecases.title_highlight")}
+                </span>{" "}
+                {t("usecases.title_part2")}
               </h1>
 
               <p className="text-muted-foreground max-w-lg mx-auto md:mx-0">
-                Enhance resolution, redesign backgrounds, place products, or
-                create professional visuals for LinkedIn — all in one
-                intelligent workspace. Explore the full potential of AI-powered
-                image creation.
+                {t("usecases.description")}
               </p>
 
               <div className="flex gap-4 justify-center md:justify-start">
@@ -33,10 +38,10 @@ function ImageComparisonSection() {
                   size="lg"
                   className="bg-primary text-primary-foreground hover:opacity-90"
                 >
-                  <Link href={"/login"}>Try For Free</Link>
+                  <Link href="/login">{t("usecases.cta_primary")}</Link>
                 </Button>
                 <Button size="lg" variant="outline">
-                  Learn More
+                  {t("usecases.cta_secondary")}
                 </Button>
               </div>
 
@@ -56,11 +61,14 @@ function ImageComparisonSection() {
                   className="rounded-full -ml-3"
                 />
                 <p className="text-sm text-muted-foreground">
-                  <strong>200+</strong> happy creators
+                  <strong>200+</strong>{" "}
+                  {t("usecases.users").replace("{count}", "")}
                 </p>
               </div>
             </div>
           </div>
+
+          {/* Right side (comparison slider) */}
           <div className="md:w-[45%] w-full">
             <ImageComparisonSlider />
           </div>

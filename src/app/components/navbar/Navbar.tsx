@@ -1,7 +1,9 @@
 "use client";
 
-import { Globe, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LanguageSwitcher from "./LanguageSwitchert";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { AvatarButton } from "./AvatarButton";
@@ -9,11 +11,13 @@ import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/store";
 import { useState } from "react";
+
 export default function Navbar() {
   const { id } = useSelector((state: RootState) => state.user);
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const isActive = (href: string) => pathName === href;
+  const { t } = useTranslation();
 
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -29,14 +33,15 @@ export default function Navbar() {
         top: elementPosition - navbarHeight,
         behavior: "smooth",
       });
-      setIsOpen(false); // mobilde tıklanınca kapat
+      setIsOpen(false);
     }
   };
 
+  // ✅ Artık çeviriler dinamik geliyor
   const navLinks = [
-    { href: "#pricing", label: "Pricing" },
-    { href: "#usecases", label: "Use Cases" },
-    { href: "#faq", label: "FAQ" },
+    { href: "#pricing", label: t("navbar.pricing") },
+    { href: "#usecases", label: t("navbar.usecases") },
+    { href: "#faq", label: t("navbar.faq") },
   ];
 
   return (
@@ -79,11 +84,8 @@ export default function Navbar() {
 
         {/* Sağ taraf */}
         <div className="flex items-center space-x-4">
-          {/* Dil ikonu */}
-          <Globe
-            size={18}
-            className="text-muted-foreground hover:text-foreground cursor-pointer hidden sm:block"
-          />
+          <LanguageSwitcher />
+
           {/* Masaüstü Butonlar */}
           <div className="hidden md:flex items-center space-x-3">
             {id ? (
@@ -94,10 +96,10 @@ export default function Navbar() {
                   variant="outline"
                   className="rounded-full px-4 py-1.5 text-sm border-border"
                 >
-                  <Link href="/login">Log in</Link>
+                  <Link href="/login">{t("navbar.login")}</Link>
                 </Button>
                 <Button className="rounded-full px-4 py-1.5 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90">
-                  <Link href="/login">Get started </Link>
+                  <Link href="/login">{t("navbar.get_started")}</Link>
                 </Button>
               </>
             )}
@@ -148,7 +150,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between">
                 <AvatarButton />
                 <span className="text-xs text-muted-foreground">
-                  My Account
+                  {t("navbar.my_account")}
                 </span>
               </div>
             ) : (
@@ -158,13 +160,13 @@ export default function Navbar() {
                   className="w-full rounded-full border-border"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href="/login">Log in</Link>
+                  <Link href="/login">{t("navbar.login")}</Link>
                 </Button>
                 <Button
                   className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href="/login">Get started </Link>
+                  <Link href="/login">{t("navbar.get_started")}</Link>
                 </Button>
               </>
             )}

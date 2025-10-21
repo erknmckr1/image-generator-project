@@ -12,6 +12,7 @@ import {
 
 export function AvatarButton() {
   const { user_metadata } = useSelector((state: RootState) => state.user);
+  const { credits_remaining } = useSelector((state: RootState) => state.credit);
   const supabase = createClient();
 
   const handleLogout = async () => {
@@ -44,6 +45,12 @@ export function AvatarButton() {
         <div className="flex flex-col space-y-2">
           <div className="text-sm font-medium text-foreground px-2">
             {user_metadata?.name || "User"}
+          </div>
+          <div className="text-sm font-medium text-foreground px-2">
+            <span className="text-xs text-foreground font-semibold">
+              Kalan Kredi:
+            </span>{" "}
+            {credits_remaining && credits_remaining}
           </div>
           <span className="text-sm text-foreground px-2 hover:underline-offset-3 hover:underline">
             <Link href={"/dashboard"}>Account</Link>

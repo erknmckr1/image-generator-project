@@ -1,0 +1,295 @@
+{
+  "navbar": {
+    "pricing": "Fiyatlandırma",
+    "usecases": "Kullanım Alanları",
+    "faq": "SSS",
+    "login": "Giriş Yap",
+    "get_started": "Başlayın",
+    "my_account": "Hesabım"
+  },
+  "hero": {
+    "badge": "ImageAI ile Yaratıcılığınızı Artırın",
+    "title_part1": "En",
+    "title_highlight": "Gerçekçi",
+    "title_part2": "AI Görsel Üreticisi",
+    "description": "Fotoğraf çekimi yapmadan stüdyo kalitesinde görseller oluşturun. Fotoğrafınızı yükleyin ve AI'ımızın saniyeler içinde profesyonel, özelleştirilebilir görseller üretmesini izleyin.",
+    "cta_primary": "Ücretsiz Deneyin",
+    "cta_secondary": "Daha Fazla Bilgi",
+    "users": "{count}+ mutlu yaratıcı",
+    "info_box_title": "Nasıl Çalışır",
+    "info_box_text": "Görselinizi yükleyin → AI sihrini görsün → Stüdyo kalitesinde görsellerinizi indirin."
+  },
+  "usecases": {
+    "badge": "Tek Platform. Sınırsız Yapay Zekâ Yaratıcılığı.",
+    "title_part1": "Hayal Et,",
+    "title_highlight": "Görselleştir,",
+    "title_part2": "ve Fikirlerini Yapay Zekâ ile Gerçeğe Dönüştür.",
+    "description": "İster ürün fotoğrafı, ister profesyonel portre, ister sosyal medya görseli olsun — ImageAI; çözünürlük artırma, arka plan düzenleme, nesne yerleştirme ve yaratıcı üretim araçlarını tek bir platformda sunar. Dakikalar içinde stüdyo kalitesinde sonuçlar elde et.",
+    "cta_primary": "Ücretsiz Dene",
+    "cta_secondary": "Daha Fazla Bilgi",
+    "users": "{count} yaratıcı kullanıcı"
+  },
+  "comparison_image": {
+    "before": "Öncesi",
+    "after": "Sonrası",
+    "slide_to_compare": "Fotoğrafları karşılaştırmak için kaydır",
+    "select_avatar": "Farklı yapay zekâ tarzlarını denemek için yukarıdaki avatarları seç",
+    "reset_tooltip": "Karşılaştırmayı sıfırla"
+  },
+  "featuresSection": {
+    "title": "AI Özellikleri",
+    "subtitle": "Güçlü üretim araçlarımızı keşfedin",
+    "powered": "AI Generator ile güçlendirildi",
+    "next": "İleri",
+    "step": "Adım {current} / {total}",
+    "mobileTitle": "AI Özellikleri",
+    "exploreTools": "Güçlü üretim araçlarımızı keşfedin"
+  },
+  "features": {
+    "resolution": {
+      "name": "Çözünürlük",
+      "description": "Görsellerinizi AI destekli detay yeniden yapılandırma ile daha yüksek çözünürlüklere yükseltin ve iyileştirin.",
+      "steps": {
+        "0": {
+          "label": "Düşük Çözünürlük",
+          "desc": "Orijinal düşük kaliteli veya küçük görsel"
+        },
+        "1": {
+          "label": "AI İyileştirme",
+          "desc": "Yapay sinir ağı detayları yeniden yapılandırıyor"
+        },
+        "2": {
+          "label": "Yüksek Çözünürlük",
+          "desc": "Kristal netliğinde geliştirilmiş görsel"
+        }
+      }
+    },
+    "product-placement": {
+      "name": "Ürün Yerleştirme",
+      "description": "Ürününüzü otomatik olarak gerçek dünya ortamlarına yerleştirerek çarpıcı pazarlama görselleri oluşturun.",
+      "steps": {
+        "0": {
+          "label": "Orijinal Görsel",
+          "desc": "Ürününüzü ve hedef ortamı yükleyin"
+        },
+        "1": {
+          "label": "AI Analizi",
+          "desc": "Gelişmiş ışık, gölge ve perspektif algılama"
+        },
+        "2": {
+          "label": "Son Sonuç",
+          "desc": "Kusursuz entegre edilmiş ürün yerleştirme"
+        }
+      }
+    },
+    "linkedin-visual": {
+      "name": "Profil Görseli",
+      "description": "Etkileşim ve kişisel markalaşma için optimize edilmiş profesyonel LinkedIn görselleri oluşturun.",
+      "steps": {
+        "0": {
+          "label": "İçerik Girişi",
+          "desc": "Profesyonel fotoğrafınızı ve mesajınızı ekleyin"
+        },
+        "1": {
+          "label": "Düzen Tasarımı",
+          "desc": "AI, LinkedIn için kompozisyonu optimize ediyor"
+        },
+        "2": {
+          "label": "Paylaşıma Hazır",
+          "desc": "Etkileşim için hazır profesyonel görsel"
+        }
+      }
+    },
+    "object-placement": {
+      "name": "Nesne Yerleştirme",
+      "description": "Nesneleri gerçekçi ışıklandırma ve gölgelerle sahnelere akıllıca yerleştirin ve entegre edin.",
+      "steps": {
+        "0": {
+          "label": "Nesne Seçimi",
+          "desc": "Sahneye yerleştirilecek nesneyi seçin"
+        },
+        "1": {
+          "label": "Sahne Analizi",
+          "desc": "AI derinlik ve ışık koşullarını analiz ediyor"
+        },
+        "2": {
+          "label": "Entegre Edildi",
+          "desc": "Nesne mükemmel gölgelerle doğal şekilde yerleştirildi"
+        }
+      }
+    },
+    "background-remove": {
+      "name": "Arka Plan",
+      "description": "Gelişmiş AI kullanarak arka planları piksel mükemmelliğinde hassasiyetle kaldırın ve değiştirin.",
+      "steps": {
+        "0": {
+          "label": "Orijinal",
+          "desc": "Mevcut arka planlı görseliniz"
+        },
+        "1": {
+          "label": "İşleniyor",
+          "desc": "AI segmentasyonu ve kenar iyileştirme"
+        },
+        "2": {
+          "label": "Tamamlandı",
+          "desc": "Temiz kaldırma veya muhteşem yeni arka plan"
+        }
+      }
+    },
+    "outfit-generation": {
+      "name": "Kıyafet Üretimi",
+      "description": "AI destekli sanal giyim ve moda üretimi ile stilinizi dönüştürün.",
+      "steps": {
+        "0": {
+          "label": "Fotoğraf Yükle",
+          "desc": "Orijinal fotoğrafınızla başlayın"
+        },
+        "1": {
+          "label": "Stil Seçimi",
+          "desc": "AI vücut yapısını algılıyor ve giysi segmentlerini belirliyor"
+        },
+        "2": {
+          "label": "Yeni Görünüm",
+          "desc": "AI tarafından üretilen yeni kıyafetiniz mükemmel şekilde uygulandı"
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "Akıllı Yapay Zekâ Asistanınız",
+    "explore": {
+      "title": "Keşfet",
+      "links": {
+        "home": "Ana Sayfa",
+        "about": "Hakkımızda",
+        "features": "Özellikler",
+        "pricing": "Fiyatlandırma"
+      }
+    },
+    "services": {
+      "title": "Hizmetler",
+      "items": {
+        "automation": "Görev Otomasyonu",
+        "scheduling": "Akıllı Planlama",
+        "communication": "İletişim Desteği",
+        "data": "Veri Düzenleme",
+        "support": "Kişiselleştirilmiş Destek"
+      }
+    },
+    "resources": {
+      "title": "Kaynaklar",
+      "items": {
+        "blog": "Blog",
+        "cases": "Vaka Çalışmaları",
+        "integrations": "Entegrasyonlar",
+        "developers": "Geliştiriciler",
+        "sitemap": "Site Haritası"
+      }
+    },
+    "contact": {
+      "phone": "(+90) 505 005 0505",
+      "email": "hi@vega.com"
+    },
+    "bottom": {
+      "rights": "© 2025 Vega",
+      "design": "Vega Tasarımı",
+      "terms": "Kullanım Şartları",
+      "privacy": "Gizlilik Politikası"
+    }
+  },
+  "faq": {
+  "title": "Sıkça Sorulan Sorular",
+  "items": [
+    {
+      "question": "Oluşturduğum fotoğrafları istediğim yerde kullanabilir miyim?",
+      "answer": "Evet! Oluşturduğunuz fotoğrafları, kullanım politikamıza uygun olduğu sürece kişisel ve ticari amaçlarla dilediğiniz gibi kullanabilirsiniz."
+    },
+    {
+      "question": "En iyi sonucu almak için hangi tür fotoğrafları yüklemeliyim?",
+      "answer": "Yüzünüzün net göründüğü, iyi aydınlatılmış ve filtre kullanılmamış fotoğrafları yüklemenizi öneririz. Bu, yapay zekânın en iyi sonucu üretmesini sağlar."
+    },
+    {
+      "question": "Verilerim güvende mi?",
+      "answer": "Kesinlikle. Tüm yüklemeler ve oluşturulan görseller güvenli bir şekilde saklanır ve siz kaydetmeyi tercih etmezseniz işlemden sonra otomatik olarak silinir."
+    },
+    {
+      "question": "Satın aldığım ürün için geri ödeme talep edebilir miyim?",
+      "answer": "Eğer teknik bir sorun nedeniyle görselleriniz teslim edilemediyse, 7 gün içinde geri ödeme talep edebilirsiniz. Lütfen destek ekibimizle iletişime geçin."
+    },
+    {
+      "question": "Hangi dosya türlerini yükleyebilirim?",
+      "answer": "Şu anda JPG, JPEG ve PNG formatlarını destekliyoruz. Her görsel için maksimum dosya boyutu 10MB'dır."
+    },
+    {
+      "question": "Portre fotoğraflarım için manuel düzenleme isteyebilir miyim?",
+      "answer": "Evet, premium kullanıcılar sipariş başına bir defaya mahsus manuel düzenleme talebinde bulunabilirler."
+    },
+    {
+      "question": "Fotoğraf siparişimi yeniden oluşturabilir miyim?",
+      "answer": "Evet. Eğer sonuçtan memnun kalmazsanız, teslimattan sonraki 48 saat içinde yeniden oluşturma talebi yapabilirsiniz."
+    }
+  ]
+},
+"pricing": {
+  "plans": [
+    {
+      "id": 1,
+      "title": "Başlangıç Planı",
+      "price": 19,
+      "period": "Ay",
+      "description": "Yaratıcı yolculuğuna yeni başlayan bireyler için mükemmel.",
+      "features": [
+        { "text": "Tüm yapay zeka araçlarına erişim", "included": true },
+        { "text": "Aylık 500 görsel üretimi", "included": true },
+        { "text": "Standart destek", "included": true },
+        { "text": "Topluluk erişimi", "included": true },
+        { "text": "Ticari kullanım hakkı yok", "included": false }
+      ],
+      "get_started" :"Başlayın"
+    },
+    {
+      "id": 2,
+      "title": "Profesyonel Plan",
+      "price": 39,
+      "period": "Ay",
+      "description": "Daha fazla güç isteyen içerik üreticileri ve profesyoneller için.",
+      "features": [
+        { "text": "Sınırsız görsel üretimi", "included": true },
+        { "text": "Öncelikli destek", "included": true },
+        { "text": "Özel yapay zeka tarz seçenekleri", "included": true },
+        { "text": "Ekip paylaşım araçları", "included": true },
+        { "text": "Ticari kullanım hakkı", "included": true }
+      ],
+       "get_started" :"Başlayın"
+    },
+    {
+      "id": 3,
+      "title": "Kurumsal Plan",
+      "price": 79,
+      "period": "Ay",
+      "description": "Ölçeklenebilirliğe ihtiyaç duyan ekipler ve şirketler için en uygun çözüm.",
+      "features": [
+        { "text": "Özel hesap yöneticisi", "included": true },
+        { "text": "Sınırsız yapay zeka işleme", "included": true },
+        { "text": "Özel model eğitimi", "included": true },
+        { "text": "Gelişmiş analiz araçları", "included": true },
+        { "text": "Özel API entegrasyonları", "included": true }
+      ],
+       "get_started" :"Başlayın"
+    }
+  ]
+},
+"demo_generator": {
+  "title": "Yapay Zekanın Büyüsünü İzle ✨",
+  "loading": "Görselin oluşturuluyor...",
+  "done": "Tamamlandı! Yapay zekâ görselin hazır",
+  "steps": [
+    "Motor başlatılıyor...",
+    "Yapay zeka modeli yükleniyor...",
+    "Girdi istemi işleniyor...",
+    "Görsel oluşturuluyor...",
+    "Çıktı sonlandırılıyor..."
+  ]
+}
+
+}

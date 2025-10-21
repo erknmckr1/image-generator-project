@@ -3,51 +3,15 @@ import { useEffect, useState } from "react";
 import { CheckCircle, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-const steps = [
-  "Initializing engine...",
-  "Loading AI model...",
-  "Processing input prompt...",
-  "Generating image...",
-  "Finalizing output...",
-];
+import { useTranslation } from "@/lib/hooks/useTranslation"; // ✅ import
 
 export default function DemoImageGenerator() {
-  const [visibleImages, setVisibleImages] = useState(Array(7).fill(false));
-  console.log(visibleImages);
-  const floatImages = [
-    {
-      src: "/image1.jpg",
-      style:
-        "absolute md:top-40 top-10 md:left-50 flex flex-col gap-4 rotate-[-8deg]",
-    },
-    {
-      src: "/image1.jpg",
-      style:
-        "absolute md:top-0 top-10 md:left-30 flex flex-col gap-4 rotate-[-8deg]",
-    },
-    {
-      src: "/image1.jpg",
-      style:
-        "absolute top-20 right-30 md:w-[260px] md:h-[250px] rotate-[10deg]",
-    },
-    {
-      src: "/image1.jpg",
-      style: "absolute bottom-0 right-60 w-[130px] h-[150px] rotate-[6deg]",
-    },
-    {
-      src: "/image1.jpg",
-      style: "absolute bottom-30 right-20 w-[130px] h-[150px] rotate-[6deg]",
-    },
-    {
-      src: "/image1.jpg",
-      style: "absolute bottom-0 left-40 w-[260px] h-[160px] rotate-[-4deg]",
-    },
-    {
-      src: "/image1.jpg",
-      style: "absolute top-0 left-1/2 w-[220px] h-[150px] rotate-[3deg]",
-    },
-  ];
+  const { t } = useTranslation();
 
+  // steps artık JSON’dan geliyor
+  const steps = t<string[]>("demo_generator.steps");
+
+  const [visibleImages, setVisibleImages] = useState(Array(7).fill(false));
   const [phase, setPhase] = useState<"before" | "generating" | "after">(
     "before"
   );
@@ -58,7 +22,6 @@ export default function DemoImageGenerator() {
     let loopTimeout: NodeJS.Timeout;
 
     if (phase === "before") {
-      // 3 saniye sonra generate başlasın
       const timer = setTimeout(() => setPhase("generating"), 1000);
       return () => clearTimeout(timer);
     }
@@ -78,12 +41,9 @@ export default function DemoImageGenerator() {
       loopTimeout = setTimeout(() => {
         setVisibleImages((prev) => {
           const next = [...prev];
-          const nextIndex = prev.findIndex((v) => v === false); // sıradaki görünmeyen
-          if (nextIndex !== -1) next[nextIndex] = true; // sıradakini göster
-          if (nextIndex === -1) {
-            return Array(7).fill(false); // tekrar başa dön
-          }
-
+          const nextIndex = prev.findIndex((v) => v === false);
+          if (nextIndex !== -1) next[nextIndex] = true;
+          if (nextIndex === -1) return Array(7).fill(false);
           return next;
         });
         setPhase("before");
@@ -95,16 +55,18 @@ export default function DemoImageGenerator() {
       clearInterval(interval);
       clearTimeout(loopTimeout);
     };
-  }, [phase, floatImages]);
+  }, [phase, steps]);
 
   return (
     <div className="relative max-w-7xl mx-auto py-16 ">
       <div className="relative z-40 w-full flex flex-col items-center justify-center">
-        <h2 className=" relative z-40 text-3xl font-bold mb-12 text-center">
-          Watch AI Work Its Magic ✨
+        {/* ✅ Başlık */}
+        <h2 className="relative z-40 text-3xl font-bold mb-12 text-center">
+          {t("demo_generator.title")}
         </h2>
+
         <div className="relative z-40 w-[360px] h-[360px] md:w-[560px] md:h-[460px] rounded-xl overflow-hidden shadow-2xl border border-border bg-muted">
-          {/* Fotoğraf alanı */}
+          {/* Görsel alanı */}
           <AnimatePresence mode="wait">
             {phase === "before" && (
               <motion.div
@@ -153,7 +115,6 @@ export default function DemoImageGenerator() {
               transition={{ duration: 0.3 }}
               className="absolute inset-0 bg-background/70 backdrop-blur-sm flex flex-col justify-center items-center text-center p-6"
             >
-              {/* Yüklenme başlığı */}
               <div className="flex justify-center mb-4">
                 {currentStep < steps.length ? (
                   <Loader2 className="animate-spin text-primary w-6 h-6" />
@@ -162,13 +123,14 @@ export default function DemoImageGenerator() {
                 )}
               </div>
 
+              {/*  Dinamik başlık */}
               <h2 className="text-base md:text-lg font-semibold mb-3 text-foreground">
                 {currentStep < steps.length
-                  ? "Generating your image..."
-                  : "Done! Your AI image is ready"}
+                  ? t("demo_generator.loading")
+                  : t("demo_generator.done")}
               </h2>
 
-              {/* Adımlar listesi */}
+              {/*  Adımlar listesi */}
               <ul className="space-y-2 text-sm w-full max-w-xs text-left">
                 {steps.map((step, index) => {
                   const isDone = index < currentStep;
@@ -199,7 +161,6 @@ export default function DemoImageGenerator() {
                 })}
               </ul>
 
-              {/* Progress bar */}
               <div className="mt-5 w-full max-w-xs bg-muted h-1 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full bg-primary"
@@ -212,26 +173,6 @@ export default function DemoImageGenerator() {
             </motion.div>
           )}
         </div>
-        {/* Renkli parlayan blob */}
-        <div className="absolute -bottom-20 -right-10 w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-gradient-to-tr from-blue-500 via-purple-600 to-pink-500 blur-3xl opacity-40 animate-pulse z-10" />
-
-        {floatImages.map((img, i) => (
-          <div
-            key={i}
-            className={`${img.style} transition-opacity duration-700 ${
-              visibleImages[i] ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <div className="relative z-0 w-[140px] h-[100px] md:w-[160px] md:h-[120px]">
-              <Image
-                src={img.src}
-                alt={`float-${i}`}
-                fill
-                className="object-cover rounded-xl shadow-xl"
-              />
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

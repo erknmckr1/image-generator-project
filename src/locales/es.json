@@ -1,0 +1,294 @@
+{
+  "navbar": {
+    "pricing": "Precios",
+    "usecases": "Casos de uso",
+    "faq": "Preguntas frecuentes",
+    "login": "Iniciar sesión",
+    "get_started": "Comenzar",
+    "my_account": "Mi cuenta"
+  },
+  "hero": {
+    "badge": "Aumenta tu creatividad con ImageAI",
+    "title_part1": "El generador de imágenes con IA más",
+    "title_highlight": "realista",
+    "title_part2": "",
+    "description": "Crea imágenes de calidad de estudio sin necesidad de una sesión de fotos. Sube tu foto y deja que nuestra IA genere imágenes profesionales y personalizables en segundos.",
+    "cta_primary": "Probar gratis",
+    "cta_secondary": "Más información",
+    "users": "Más de {count} creadores felices",
+    "info_box_title": "Cómo funciona",
+    "info_box_text": "Sube tu imagen → deja que la IA haga su magia → descarga tus imágenes con calidad de estudio."
+  },
+  "usecases": {
+    "badge": "Una sola plataforma. Creatividad ilimitada con IA.",
+    "title_part1": "Imagina,",
+    "title_highlight": "visualiza,",
+    "title_part2": "y convierte tus ideas en realidad con IA.",
+    "description": "Ya sea una foto de producto, un retrato profesional o una imagen para redes sociales — ImageAI ofrece mejora de resolución, edición de fondo, colocación de objetos y herramientas creativas en una sola plataforma. Obtén resultados de calidad profesional en minutos.",
+    "cta_primary": "Probar gratis",
+    "cta_secondary": "Más información",
+    "users": "{count} usuarios creativos"
+  },
+  "comparison_image": {
+    "before": "Antes",
+    "after": "Después",
+    "slide_to_compare": "Desliza para comparar las fotos",
+    "select_avatar": "Selecciona un avatar arriba para probar diferentes estilos de IA",
+    "reset_tooltip": "Restablecer comparación"
+  },
+  "featuresSection": {
+    "title": "Funciones de IA",
+    "subtitle": "Explora nuestras potentes herramientas de generación",
+    "powered": "Impulsado por AI Generator",
+    "next": "Siguiente",
+    "step": "Paso {current} / {total}",
+    "mobileTitle": "Funciones de IA",
+    "exploreTools": "Explora nuestras potentes herramientas de generación"
+  },
+  "features": {
+    "resolution": {
+      "name": "Resolución",
+      "description": "Mejora tus imágenes a resoluciones más altas con reconstrucción de detalles basada en IA.",
+      "steps": {
+        "0": {
+          "label": "Baja resolución",
+          "desc": "Imagen original de baja calidad o tamaño pequeño"
+        },
+        "1": {
+          "label": "Mejora con IA",
+          "desc": "La red neuronal reconstruye los detalles"
+        },
+        "2": {
+          "label": "Alta resolución",
+          "desc": "Imagen mejorada con claridad cristalina"
+        }
+      }
+    },
+    "product-placement": {
+      "name": "Colocación de productos",
+      "description": "Coloca tu producto automáticamente en entornos reales para obtener imágenes de marketing impactantes.",
+      "steps": {
+        "0": {
+          "label": "Imagen original",
+          "desc": "Sube tu producto y el entorno deseado"
+        },
+        "1": {
+          "label": "Análisis de IA",
+          "desc": "Detección avanzada de luz, sombra y perspectiva"
+        },
+        "2": {
+          "label": "Resultado final",
+          "desc": "Colocación del producto perfectamente integrada"
+        }
+      }
+    },
+    "linkedin-visual": {
+      "name": "Imagen de perfil",
+      "description": "Crea imágenes profesionales optimizadas para LinkedIn que aumenten tu interacción y marca personal.",
+      "steps": {
+        "0": {
+          "label": "Entrada de contenido",
+          "desc": "Agrega tu foto profesional y tu mensaje"
+        },
+        "1": {
+          "label": "Diseño de composición",
+          "desc": "La IA optimiza la composición para LinkedIn"
+        },
+        "2": {
+          "label": "Lista para compartir",
+          "desc": "Imagen profesional lista para publicación"
+        }
+      }
+    },
+    "object-placement": {
+      "name": "Colocación de objetos",
+      "description": "Coloca objetos inteligentemente en escenas con iluminación y sombras realistas.",
+      "steps": {
+        "0": {
+          "label": "Selección de objeto",
+          "desc": "Elige el objeto que se colocará en la escena"
+        },
+        "1": {
+          "label": "Análisis de escena",
+          "desc": "La IA analiza la profundidad y las condiciones de iluminación"
+        },
+        "2": {
+          "label": "Integrado",
+          "desc": "El objeto se integra de forma natural con sombras perfectas"
+        }
+      }
+    },
+    "background-remove": {
+      "name": "Fondo",
+      "description": "Elimina o reemplaza fondos con precisión de píxel mediante IA avanzada.",
+      "steps": {
+        "0": {
+          "label": "Original",
+          "desc": "Tu imagen con el fondo actual"
+        },
+        "1": {
+          "label": "Procesando",
+          "desc": "Segmentación y mejora de bordes por IA"
+        },
+        "2": {
+          "label": "Completado",
+          "desc": "Fondo eliminado o reemplazado por uno nuevo impresionante"
+        }
+      }
+    },
+    "outfit-generation": {
+      "name": "Generación de atuendos",
+      "description": "Transforma tu estilo con moda virtual impulsada por IA.",
+      "steps": {
+        "0": {
+          "label": "Subir foto",
+          "desc": "Comienza con tu foto original"
+        },
+        "1": {
+          "label": "Seleccionar estilo",
+          "desc": "La IA detecta la forma del cuerpo y los segmentos de la ropa"
+        },
+        "2": {
+          "label": "Nuevo look",
+          "desc": "Tu nuevo atuendo generado por IA se aplica perfectamente"
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "Tu asistente inteligente con IA",
+    "explore": {
+      "title": "Explorar",
+      "links": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "features": "Funciones",
+        "pricing": "Precios"
+      }
+    },
+    "services": {
+      "title": "Servicios",
+      "items": {
+        "automation": "Automatización de tareas",
+        "scheduling": "Planificación inteligente",
+        "communication": "Asistencia en comunicación",
+        "data": "Organización de datos",
+        "support": "Soporte personalizado"
+      }
+    },
+    "resources": {
+      "title": "Recursos",
+      "items": {
+        "blog": "Blog",
+        "cases": "Casos de estudio",
+        "integrations": "Integraciones",
+        "developers": "Desarrolladores",
+        "sitemap": "Mapa del sitio"
+      }
+    },
+    "contact": {
+      "phone": "(+90) 505 005 0505",
+      "email": "hi@vega.com"
+    },
+    "bottom": {
+      "rights": "© 2025 Vega",
+      "design": "Diseño de Vega",
+      "terms": "Términos de uso",
+      "privacy": "Política de privacidad"
+    }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Puedo usar las imágenes que creo en cualquier lugar?",
+        "answer": "¡Sí! Puedes usar las imágenes que generes para fines personales o comerciales, siempre que cumplan con nuestra política de uso."
+      },
+      {
+        "question": "¿Qué tipo de fotos debo subir para obtener mejores resultados?",
+        "answer": "Te recomendamos subir fotos bien iluminadas, nítidas y sin filtros. Esto ayuda a la IA a generar los mejores resultados posibles."
+      },
+      {
+        "question": "¿Mis datos están seguros?",
+        "answer": "Absolutamente. Todas las cargas y las imágenes generadas se almacenan de forma segura y se eliminan automáticamente después del procesamiento, a menos que decidas guardarlas."
+      },
+      {
+        "question": "¿Puedo solicitar un reembolso?",
+        "answer": "Si tus imágenes no se entregan debido a un problema técnico, puedes solicitar un reembolso dentro de los 7 días. Ponte en contacto con nuestro equipo de soporte."
+      },
+      {
+        "question": "¿Qué formatos de archivo puedo subir?",
+        "answer": "Actualmente admitimos JPG, JPEG y PNG. El tamaño máximo de archivo es de 10 MB por imagen."
+      },
+      {
+        "question": "¿Puedo solicitar una edición manual de mis retratos?",
+        "answer": "Sí, los usuarios premium pueden solicitar una edición manual única por pedido."
+      },
+      {
+        "question": "¿Puedo volver a generar mi pedido de imagen?",
+        "answer": "Sí. Si no estás satisfecho con el resultado, puedes solicitar una nueva generación dentro de las 48 horas posteriores a la entrega."
+      }
+    ]
+  },
+  "pricing": {
+    "plans": [
+      {
+        "id": 1,
+        "title": "Plan Inicial",
+        "price": 19,
+        "period": "Mes",
+        "description": "Perfecto para individuos que comienzan su viaje creativo.",
+        "features": [
+          { "text": "Acceso a todas las herramientas de IA", "included": true },
+          { "text": "500 imágenes por mes", "included": true },
+          { "text": "Soporte estándar", "included": true },
+          { "text": "Acceso a la comunidad", "included": true },
+          { "text": "Sin derechos de uso comercial", "included": false }
+        ],
+        "get_started": "Comenzar"
+      },
+      {
+        "id": 2,
+        "title": "Plan Profesional",
+        "price": 39,
+        "period": "Mes",
+        "description": "Para creadores de contenido y profesionales que necesitan más potencia.",
+        "features": [
+          { "text": "Generación ilimitada de imágenes", "included": true },
+          { "text": "Soporte prioritario", "included": true },
+          { "text": "Estilos de IA personalizados", "included": true },
+          { "text": "Herramientas de colaboración en equipo", "included": true },
+          { "text": "Derechos de uso comercial", "included": true }
+        ],
+        "get_started": "Comenzar"
+      },
+      {
+        "id": 3,
+        "title": "Plan Empresarial",
+        "price": 79,
+        "period": "Mes",
+        "description": "La mejor solución para equipos y empresas que necesitan escalabilidad.",
+        "features": [
+          { "text": "Gerente de cuenta dedicado", "included": true },
+          { "text": "Procesamiento de IA ilimitado", "included": true },
+          { "text": "Entrenamiento de modelos personalizados", "included": true },
+          { "text": "Herramientas avanzadas de análisis", "included": true },
+          { "text": "Integraciones API personalizadas", "included": true }
+        ],
+        "get_started": "Comenzar"
+      }
+    ]
+  },
+  "demo_generator": {
+    "title": "Mira la magia de la IA ✨",
+    "loading": "Generando imagen...",
+    "done": "¡Listo! Tu imagen está preparada",
+    "steps": [
+      "Iniciando motor...",
+      "Cargando modelo de IA...",
+      "Procesando entrada...",
+      "Generando imagen...",
+      "Finalizando salida..."
+    ]
+  }
+}

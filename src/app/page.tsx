@@ -1,6 +1,6 @@
 import Hero from "./components/home/Hero";
 import PricingSection from "./components/home/PricingSection";
-import ImageComparisonSection from "./components/home/ImageComparisonSection";
+import ImageComparisonSection from "./components/home/usecases/ImageComparisonSection";
 import Footer from "./components/home/footer/Footer";
 import FAQSection from "./components/home/FAQSection";
 import DemoImageGenerator from "./components/home/imageGenerationSection/GenerationProgress";

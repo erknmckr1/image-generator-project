@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Globe, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitchert";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { AvatarButton } from "./AvatarButton";
@@ -53,10 +54,7 @@ export default function PrivateNavbar() {
 
         {/* Sağ taraf */}
         <div className="flex items-center gap-3">
-          <Globe
-            size={18}
-            className="text-muted-foreground hover:text-foreground cursor-pointer"
-          />
+          <LanguageSwitcher />
 
           <div className="hidden md:block">
             <AvatarButton />

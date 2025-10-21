@@ -1,0 +1,294 @@
+{
+  "navbar": {
+    "pricing": "Preise",
+    "usecases": "Anwendungsfälle",
+    "faq": "Häufige Fragen",
+    "login": "Anmelden",
+    "get_started": "Jetzt starten",
+    "my_account": "Mein Konto"
+  },
+  "hero": {
+    "badge": "Steigere deine Kreativität mit ImageAI",
+    "title_part1": "Der",
+    "title_highlight": "realistischste",
+    "title_part2": "KI-Bildgenerator",
+    "description": "Erstelle Bilder in Studioqualität ohne Fotoshooting. Lade dein Foto hoch und sieh zu, wie unsere KI in Sekunden professionelle, anpassbare Bilder generiert.",
+    "cta_primary": "Kostenlos testen",
+    "cta_secondary": "Mehr erfahren",
+    "users": "{count}+ zufriedene Kreative",
+    "info_box_title": "So funktioniert’s",
+    "info_box_text": "Bild hochladen → KI ihre Magie wirken lassen → Bilder in Studioqualität herunterladen."
+  },
+  "usecases": {
+    "badge": "Eine Plattform. Unbegrenzte KI-Kreativität.",
+    "title_part1": "Stell es dir vor,",
+    "title_highlight": "visualisiere es,",
+    "title_part2": "und setze deine Ideen mit KI um.",
+    "description": "Ob Produktfoto, professionelles Porträt oder Social-Media-Bild – ImageAI bietet Auflösungsverbesserung, Hintergrundbearbeitung, Objektplatzierung und kreative Tools in einer Plattform. Erziele in wenigen Minuten Ergebnisse in Studioqualität.",
+    "cta_primary": "Kostenlos testen",
+    "cta_secondary": "Mehr erfahren",
+    "users": "{count} kreative Nutzer"
+  },
+  "comparison_image": {
+    "before": "Vorher",
+    "after": "Nachher",
+    "slide_to_compare": "Zum Vergleichen der Fotos schieben",
+    "select_avatar": "Wähle oben einen Avatar aus, um verschiedene KI-Stile zu testen",
+    "reset_tooltip": "Vergleich zurücksetzen"
+  },
+  "featuresSection": {
+    "title": "KI-Funktionen",
+    "subtitle": "Entdecke unsere leistungsstarken Generator-Tools",
+    "powered": "Angetrieben von AI Generator",
+    "next": "Weiter",
+    "step": "Schritt {current} / {total}",
+    "mobileTitle": "KI-Funktionen",
+    "exploreTools": "Entdecke unsere leistungsstarken Generator-Tools"
+  },
+  "features": {
+    "resolution": {
+      "name": "Auflösung",
+      "description": "Erhöhe und verbessere die Auflösung deiner Bilder mit KI-gestützter Detailrekonstruktion.",
+      "steps": {
+        "0": {
+          "label": "Niedrige Auflösung",
+          "desc": "Originalbild mit niedriger Qualität oder kleiner Größe"
+        },
+        "1": {
+          "label": "KI-Verbesserung",
+          "desc": "Das neuronale Netz rekonstruiert Details"
+        },
+        "2": {
+          "label": "Hohe Auflösung",
+          "desc": "Kristallklares, verbessertes Bild"
+        }
+      }
+    },
+    "product-placement": {
+      "name": "Produktplatzierung",
+      "description": "Platziere dein Produkt automatisch in realistischen Umgebungen und erhalte beeindruckende Marketingbilder.",
+      "steps": {
+        "0": {
+          "label": "Originalbild",
+          "desc": "Lade dein Produktbild und die Zielumgebung hoch"
+        },
+        "1": {
+          "label": "KI-Analyse",
+          "desc": "Erweiterte Erkennung von Licht, Schatten und Perspektive"
+        },
+        "2": {
+          "label": "Endergebnis",
+          "desc": "Nahtlos integrierte Produktplatzierung"
+        }
+      }
+    },
+    "linkedin-visual": {
+      "name": "Profilbild",
+      "description": "Erstelle professionelle LinkedIn-Bilder, optimiert für Interaktion und persönliches Branding.",
+      "steps": {
+        "0": {
+          "label": "Inhalt eingeben",
+          "desc": "Füge dein professionelles Foto und deine Nachricht hinzu"
+        },
+        "1": {
+          "label": "Layout-Design",
+          "desc": "KI optimiert die Komposition für LinkedIn"
+        },
+        "2": {
+          "label": "Bereit zum Teilen",
+          "desc": "Professionelles Bild bereit für Veröffentlichung"
+        }
+      }
+    },
+    "object-placement": {
+      "name": "Objektplatzierung",
+      "description": "Platziere Objekte intelligent in Szenen mit realistischer Beleuchtung und Schatten.",
+      "steps": {
+        "0": {
+          "label": "Objekt auswählen",
+          "desc": "Wähle das Objekt aus, das in der Szene platziert werden soll"
+        },
+        "1": {
+          "label": "Szenenanalyse",
+          "desc": "KI analysiert Tiefe und Lichtbedingungen"
+        },
+        "2": {
+          "label": "Integriert",
+          "desc": "Objekt natürlich mit perfekten Schatten platziert"
+        }
+      }
+    },
+    "background-remove": {
+      "name": "Hintergrund",
+      "description": "Entferne oder ersetze Hintergründe pixelgenau mit fortschrittlicher KI.",
+      "steps": {
+        "0": {
+          "label": "Original",
+          "desc": "Dein Bild mit aktuellem Hintergrund"
+        },
+        "1": {
+          "label": "Verarbeitung",
+          "desc": "KI-Segmentierung und Kantenglättung"
+        },
+        "2": {
+          "label": "Fertig",
+          "desc": "Hintergrund sauber entfernt oder durch neuen ersetzt"
+        }
+      }
+    },
+    "outfit-generation": {
+      "name": "Outfit-Generierung",
+      "description": "Verwandle deinen Stil mit KI-gestützter virtueller Mode und Kleidung.",
+      "steps": {
+        "0": {
+          "label": "Foto hochladen",
+          "desc": "Starte mit deinem Originalfoto"
+        },
+        "1": {
+          "label": "Stil auswählen",
+          "desc": "KI erkennt Körperstruktur und Kleidungsteile"
+        },
+        "2": {
+          "label": "Neuer Look",
+          "desc": "KI-generiertes Outfit perfekt angewendet"
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "Dein intelligenter KI-Assistent",
+    "explore": {
+      "title": "Erkunden",
+      "links": {
+        "home": "Startseite",
+        "about": "Über uns",
+        "features": "Funktionen",
+        "pricing": "Preise"
+      }
+    },
+    "services": {
+      "title": "Dienstleistungen",
+      "items": {
+        "automation": "Aufgabenautomatisierung",
+        "scheduling": "Intelligente Planung",
+        "communication": "Kommunikationsunterstützung",
+        "data": "Datenorganisation",
+        "support": "Personalisierte Unterstützung"
+      }
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "items": {
+        "blog": "Blog",
+        "cases": "Fallstudien",
+        "integrations": "Integrationen",
+        "developers": "Entwickler",
+        "sitemap": "Seitenübersicht"
+      }
+    },
+    "contact": {
+      "phone": "(+90) 505 005 0505",
+      "email": "hi@vega.com"
+    },
+    "bottom": {
+      "rights": "© 2025 Vega",
+      "design": "Design von Vega",
+      "terms": "Nutzungsbedingungen",
+      "privacy": "Datenschutzrichtlinie"
+    }
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Kann ich die erstellten Fotos überall verwenden?",
+        "answer": "Ja! Du kannst die erstellten Bilder für persönliche und kommerzielle Zwecke verwenden, solange sie unseren Nutzungsrichtlinien entsprechen."
+      },
+      {
+        "question": "Welche Fotos sollte ich hochladen, um die besten Ergebnisse zu erzielen?",
+        "answer": "Wir empfehlen gut beleuchtete, klare und ungefilterte Fotos, auf denen dein Gesicht deutlich zu sehen ist. So kann die KI die besten Ergebnisse liefern."
+      },
+      {
+        "question": "Sind meine Daten sicher?",
+        "answer": "Ja, absolut. Alle hochgeladenen und generierten Bilder werden sicher gespeichert und automatisch gelöscht, wenn du sie nicht speichern möchtest."
+      },
+      {
+        "question": "Kann ich eine Rückerstattung beantragen?",
+        "answer": "Wenn deine Bilder aufgrund technischer Probleme nicht geliefert wurden, kannst du innerhalb von 7 Tagen eine Rückerstattung beantragen. Bitte kontaktiere unser Support-Team."
+      },
+      {
+        "question": "Welche Dateiformate kann ich hochladen?",
+        "answer": "Derzeit unterstützen wir JPG, JPEG und PNG. Die maximale Dateigröße pro Bild beträgt 10 MB."
+      },
+      {
+        "question": "Kann ich eine manuelle Bearbeitung meiner Porträts anfordern?",
+        "answer": "Ja, Premium-Nutzer können einmal pro Bestellung eine manuelle Bearbeitung anfordern."
+      },
+      {
+        "question": "Kann ich meine Bildbestellung erneut generieren?",
+        "answer": "Ja. Wenn du mit dem Ergebnis nicht zufrieden bist, kannst du innerhalb von 48 Stunden nach der Lieferung eine Neuerstellung anfordern."
+      }
+    ]
+  },
+  "pricing": {
+    "plans": [
+      {
+        "id": 1,
+        "title": "Starter-Plan",
+        "price": 19,
+        "period": "Monat",
+        "description": "Perfekt für Einzelpersonen, die ihre kreative Reise beginnen.",
+        "features": [
+          { "text": "Zugang zu allen KI-Tools", "included": true },
+          { "text": "500 Bilder pro Monat", "included": true },
+          { "text": "Standard-Support", "included": true },
+          { "text": "Community-Zugang", "included": true },
+          { "text": "Keine kommerzielle Nutzung", "included": false }
+        ],
+        "get_started": "Jetzt starten"
+      },
+      {
+        "id": 2,
+        "title": "Profi-Plan",
+        "price": 39,
+        "period": "Monat",
+        "description": "Für Content-Ersteller und Profis, die mehr Leistung benötigen.",
+        "features": [
+          { "text": "Unbegrenzte Bildgenerierung", "included": true },
+          { "text": "Priorisierter Support", "included": true },
+          { "text": "Exklusive KI-Stile", "included": true },
+          { "text": "Teamfreigabe-Tools", "included": true },
+          { "text": "Kommerzielle Nutzung erlaubt", "included": true }
+        ],
+        "get_started": "Jetzt starten"
+      },
+      {
+        "id": 3,
+        "title": "Unternehmens-Plan",
+        "price": 79,
+        "period": "Monat",
+        "description": "Die beste Lösung für Teams und Unternehmen mit Skalierungsbedarf.",
+        "features": [
+          { "text": "Persönlicher Kundenbetreuer", "included": true },
+          { "text": "Unbegrenzte KI-Verarbeitung", "included": true },
+          { "text": "Individuelles Modelltraining", "included": true },
+          { "text": "Erweiterte Analyse-Tools", "included": true },
+          { "text": "Individuelle API-Integrationen", "included": true }
+        ],
+        "get_started": "Jetzt starten"
+      }
+    ]
+  },
+  "demo_generator": {
+    "title": "Erlebe die Magie der KI ✨",
+    "loading": "Bild wird generiert...",
+    "done": "Fertig! Dein KI-Bild ist bereit",
+    "steps": [
+      "Motor wird gestartet...",
+      "KI-Modell wird geladen...",
+      "Eingabe wird verarbeitet...",
+      "Bild wird generiert...",
+      "Ausgabe wird abgeschlossen..."
+    ]
+  }
+}

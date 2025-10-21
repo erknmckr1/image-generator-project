@@ -1,52 +1,23 @@
+"use client";
 import React from "react";
 import PricingCard from "./PriceCard";
 import FadeInSection from "./motion/FadeInSection";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 function PricingSection() {
-  const pricingPlans = [
+  const { t } = useTranslation();
+
+  const pricingPlans = t<
     {
-      id: 1,
-      title: "Basic Plan",
-      price: 19,
-      period: "Mo",
-      description: "Perfect for individuals starting their creative journey.",
-      features: [
-        { text: "Access to all AI tools", included: true },
-        { text: "500 monthly generations", included: true },
-        { text: "Standard support", included: true },
-        { text: "Community access", included: true },
-        { text: "No commercial usage rights", included: false },
-      ],
-    },
-    {
-      id: 2,
-      title: "Pro Plan",
-      price: 39,
-      period: "Mo",
-      description: "For creators and professionals who need more power.",
-      features: [
-        { text: "Unlimited generations", included: true },
-        { text: "Priority support", included: true },
-        { text: "Custom AI style options", included: true },
-        { text: "Team sharing tools", included: true },
-        { text: "Commercial usage rights", included: true },
-      ],
-    },
-    {
-      id: 3,
-      title: "Enterprise Plan",
-      price: 79,
-      period: "Mo",
-      description: "Best for teams and companies needing scalability.",
-      features: [
-        { text: "Dedicated account manager", included: true },
-        { text: "Unlimited AI renderings", included: true },
-        { text: "Custom model training", included: true },
-        { text: "Advanced analytics", included: true },
-        { text: "Custom API integrations", included: true },
-      ],
-    },
-  ];
+      id: number;
+      title: string;
+      price: number;
+      period: string;
+      description: string;
+      features: { text: string; included: boolean }[];
+      get_started: string;
+    }[]
+  >("pricing.plans");
 
   return (
     <FadeInSection>
