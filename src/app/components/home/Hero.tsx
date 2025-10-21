@@ -90,7 +90,68 @@ export default function Hero() {
 
             {/* Arka plan renk efekti */}
             <div className="absolute -bottom-20 -right-10 w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full bg-gradient-to-tr from-blue-500 via-purple-600 to-pink-500 blur-3xl opacity-40 animate-pulse z-10" />
-            {/* (Diğer küçük görseller aynı kalıyor) */}
+              {/* Ekstra mini görseller dizisi */}
+            <div className=" inset-0 pointer-events-none">
+              {/* Üst solda küçük görseller */}
+              <div className="absolute -top-30 left-0 sm:-left-20 flex flex-col gap-4 rotate-[-8deg]">
+                <div className="relative w-[110px] h-[80px] md:w-[140px] md:h-[100px] rotate-3 animate-float-smooth-slow">
+                  <Image
+                    src="/image4.jpg"
+                    alt="float1"
+                    fill
+                    className="object-cover rounded-md shadow-xl"
+                  />
+                </div>
+                <div className="relative z-40 w-[110px] h-[80px] md:w-[140px] md:h-[100px] -rotate-6 animate-float-smooth">
+                  <Image
+                    src="/image3.jpg"
+                    alt="float2"
+                    fill
+                    className="object-cover rounded-md shadow-lg opacity-95"
+                  />
+                </div>
+              </div>
+
+              {/* Sağ üstte hafif büyük görsel */}
+              <div className="absolute -top-24 right-0 w-[160px] h-[100px] md:w-[200px] md:h-[130px] rotate-[10deg] animate-float-smooth-slow">
+                <Image
+                  src="/image2.jpg"
+                  alt="float3"
+                  fill
+                  className="object-cover rounded-lg shadow-2xl opacity-85"
+                />
+              </div>
+
+              {/* Sağ altta dikey pozisyonlu görseller */}
+              <div className="absolute z-50  -bottom-10 -right-5 flex flex-col gap-5 rotate-[6deg]">
+                <div className="relative w-[100px] h-[120px] md:w-[130px] md:h-[150px] animate-float-smooth">
+                  <Image
+                    src="/image2.jpg"
+                    alt="float4"
+                    fill
+                    className="object-cover rounded-xl shadow-lg "
+                  />
+                </div>
+                <div className="relative w-[100px] h-[120px] md:w-[130px] md:h-[150px] animate-float-smooth-slow">
+                  <Image
+                    src="/image3.jpg"
+                    alt="float5"
+                    fill
+                    className="object-cover rounded-xl shadow-lg "
+                  />
+                </div>
+              </div>
+
+              {/* Alt sol - geniş görsel */}
+              <div className="absolute -bottom-20 sm:bottom-0 -left-24 w-[200px] h-[120px] md:w-[260px] md:h-[160px] rotate-[-4deg] animate-float-smooth-slow">
+                <Image
+                  src="/image4.jpg"
+                  alt="float6"
+                  fill
+                  className="object-cover rounded-xl shadow-2xl opacity-85"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

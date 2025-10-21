@@ -198,98 +198,97 @@
     }
   },
   "faq": {
-  "title": "Sıkça Sorulan Sorular",
-  "items": [
-    {
-      "question": "Oluşturduğum fotoğrafları istediğim yerde kullanabilir miyim?",
-      "answer": "Evet! Oluşturduğunuz fotoğrafları, kullanım politikamıza uygun olduğu sürece kişisel ve ticari amaçlarla dilediğiniz gibi kullanabilirsiniz."
-    },
-    {
-      "question": "En iyi sonucu almak için hangi tür fotoğrafları yüklemeliyim?",
-      "answer": "Yüzünüzün net göründüğü, iyi aydınlatılmış ve filtre kullanılmamış fotoğrafları yüklemenizi öneririz. Bu, yapay zekânın en iyi sonucu üretmesini sağlar."
-    },
-    {
-      "question": "Verilerim güvende mi?",
-      "answer": "Kesinlikle. Tüm yüklemeler ve oluşturulan görseller güvenli bir şekilde saklanır ve siz kaydetmeyi tercih etmezseniz işlemden sonra otomatik olarak silinir."
-    },
-    {
-      "question": "Satın aldığım ürün için geri ödeme talep edebilir miyim?",
-      "answer": "Eğer teknik bir sorun nedeniyle görselleriniz teslim edilemediyse, 7 gün içinde geri ödeme talep edebilirsiniz. Lütfen destek ekibimizle iletişime geçin."
-    },
-    {
-      "question": "Hangi dosya türlerini yükleyebilirim?",
-      "answer": "Şu anda JPG, JPEG ve PNG formatlarını destekliyoruz. Her görsel için maksimum dosya boyutu 10MB'dır."
-    },
-    {
-      "question": "Portre fotoğraflarım için manuel düzenleme isteyebilir miyim?",
-      "answer": "Evet, premium kullanıcılar sipariş başına bir defaya mahsus manuel düzenleme talebinde bulunabilirler."
-    },
-    {
-      "question": "Fotoğraf siparişimi yeniden oluşturabilir miyim?",
-      "answer": "Evet. Eğer sonuçtan memnun kalmazsanız, teslimattan sonraki 48 saat içinde yeniden oluşturma talebi yapabilirsiniz."
-    }
-  ]
-},
-"pricing": {
-  "plans": [
-    {
-      "id": 1,
-      "title": "Başlangıç Planı",
-      "price": 19,
-      "period": "Ay",
-      "description": "Yaratıcı yolculuğuna yeni başlayan bireyler için mükemmel.",
-      "features": [
-        { "text": "Tüm yapay zeka araçlarına erişim", "included": true },
-        { "text": "Aylık 500 görsel üretimi", "included": true },
-        { "text": "Standart destek", "included": true },
-        { "text": "Topluluk erişimi", "included": true },
-        { "text": "Ticari kullanım hakkı yok", "included": false }
-      ],
-      "get_started" :"Başlayın"
-    },
-    {
-      "id": 2,
-      "title": "Profesyonel Plan",
-      "price": 39,
-      "period": "Ay",
-      "description": "Daha fazla güç isteyen içerik üreticileri ve profesyoneller için.",
-      "features": [
-        { "text": "Sınırsız görsel üretimi", "included": true },
-        { "text": "Öncelikli destek", "included": true },
-        { "text": "Özel yapay zeka tarz seçenekleri", "included": true },
-        { "text": "Ekip paylaşım araçları", "included": true },
-        { "text": "Ticari kullanım hakkı", "included": true }
-      ],
-       "get_started" :"Başlayın"
-    },
-    {
-      "id": 3,
-      "title": "Kurumsal Plan",
-      "price": 79,
-      "period": "Ay",
-      "description": "Ölçeklenebilirliğe ihtiyaç duyan ekipler ve şirketler için en uygun çözüm.",
-      "features": [
-        { "text": "Özel hesap yöneticisi", "included": true },
-        { "text": "Sınırsız yapay zeka işleme", "included": true },
-        { "text": "Özel model eğitimi", "included": true },
-        { "text": "Gelişmiş analiz araçları", "included": true },
-        { "text": "Özel API entegrasyonları", "included": true }
-      ],
-       "get_started" :"Başlayın"
-    }
-  ]
-},
-"demo_generator": {
-  "title": "Yapay Zekanın Büyüsünü İzle ✨",
-  "loading": "Görselin oluşturuluyor...",
-  "done": "Tamamlandı! Yapay zekâ görselin hazır",
-  "steps": [
-    "Motor başlatılıyor...",
-    "Yapay zeka modeli yükleniyor...",
-    "Girdi istemi işleniyor...",
-    "Görsel oluşturuluyor...",
-    "Çıktı sonlandırılıyor..."
-  ]
-}
-
+    "title": "Sıkça Sorulan Sorular",
+    "items": [
+      {
+        "question": "Oluşturduğum fotoğrafları istediğim yerde kullanabilir miyim?",
+        "answer": "Evet! Oluşturduğunuz fotoğrafları, kullanım politikamıza uygun olduğu sürece kişisel ve ticari amaçlarla dilediğiniz gibi kullanabilirsiniz."
+      },
+      {
+        "question": "En iyi sonucu almak için hangi tür fotoğrafları yüklemeliyim?",
+        "answer": "Yüzünüzün net göründüğü, iyi aydınlatılmış ve filtre kullanılmamış fotoğrafları yüklemenizi öneririz. Bu, yapay zekânın en iyi sonucu üretmesini sağlar."
+      },
+      {
+        "question": "Verilerim güvende mi?",
+        "answer": "Kesinlikle. Tüm yüklemeler ve oluşturulan görseller güvenli bir şekilde saklanır ve siz kaydetmeyi tercih etmezseniz işlemden sonra otomatik olarak silinir."
+      },
+      {
+        "question": "Satın aldığım ürün için geri ödeme talep edebilir miyim?",
+        "answer": "Eğer teknik bir sorun nedeniyle görselleriniz teslim edilemediyse, 7 gün içinde geri ödeme talep edebilirsiniz. Lütfen destek ekibimizle iletişime geçin."
+      },
+      {
+        "question": "Hangi dosya türlerini yükleyebilirim?",
+        "answer": "Şu anda JPG, JPEG ve PNG formatlarını destekliyoruz. Her görsel için maksimum dosya boyutu 10MB'dır."
+      },
+      {
+        "question": "Portre fotoğraflarım için manuel düzenleme isteyebilir miyim?",
+        "answer": "Evet, premium kullanıcılar sipariş başına bir defaya mahsus manuel düzenleme talebinde bulunabilirler."
+      },
+      {
+        "question": "Fotoğraf siparişimi yeniden oluşturabilir miyim?",
+        "answer": "Evet. Eğer sonuçtan memnun kalmazsanız, teslimattan sonraki 48 saat içinde yeniden oluşturma talebi yapabilirsiniz."
+      }
+    ]
+  },
+  "pricing": {
+    "plans": [
+      {
+        "id": 1,
+        "title": "Başlangıç Planı",
+        "price": 19,
+        "period": "Ay",
+        "description": "Yaratıcı yolculuğuna yeni başlayan bireyler için mükemmel.",
+        "features": [
+          { "text": "Tüm yapay zeka araçlarına erişim", "included": true },
+          { "text": "Aylık 500 görsel üretimi", "included": true },
+          { "text": "Standart destek", "included": true },
+          { "text": "Topluluk erişimi", "included": true },
+          { "text": "Ticari kullanım hakkı yok", "included": false }
+        ],
+        "get_started": "Başlayın"
+      },
+      {
+        "id": 2,
+        "title": "Profesyonel Plan",
+        "price": 39,
+        "period": "Ay",
+        "description": "Daha fazla güç isteyen içerik üreticileri ve profesyoneller için.",
+        "features": [
+          { "text": "Sınırsız görsel üretimi", "included": true },
+          { "text": "Öncelikli destek", "included": true },
+          { "text": "Özel yapay zeka tarz seçenekleri", "included": true },
+          { "text": "Ekip paylaşım araçları", "included": true },
+          { "text": "Ticari kullanım hakkı", "included": true }
+        ],
+        "get_started": "Başlayın"
+      },
+      {
+        "id": 3,
+        "title": "Kurumsal Plan",
+        "price": 79,
+        "period": "Ay",
+        "description": "Ölçeklenebilirliğe ihtiyaç duyan ekipler ve şirketler için en uygun çözüm.",
+        "features": [
+          { "text": "Özel hesap yöneticisi", "included": true },
+          { "text": "Sınırsız yapay zeka işleme", "included": true },
+          { "text": "Özel model eğitimi", "included": true },
+          { "text": "Gelişmiş analiz araçları", "included": true },
+          { "text": "Özel API entegrasyonları", "included": true }
+        ],
+        "get_started": "Başlayın"
+      }
+    ]
+  },
+  "demo_generator": {
+    "title": "Yapay Zekanın Büyüsünü İzle ✨",
+    "loading": "Görselin oluşturuluyor...",
+    "done": "Tamamlandı! Yapay zekâ görselin hazır",
+    "steps": [
+      "Motor başlatılıyor...",
+      "Yapay zeka modeli yükleniyor...",
+      "Girdi istemi işleniyor...",
+      "Görsel oluşturuluyor...",
+      "Çıktı sonlandırılıyor..."
+    ]
+  }
 }
