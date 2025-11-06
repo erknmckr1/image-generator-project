@@ -71,6 +71,8 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
     }
   };
 
+  console.log(images)
+
   return (
     <div className="flex flex-col items-center h-full  w-full bg-gradient-to-b from-muted/30 via-background to-muted overflow-auto">
       <div className="w-full max-w-lg">
@@ -140,7 +142,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
           <div className="bg-card  rounded-2xl border border-border shadow-md overflow-hidden transition-all hover:shadow-lg">
             <div className="relative aspect-square bg-muted flex items-center justify-center">
               <Image
-                src={images.image_url}
+                src={images[0].image_url}
                 alt="Generated"
                 width={512}
                 height={512}
@@ -150,7 +152,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
 
             <div className="p-4 flex gap-3">
               <Button
-                onClick={() => handleDownload(images.image_url)}
+                onClick={() => handleDownload(images[0].image_url)}
                 variant="outline"
                 size="sm"
                 className="flex-1 rounded-lg border-border hover:bg-muted transition"
@@ -160,7 +162,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
               </Button>
 
               <Button
-                onClick={() => handleCopyUrl(images.image_url)}
+                onClick={() => handleCopyUrl(images[0].image_url)}
                 variant="outline"
                 size="sm"
                 className="flex-1 rounded-lg border-border hover:bg-muted transition"

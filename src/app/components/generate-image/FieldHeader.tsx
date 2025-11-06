@@ -1,7 +1,12 @@
-// components/editor/FieldHeader.tsx
 "use client";
+import { useState } from "react";
 import { Label } from "@/components/ui/label";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { CircleAlert } from "lucide-react";
 import { CategoryFieldInfoMap } from "@/lib/types/form";
 
@@ -12,13 +17,19 @@ interface FieldHeaderProps {
 
 export default function FieldHeader({ field, label }: FieldHeaderProps) {
   const info = CategoryFieldInfoMap[field];
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="flex items-center justify-between w-full">
       <Label className="text-sm font-medium text-foreground">{label}</Label>
+
       {info && (
         <TooltipProvider delayDuration={0}>
-          <Tooltip>
-            <TooltipTrigger asChild>
+          <Tooltip open={open} onOpenChange={setOpen}>
+            <TooltipTrigger
+              asChild
+              onClick={() => setOpen((prev) => !prev)} //  mobilde tıklamayla aç/kapa
+            >
               <CircleAlert
                 size={14}
                 className="text-muted-foreground cursor-pointer hover:text-orange-500 transition-colors"

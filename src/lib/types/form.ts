@@ -112,3 +112,71 @@ export const CategoryFieldInfoMap: Record<keyof FormData, string> = {
   image_category:
     "Kategoriyi belirler (örneğin outfit-generation, background-remove, vb.)",
 };
+
+export const CategoryConfigMap = {
+  "object-placement": {
+    target_resolution: {
+      values: ["720p", "1080p", "1440p", "2160p"],
+      default: "1080p",
+    },
+    aspect_ratio: {
+      values: ["21:9", "16:9", "4:3", "3:2", "1:1", "2:3", "3:4", "9:16"],
+      default: "1:1",
+    },
+  },
+
+  resolution: {
+    target_resolution: {
+      values: ["720p", "1080p", "1440p", "2160p"],
+      default: "1080p",
+    },
+    output_format: {
+      values: ["png", "jpg", "webp"],
+      default: "jpg",
+    },
+  },
+
+  "product-placement": {
+    target_resolution: {
+      values: ["720p", "1080p", "1440p", "2160p"],
+      default: "1080p",
+    },
+    aspect_ratio: {
+      values: ["16:9", "1:1", "3:2", "4:3", "9:16","16:9"],
+      default: "1:1",
+    },
+  },
+
+  "linkedin-visual": {
+    aspect_ratio: {
+      values: ["1:1", "4:3", "16:9", "9:16"],
+      default: "4:3",
+    },
+    target_resolution: {
+      values: ["720p", "1080p", "1440p"],
+      default: "1080p",
+    },
+  },
+
+  "background-remove": {
+    aspect_ratio: {
+      values: ["21:9", "16:9", "4:3", "3:2", "1:1", "2:3", "3:4", "9:16"],
+      default: "16:9",
+    },
+    target_resolution: {
+      values: ["720p", "1080p", "1440p", "2160p"],
+      default: "1080p",
+    },
+  },
+
+  "outfit-generation": {
+    aspect_ratio: {
+      values: ["1:1", "4:3", "16:9", "9:16","3:4",],
+      default: "1:1",
+    },
+    target_resolution: {
+      values: ["720p", "1080p", "1440p", "2160p"],
+      default: "1080p",
+    },
+  },
+};

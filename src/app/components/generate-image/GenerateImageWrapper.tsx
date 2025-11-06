@@ -198,11 +198,11 @@ export default function GenerateImageWrapper() {
     username: "",
     prompt: "",
     image_url: "",
-    aspect_ratio: "",
+    aspect_ratio: "1:1",
     output_format: "jpg",
     target_resolution: "1080p",
-    safety_tolerance: "",
-    guidance_scale: null,
+    safety_tolerance: "2",
+    guidance_scale: 3.5,
     product_image: "",
     scene: "",
     product_placement: "",
@@ -210,6 +210,8 @@ export default function GenerateImageWrapper() {
     clothing_image_url: "",
     preserve_pose: true,
   });
+
+  console.log(formData)
 
   const handleFeatureChange = (featureId: string) => {
     dispatch(setSelectedFeature(featureId));

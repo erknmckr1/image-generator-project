@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/store";
 import { FormData, CategoryFieldMap } from "@/lib/types/form";
 import { Textarea } from "@/components/ui/textarea";
+import { CategoryConfigMap } from "@/lib/types/form";
 import FieldHeader from "./FieldHeader";
 import {
   Select,
@@ -44,16 +45,14 @@ export default function EditorForm({
     setGeneratedImages(null);
 
     try {
-      const response = await fetch(
-        `https://wouro4lw.rpcld.net/webhook/07f580c3-ece9-4015-bd65-ab257a26ffec`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_URL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      console.log("API Response Status:", response);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -87,6 +86,7 @@ export default function EditorForm({
     "clothing_image_url",
   ].find((f) => visibleFields.includes(f as keyof FormData));
 
+  const config = CategoryConfigMap[selectedFeature];
   return (
     <div className="w-full h-full max-w-2xl">
       <form
@@ -133,23 +133,18 @@ export default function EditorForm({
               <div className="p-5 rounded-xl border border-border bg-card hover:shadow-md transition-shadow">
                 <FieldHeader field="aspect_ratio" label="Aspect Ratio" />
                 <Select
-                  value={formData.aspect_ratio || "1:1"}
+                  value={
+                    formData.aspect_ratio ||
+                    config.aspect_ratio?.default ||
+                    "1:1"
+                  }
                   onValueChange={(v) => handleChange("aspect_ratio", v)}
                 >
                   <SelectTrigger className="mt-2">
                     <SelectValue placeholder="Select ratio" />
                   </SelectTrigger>
                   <SelectContent>
-                    {[
-                      "21:9",
-                      "16:9",
-                      "4:3",
-                      "3:2",
-                      "1:1",
-                      "2:3",
-                      "3:4",
-                      "9:16",
-                    ].map((r) => (
+                    {(config.aspect_ratio?.values || []).map((r: string) => (
                       <SelectItem key={r} value={r}>
                         {r}
                       </SelectItem>
@@ -211,18 +206,23 @@ export default function EditorForm({
                   label="Target Resolution"
                 />
                 <Select
-                  value={formData.target_resolution || "1080p"}
+                  value={
+                    formData.target_resolution ||
+                    config.target_resolution?.default 
+                  }
                   onValueChange={(v) => handleChange("target_resolution", v)}
                 >
                   <SelectTrigger className="mt-2">
                     <SelectValue placeholder="Select resolution" />
                   </SelectTrigger>
                   <SelectContent>
-                    {["720p", "1080p", "1440p", "2160p"].map((res) => (
-                      <SelectItem key={res} value={res}>
-                        {res}
-                      </SelectItem>
-                    ))}
+                    {(config.target_resolution?.values || []).map(
+                      (res: string) => (
+                        <SelectItem key={res} value={res}>
+                          {res}
+                        </SelectItem>
+                      )
+                    )}
                   </SelectContent>
                 </Select>
               </div>
