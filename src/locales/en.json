@@ -199,98 +199,97 @@
     }
   },
   "faq": {
-  "title": "Frequently Asked Questions",
-  "items": [
-    {
-      "question": "Can I use my photos anywhere?",
-      "answer": "Yes! You have full rights to use the photos you generate for personal and commercial purposes, as long as they comply with our usage policy."
-    },
-    {
-      "question": "What images should I upload for the best results?",
-      "answer": "We recommend uploading clear, well-lit images where your face is fully visible. Avoid heavy filters or dark lighting for optimal AI results."
-    },
-    {
-      "question": "Is my data secure?",
-      "answer": "Absolutely. All uploads and generated images are stored securely and deleted automatically after processing unless you choose to save them."
-    },
-    {
-      "question": "Can I request a refund for my purchase?",
-      "answer": "Refunds can be requested within 7 days if there is a technical issue preventing delivery of your AI images. Please contact our support team."
-    },
-    {
-      "question": "Which image file types can I upload?",
-      "answer": "We currently support JPG, JPEG, and PNG formats up to 10MB per image."
-    },
-    {
-      "question": "Is it possible to request manual edits for my headshot photos?",
-      "answer": "Yes, premium users can request one round of manual edits per order directly from their dashboard."
-    },
-    {
-      "question": "Can I request a redo for my headshot order?",
-      "answer": "Yes. If you are unsatisfied, you can request a redo once within 48 hours of delivery."
-    }
-  ]
-},
-"pricing": {
-  "plans": [
-    {
-      "id": 1,
-      "title": "Basic Plan",
-      "price": 19,
-      "period": "Mo",
-      "description": "Perfect for individuals starting their creative journey.",
-      "features": [
-        { "text": "Access to all AI tools", "included": true },
-        { "text": "500 monthly generations", "included": true },
-        { "text": "Standard support", "included": true },
-        { "text": "Community access", "included": true },
-        { "text": "No commercial usage rights", "included": false }
-      ],
-      "get_started":"Get Started"
-    },
-    {
-      "id": 2,
-      "title": "Pro Plan",
-      "price": 39,
-      "period": "Mo",
-      "description": "For creators and professionals who need more power.",
-      "features": [
-        { "text": "Unlimited generations", "included": true },
-        { "text": "Priority support", "included": true },
-        { "text": "Custom AI style options", "included": true },
-        { "text": "Team sharing tools", "included": true },
-        { "text": "Commercial usage rights", "included": true }
-      ],
-      "get_started":"Get Started"
-    },
-    {
-      "id": 3,
-      "title": "Enterprise Plan",
-      "price": 79,
-      "period": "Mo",
-      "description": "Best for teams and companies needing scalability.",
-      "features": [
-        { "text": "Dedicated account manager", "included": true },
-        { "text": "Unlimited AI renderings", "included": true },
-        { "text": "Custom model training", "included": true },
-        { "text": "Advanced analytics", "included": true },
-        { "text": "Custom API integrations", "included": true }
-      ],
-      "get_started":"Get Started"
-    }
-  ]
-},
-"demo_generator": {
-  "title": "Watch AI Work Its Magic ✨",
-  "loading": "Generating your image...",
-  "done": "Done! Your AI image is ready",
-  "steps": [
-    "Initializing engine...",
-    "Loading AI model...",
-    "Processing input prompt...",
-    "Generating image...",
-    "Finalizing output..."
-  ]
-}
-
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Can I use my photos anywhere?",
+        "answer": "Yes! You have full rights to use the photos you generate for personal and commercial purposes, as long as they comply with our usage policy."
+      },
+      {
+        "question": "What images should I upload for the best results?",
+        "answer": "We recommend uploading clear, well-lit images where your face is fully visible. Avoid heavy filters or dark lighting for optimal AI results."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "Absolutely. All uploads and generated images are stored securely and deleted automatically after processing unless you choose to save them."
+      },
+      {
+        "question": "Can I request a refund for my purchase?",
+        "answer": "Refunds can be requested within 7 days if there is a technical issue preventing delivery of your AI images. Please contact our support team."
+      },
+      {
+        "question": "Which image file types can I upload?",
+        "answer": "We currently support JPG, JPEG, and PNG formats up to 10MB per image."
+      },
+      {
+        "question": "Is it possible to request manual edits for my headshot photos?",
+        "answer": "Yes, premium users can request one round of manual edits per order directly from their dashboard."
+      },
+      {
+        "question": "Can I request a redo for my headshot order?",
+        "answer": "Yes. If you are unsatisfied, you can request a redo once within 48 hours of delivery."
+      }
+    ]
+  },
+  "pricing": {
+    "plans": [
+      {
+        "id": 1,
+        "title": "Basic Plan",
+        "price": 19,
+        "period": "Mo",
+        "description": "Perfect for individuals starting their creative journey.",
+        "features": [
+          { "text": "Access to all AI tools", "included": true },
+          { "text": "500 monthly generations", "included": true },
+          { "text": "Standard support", "included": true },
+          { "text": "Community access", "included": true },
+          { "text": "No commercial usage rights", "included": false }
+        ],
+        "get_started": "Get Started"
+      },
+      {
+        "id": 2,
+        "title": "Pro Plan",
+        "price": 39,
+        "period": "Mo",
+        "description": "For creators and professionals who need more power.",
+        "features": [
+          { "text": "Unlimited generations", "included": true },
+          { "text": "Priority support", "included": true },
+          { "text": "Custom AI style options", "included": true },
+          { "text": "Team sharing tools", "included": true },
+          { "text": "Commercial usage rights", "included": true }
+        ],
+        "get_started": "Get Started"
+      },
+      {
+        "id": 3,
+        "title": "Enterprise Plan",
+        "price": 79,
+        "period": "Mo",
+        "description": "Best for teams and companies needing scalability.",
+        "features": [
+          { "text": "Dedicated account manager", "included": true },
+          { "text": "Unlimited AI renderings", "included": true },
+          { "text": "Custom model training", "included": true },
+          { "text": "Advanced analytics", "included": true },
+          { "text": "Custom API integrations", "included": true }
+        ],
+        "get_started": "Get Started"
+      }
+    ]
+  },
+  "demo_generator": {
+    "title": "Watch AI Work Its Magic ✨",
+    "loading": "Generating your image...",
+    "done": "Done! Your AI image is ready",
+    "steps": [
+      "Initializing engine...",
+      "Loading AI model...",
+      "Processing input prompt...",
+      "Generating image...",
+      "Finalizing output..."
+    ]
+  }
 }

@@ -32,10 +32,12 @@ export function useTranslation() {
   };
   const translations = locales[language];
 
+  // t fonkisyonu varsayılan olarak string dönsün ama farklı degerlerde dönebilir. generic type 
   const t = <T = string>(path: string): T => {
     const result = path
       .split(".")
       .reduce<TranslationValue | undefined>((acc, key) => {
+        // type narrowing
         if (acc && typeof acc === "object" && !Array.isArray(acc)) {
           return (acc as TranslationObject)[key];
         }

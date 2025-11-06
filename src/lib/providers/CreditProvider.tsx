@@ -28,8 +28,6 @@ function CreditProvider({
         return;
       }
 
-      console.log(data);
-
       if (data) {
         dispatch(
           setCredit({

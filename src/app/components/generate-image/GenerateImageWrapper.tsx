@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import EditorForm from "./EditorForm";
+import { setSelectedFeature } from "@/lib/redux/slices/editorForm.slice";
 import {
   Sparkles,
   ImageIcon,
@@ -14,6 +16,7 @@ import { motion } from "framer-motion";
 import ImagePreview from "./ImagePreview";
 import { FormData, ImageData } from "@/lib/types/form";
 import { ChevronDown } from "lucide-react";
+import { RootState } from "@/lib/redux/store";
 const features = [
   {
     id: "resolution",
@@ -185,24 +188,31 @@ const features = [
   },
 ];
 export default function GenerateImageWrapper() {
-  const [selectedFeature, setSelectedFeature] = useState(features[0].id);
+  const { selectedFeature } = useSelector(
+    (state: RootState) => state.editorForm
+  );
+  const dispatch = useDispatch();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [formData, setFormData] = useState<FormData>({
+    image_category: selectedFeature || "general",
+    username: "",
     prompt: "",
-    image_category: selectedFeature,
     image_url: "",
-    image_size: "square_hd",
-    num_inference_steps: 30,
-    guidance_scale: 4,
-    num_images: 1,
-    enable_safety_checker: true,
-    output_format: "png",
-    acceleration: "none",
-    strength: 0.94,
+    aspect_ratio: "",
+    output_format: "jpg",
+    target_resolution: "1080p",
+    safety_tolerance: "",
+    guidance_scale: null,
+    product_image: "",
+    scene: "",
+    product_placement: "",
+    person_image_url: "",
+    clothing_image_url: "",
+    preserve_pose: true,
   });
 
   const handleFeatureChange = (featureId: string) => {
-    setSelectedFeature(featureId);
+    dispatch(setSelectedFeature(featureId));
     setFormData((prev) => ({ ...prev, image_category: featureId }));
     setIsDropdownOpen(false);
   };
@@ -211,16 +221,16 @@ export default function GenerateImageWrapper() {
   const Icon = currentFeature?.icon;
 
   const [isLoading, setIsLoading] = useState(false);
-  const [generatedImages, setGeneratedImages] = useState<ImageData | null>({
-    image_url: "/file.svg",
-  });
+  const [generatedImages, setGeneratedImages] = useState<ImageData | null>(
+    null
+  );
 
   return (
-    <div className="max-w-7xl mx-auto pt-20 min-h-screen bg-gradient-to-b from-muted/30 via-background to-muted">
+    <div className="max-w-7xl mx-auto sm:flex w-full pt-16 min-h-screen bg-gradient-to-b from-muted/30 via-background to-muted">
       {/* Header - Category Selector */}
-      <div className="w-full bg-gradient-to-b from-muted/30 via-background to-muted/10">
+      <div className=" bg-gradient-to-b from-muted/30 via-background to-muted/10">
         {/* Mobile: Dropdown Selector */}
-        <div className="block lg:hidden px-4 pt-4 pb-3">
+        <div className="block sm:hidden px-4 pt-4 pb-3">
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -281,42 +291,48 @@ export default function GenerateImageWrapper() {
         </div>
 
         {/* Desktop: Grid Layout */}
-        <div className="hidden lg:grid lg:grid-cols-3 xl:grid-cols-6 gap-3 px-4 py-4">
-          {features.map((feature) => {
-            const FeatureIcon = feature.icon;
-            const isSelected = selectedFeature === feature.id;
+        <div className="hidden lg:flex fixed backdrop-blur-xl  left-0  z-50 ">
+          <div className="flex flex-col gap-4 px-6 py-5">
+            {features.map((feature) => {
+              const FeatureIcon = feature.icon;
+              const isSelected = selectedFeature === feature.id;
 
-            return (
-              <button
-                key={feature.id}
-                onClick={() => handleFeatureChange(feature.id)}
-                className={`relative p-4 rounded-xl transition-all duration-300 ${
-                  isSelected
-                    ? "bg-primary/10 border-2 border-primary/50 shadow-lg shadow-primary/20 scale-105"
-                    : "bg-card border-2 border-border hover:border-primary/30 hover:bg-muted/50"
-                }`}
-              >
-                <div className="flex flex-col items-center gap-2">
-                  <div
-                    className={`p-3 rounded-xl bg-gradient-to-br ${feature.gradient} shadow-lg`}
-                  >
-                    <FeatureIcon className="w-6 h-6 text-white" />
+              return (
+                <button
+                  key={feature.id}
+                  onClick={() => handleFeatureChange(feature.id)}
+                  className={`relative p-5 rounded-xl transition-all duration-300 ${
+                    isSelected
+                      ? "bg-primary/10 border-2 border-primary/50 shadow-lg shadow-primary/20 scale-105"
+                      : "bg-card border-2 border-border hover:border-primary/30 hover:bg-muted/50"
+                  }`}
+                >
+                  <div className="flex flex-col items-center gap-2.5">
+                    <div
+                      className={`p-3.5 rounded-xl bg-gradient-to-br ${feature.gradient} shadow-lg`}
+                    >
+                      <FeatureIcon className="w-7 h-7 text-white" />
+                    </div>
+                    <span className="font-semibold text-sm text-center leading-tight">
+                      {feature.name}
+                    </span>
                   </div>
-                  <span className="font-semibold text-xs text-center leading-tight">
-                    {feature.name}
-                  </span>
-                </div>
 
-                {isSelected && (
-                  <motion.div
-                    layoutId="activeFeature"
-                    className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-xl -z-10"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-              </button>
-            );
-          })}
+                  {isSelected && (
+                    <motion.div
+                      layoutId="activeFeature"
+                      className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-xl -z-10"
+                      transition={{
+                        type: "spring",
+                        bounce: 0.2,
+                        duration: 0.6,
+                      }}
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Tablet: Horizontal Scroll */}
@@ -360,7 +376,7 @@ export default function GenerateImageWrapper() {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full sm:flex justify-between">
+      <div className="w-full h-auto sm:flex  justify-between">
         {/* Left Section - Form */}
         <div className="w-full h-full overflow-auto sm:w-1/2 flex items-center justify-center px-4 sm:py-16">
           <EditorForm
@@ -373,11 +389,11 @@ export default function GenerateImageWrapper() {
         </div>
 
         {/* Right Section - Preview Area */}
-        <div className="sm:w-1/2 px-4 py-16 relative">
-          <div className="flex flex-col sm:fixed h-[65vh]">
+        {
+          <div className="sm:w-1/2 h-full px-4 py-16 relative">
             <ImagePreview images={generatedImages} isLoading={isLoading} />
           </div>
-        </div>
+        }
       </div>
     </div>
   );

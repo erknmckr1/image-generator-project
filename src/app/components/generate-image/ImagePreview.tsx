@@ -1,11 +1,11 @@
 "use client";
 
-import { Download, Copy, Check, Loader2 } from "lucide-react";
-
+import { Download, Copy, Check, Loader2, Sparkles, Wand2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ImageData } from "@/lib/types/form";
+
 interface ImagePreviewProps {
   images: ImageData | null;
   isLoading: boolean;
@@ -24,7 +24,6 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
     "Finalizing output...",
   ];
 
-  // 🔹 Fake Progress Simülasyonu
   useEffect(() => {
     if (isLoading) {
       setProgress(0);
@@ -37,7 +36,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
           return 100;
         });
         setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
-      }, 6000); // her 1 saniyede ilerle
+      }, 6000);
       return () => clearInterval(interval);
     } else {
       setProgress(100);
@@ -73,11 +72,10 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
   };
 
   return (
-    <div className="flex flex-col items-center  w-full  bg-gradient-to-b from-muted/30 via-background to-muted overflow-auto">
+    <div className="flex flex-col items-center h-full  w-full bg-gradient-to-b from-muted/30 via-background to-muted overflow-auto">
       <div className="w-full max-w-lg">
         {isLoading ? (
-          // 🔹 Çok aşamalı vertical progress görünümü
-          <div className="bg-card/70 border border-border rounded-2xl shadow-sm p-8 backdrop-blur-sm text-center">
+          <div className="bg-card/70  border border-border rounded-2xl shadow-sm p-8 backdrop-blur-sm text-center">
             <div className="flex justify-center mb-6">
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
             </div>
@@ -85,13 +83,11 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
             <p className="text-foreground text-lg font-medium mb-6">
               Generating your image...
             </p>
-            {/* multi step progress */}
+            
             <div className="space-y-6 text-left">
               {steps.map((step, index) => {
                 const isDone = index < currentStep;
                 const isActive = index === currentStep;
-
-                // 🔹 Aktif step’in progress yüzdesi
                 const progressValue = isActive
                   ? Math.min((progress / 20) % 100, 100)
                   : isDone
@@ -119,7 +115,6 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
                       <span>{step}</span>
                     </div>
 
-                    {/* 🔹 Step progress bar */}
                     <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
                       <div
                         className={`h-3 rounded-full transition-all duration-500 ${
@@ -142,8 +137,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
             </div>
           </div>
         ) : images ? (
-          // 🔹 Görsel ekranı
-          <div className="bg-card rounded-2xl border border-border shadow-md overflow-hidden transition-all hover:shadow-lg">
+          <div className="bg-card  rounded-2xl border border-border shadow-md overflow-hidden transition-all hover:shadow-lg">
             <div className="relative aspect-square bg-muted flex items-center justify-center">
               <Image
                 src={images.image_url}
@@ -186,11 +180,59 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
             </div>
           </div>
         ) : (
-          // 🔹 Boş state
-          <div className="text-center text-muted-foreground mt-8 text-sm">
-            No image generated yet.
-            <br />
-            Start by entering a prompt on the left.
+          //  Modern Empty State
+          <div className=" h-full ">
+            {/* Main Content */}
+            <div className=" h-full bg-card/80 backdrop-blur-xl border-2 border-dashed border-border rounded-2xl sm:p-28 text-center">
+              {/* Animated Icons */}
+              <div className="flex justify-center w-full gap-4 mb-8">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl blur-lg opacity-50 animate-pulse" />
+                  <div className="relative bg-gradient-to-br from-violet-500 to-purple-600 p-4 rounded-2xl shadow-lg">
+                    <Sparkles className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                
+                <div className="relative mt-6">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl blur-lg opacity-50 animate-pulse delay-150" />
+                  <div className="relative bg-gradient-to-br from-blue-500 to-cyan-600 p-4 rounded-2xl shadow-lg">
+                    <Wand2 className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl blur-lg opacity-50 animate-pulse delay-300" />
+                  <div className="relative bg-gradient-to-br from-pink-500 to-rose-600 p-4 rounded-2xl shadow-lg">
+                    <Zap className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Text Content */}
+              <h3 className="text-2xl font-bold text-foreground mb-3 bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text ">
+                Your Canvas Awaits
+              </h3>
+              
+              <p className="text-muted-foreground text-base mb-6 max-w-md mx-auto leading-relaxed">
+                Fill out the form on the left to bring your creative vision to life. 
+                <span className="block mt-2 text-sm">
+                  ✨ AI-powered • 🎨 High quality • ⚡ Lightning fast
+                </span>
+              </p>
+
+              {/* Feature Pills */}
+              <div className="flex flex-wrap justify-center gap-2 mt-6">
+                <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
+                  Multiple Formats
+                </span>
+                <span className="px-4 py-2 bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full text-sm font-medium border border-purple-500/20">
+                  High Resolution
+                </span>
+                <span className="px-4 py-2 bg-pink-500/10 text-pink-600 dark:text-pink-400 rounded-full text-sm font-medium border border-pink-500/20">
+                  Smart AI
+                </span>
+              </div>
+            </div>
           </div>
         )}
       </div>
