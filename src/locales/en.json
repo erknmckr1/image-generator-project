@@ -7,6 +7,11 @@
     "get_started": "Get Started",
     "my_account": "My Account"
   },
+  "dashboard_navbar": {
+    "generate_image": "Generate Image",
+    "my_images": "My Images"
+  },
+
   "hero": {
     "badge": "Boost Your Creativity with ImageAI",
     "title_part1": "The Most",
@@ -291,5 +296,47 @@
       "Generating image...",
       "Finalizing output..."
     ]
+  },
+  "image_editor_form_info": {
+    "username": "Specifies the username. Used for identification in API requests.",
+    "prompt": "Enter a description for the image to be generated or modified. Be clear and concise.",
+    "image_url": "The URL or uploaded image to be processed.",
+    "aspect_ratio": "Defines the aspect ratio of the output image (e.g., 1:1, 16:9).",
+    "output_format": "Select the output image format (PNG, JPG, WEBP).",
+    "target_resolution": "Sets the image resolution (1080p recommended).",
+    "safety_tolerance": "Controls safety filter sensitivity (1 = strictest).",
+    "guidance_scale": "Determines how closely the model follows the prompt (higher = more consistent).",
+    "product_image": "Upload the scene image where the product will be placed.",
+    "scene": "Short description of the scene where the product will appear.",
+    "product_placement": "Explain how the product should be positioned in the image.",
+    "person_image_url": "Upload the photo of the person for virtual try-on.",
+    "clothing_image_url": "Upload the image of the clothing to be tried on.",
+    "preserve_pose": "If enabled, keeps the original pose while changing clothes.",
+    "image_category": "Specifies the category (e.g., outfit-generation, background-remove, etc.)."
+  },
+  "form_editor_add_image": {
+    "upload_title": "Drag & drop or click to upload",
+    "upload_subtitle": "JPG, PNG, WEBP – max 5MB",
+    "select_file": "Select File",
+    "or_paste": "or paste image URL below",
+    "url_placeholder": "Paste image link here",
+    "file_too_large": "File too large (max 5MB)"
+  },
+  "form_editor_fields": {
+    "prompt": "Prompt",
+    "image_url": "Main Image",
+    "product_image": "Product Image",
+    "person_image_url": "Person Image",
+    "clothing_image_url": "Clothing Image",
+    "aspect_ratio": "Aspect Ratio",
+    "output_format": "Output Format",
+    "target_resolution": "Target Resolution",
+    "safety_tolerance": "Safety Tolerance",
+    "guidance_scale": "Guidance Scale",
+    "preserve_pose": "Preserve Pose"
+  },
+  "editor_form_advanced_title": {
+    "title": "Advanced Settings",
+    "subtitle": "Configure advanced settings to customize your image output."
   }
 }

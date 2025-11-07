@@ -12,12 +12,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/store";
 import { useState } from "react";
 
+
 export default function Navbar() {
   const { id } = useSelector((state: RootState) => state.user);
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const isActive = (href: string) => pathName === href;
-  const { t } = useTranslation();
+  const { t,locale } = useTranslation();
 
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -37,7 +38,7 @@ export default function Navbar() {
     }
   };
 
-  // ✅ Artık çeviriler dinamik geliyor
+  //  Artık çeviriler dinamik geliyor
   const navLinks = [
     { href: "#pricing", label: t("navbar.pricing") },
     { href: "#usecases", label: t("navbar.usecases") },
@@ -53,7 +54,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         {/* Logo */}
         <Link
-          href="/"
+           href={`/${locale}`}
           onClick={(e) => {
             if (pathName === "/") {
               e.preventDefault();
@@ -73,7 +74,7 @@ export default function Navbar() {
           {navLinks.map(({ href, label }) => (
             <li key={href} className="hover:text-foreground transition">
               <Link
-                href={href}
+                href={`/${locale}`}
                 onClick={(e) => scrollToSection(e, href.slice(1))}
               >
                 {label}
@@ -96,10 +97,10 @@ export default function Navbar() {
                   variant="outline"
                   className="rounded-full px-4 py-1.5 text-sm border-border"
                 >
-                  <Link href="/login">{t("navbar.login")}</Link>
+                  <Link href={`/${locale}/login`}>{t("navbar.login")}</Link>
                 </Button>
                 <Button className="rounded-full px-4 py-1.5 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90">
-                  <Link href="/login">{t("navbar.get_started")}</Link>
+                  <Link href={`/${locale}/login`}>{t("navbar.get_started")}</Link>
                 </Button>
               </>
             )}
@@ -160,13 +161,13 @@ export default function Navbar() {
                   className="w-full rounded-full border-border"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href="/login">{t("navbar.login")}</Link>
+                  <Link href={`/${locale}/login`}>{t("navbar.login")}</Link>
                 </Button>
                 <Button
                   className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href="/login">{t("navbar.get_started")}</Link>
+                  <Link href={`/${locale}/login`}>{t("navbar.get_started")}</Link>
                 </Button>
               </>
             )}

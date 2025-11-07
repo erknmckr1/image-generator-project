@@ -7,6 +7,10 @@
     "get_started": "Başlayın",
     "my_account": "Hesabım"
   },
+  "dashboard_navbar": {
+    "generate_image": "Görsel Oluştur",
+    "my_images": "Görsellerim"
+  },
   "hero": {
     "badge": "ImageAI ile Yaratıcılığınızı Artırın",
     "title_part1": "En",
@@ -290,5 +294,47 @@
       "Görsel oluşturuluyor...",
       "Çıktı sonlandırılıyor..."
     ]
+  },
+  "image_editor_form_info": {
+    "username": "Kullanıcı adını belirtir. API çağrılarında kimlik tanımlaması için kullanılır.",
+    "prompt": "Oluşturulacak veya değiştirilecek görselin tanımını girin. Net ve kısa yazın.",
+    "image_url": "İşlenecek ana görselin bağlantısı veya yüklenen görsel.",
+    "aspect_ratio": "Çıktı görselinin oranını belirler (örneğin 1:1, 16:9).",
+    "output_format": "Oluşturulacak görselin dosya formatını seçin (PNG, JPG, WEBP).",
+    "target_resolution": "Görselin çözünürlüğünü belirler (1080p önerilir).",
+    "safety_tolerance": "Görsel güvenlik filtresinin hassasiyetini belirler (1 = en sıkı).",
+    "guidance_scale": "Modelin prompt’a ne kadar sadık kalacağını belirler (yüksek = daha tutarlı).",
+    "product_image": "Üzerine ürün yerleştirilecek sahne görselini yükleyin.",
+    "scene": "Ürünün yerleştirileceği sahnenin kısa tanımı.",
+    "product_placement": "Ürünün görselde nasıl konumlandırılacağını açıklayın.",
+    "person_image_url": "Üzerinde kıyafet denenecek kişinin fotoğrafı.",
+    "clothing_image_url": "Denenecek kıyafetin görseli.",
+    "preserve_pose": "Aktifse, orijinal pozu koruyarak kıyafet değişimi yapılır.",
+    "image_category": "Kategoriyi belirler (örneğin outfit-generation, background-remove, vb.)."
+  },
+  "form_editor_add_image": {
+    "upload_title": "Sürükle & bırak veya yüklemek için tıklayın",
+    "upload_subtitle": "JPG, PNG, WEBP – en fazla 5MB",
+    "select_file": "Dosya Seç",
+    "or_paste": "veya aşağıya görsel bağlantısı yapıştırın",
+    "url_placeholder": "Görsel bağlantısını buraya yapıştırın",
+    "file_too_large": "Dosya çok büyük (maks 5MB)"
+  },
+  "form_editor_fields": {
+    "prompt": "İstek (Prompt)",
+    "image_url": "Ana Görsel",
+    "product_image": "Ürün Görseli",
+    "person_image_url": "Kişi Görseli",
+    "clothing_image_url": "Kıyafet Görseli",
+    "aspect_ratio": "Görsel Oranı",
+    "output_format": "Çıktı Formatı",
+    "target_resolution": "Hedef Çözünürlük",
+    "safety_tolerance": "Güvenlik Toleransı",
+    "guidance_scale": "Yönlendirme Ölçeği",
+    "preserve_pose": "Pozu Koru"
+  },
+  "editor_form_advanced_title":{
+    "title":"Gelişmiş Ayarlar",
+    "subtitle":"Görsel çıktınızı özelleştirmek için gelişmiş ayarları yapılandırın."
   }
 }

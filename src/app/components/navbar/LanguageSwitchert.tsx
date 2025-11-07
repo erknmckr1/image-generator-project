@@ -1,10 +1,7 @@
 "use client";
 
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { RootState } from "@/lib/redux/store";
-import { setLanguage } from "@/lib/redux/slices/language.slice";
+import React, { useState } from "react";
+import { useRouter, usePathname, useParams } from "next/navigation";
 import {
   Popover,
   PopoverTrigger,
@@ -14,34 +11,35 @@ import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
 
 export default function LanguageSwitcher() {
-  const dispatch = useDispatch();
-  const { language } = useSelector((state: RootState) => state.language);
-  const [open,setOpen] =useState(false)
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams();
+  const currentLocale = params?.locale as string;
+
   const languages = [
     { code: "tr", label: "Türkçe", flag: "🇹🇷" },
     { code: "en", label: "English", flag: "🇬🇧" },
-    { code: "de", label: "한국어", flag: "de" },
+    { code: "de", label: "Deutsch", flag: "🇩🇪" },
     { code: "es", label: "Español", flag: "🇪🇸" },
     { code: "ru", label: "Русский", flag: "🇷🇺" },
-    { code: "ar", label: "العربية", flag: "🇸a" },
-    { code: "ko", label: "Deutsch", flag: "ko" },
+    { code: "ar", label: "العربية", flag: "🇸🇦" },
+    { code: "ko", label: "한국어", flag: "🇰🇷" },
   ];
 
   const handleSelect = (lang: string) => {
-    dispatch(setLanguage(lang));
+    if (lang === currentLocale) return setOpen(false);
+    const newPath = pathname.replace(`/${currentLocale}`, `/${lang}`);
+    router.push(newPath);
     setOpen(false);
   };
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          size="sm"
-          className="flex items-center gap-2"
-        >
+        <Button variant="outline" size="sm" className="flex items-center gap-2">
           <Globe className="w-4 h-4" />
-          <span className="uppercase">{language}</span>
+          <span className="uppercase">{currentLocale}</span>
         </Button>
       </PopoverTrigger>
 
@@ -52,7 +50,7 @@ export default function LanguageSwitcher() {
               key={lang.code}
               onClick={() => handleSelect(lang.code)}
               className={`flex items-center justify-between px-3 py-2 rounded-md text-sm transition cursor-pointer ${
-                language === lang.code
+                currentLocale === lang.code
                   ? "bg-primary text-white"
                   : "hover:bg-foreground/10 text-foreground"
               }`}

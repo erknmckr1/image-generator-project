@@ -25,8 +25,6 @@ export default function FAQSection() {
   // Type guard - eğer array değilse boş array döndür
   const faqItems = Array.isArray(faqs) ? faqs : [];
 
-  console.log("FAQs:", faqItems);
-
   return (
     <FadeInSection>
       <section

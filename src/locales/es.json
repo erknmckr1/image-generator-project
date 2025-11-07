@@ -7,6 +7,11 @@
     "get_started": "Comenzar",
     "my_account": "Mi cuenta"
   },
+  "dashboard_navbar": {
+  "generate_image": "Generar Imagen",
+  "my_images": "Mis Imágenes"
+}
+,
   "hero": {
     "badge": "Aumenta tu creatividad con ImageAI",
     "title_part1": "El generador de imágenes con IA más",
@@ -257,7 +262,10 @@
           { "text": "Generación ilimitada de imágenes", "included": true },
           { "text": "Soporte prioritario", "included": true },
           { "text": "Estilos de IA personalizados", "included": true },
-          { "text": "Herramientas de colaboración en equipo", "included": true },
+          {
+            "text": "Herramientas de colaboración en equipo",
+            "included": true
+          },
           { "text": "Derechos de uso comercial", "included": true }
         ],
         "get_started": "Comenzar"
@@ -271,7 +279,10 @@
         "features": [
           { "text": "Gerente de cuenta dedicado", "included": true },
           { "text": "Procesamiento de IA ilimitado", "included": true },
-          { "text": "Entrenamiento de modelos personalizados", "included": true },
+          {
+            "text": "Entrenamiento de modelos personalizados",
+            "included": true
+          },
           { "text": "Herramientas avanzadas de análisis", "included": true },
           { "text": "Integraciones API personalizadas", "included": true }
         ],
@@ -290,5 +301,50 @@
       "Generando imagen...",
       "Finalizando salida..."
     ]
-  }
+  },
+  "image_editor_form_info": {
+    "username": "Especifica el nombre de usuario. Se usa para identificación en las solicitudes API.",
+    "prompt": "Ingresa una descripción de la imagen a generar o modificar. Sé claro y breve.",
+    "image_url": "La URL o imagen cargada que se procesará.",
+    "aspect_ratio": "Define la relación de aspecto de la imagen resultante (por ejemplo, 1:1, 16:9).",
+    "output_format": "Selecciona el formato del archivo de salida (PNG, JPG, WEBP).",
+    "target_resolution": "Define la resolución de la imagen (1080p recomendado).",
+    "safety_tolerance": "Controla la sensibilidad del filtro de seguridad (1 = más estricto).",
+    "guidance_scale": "Determina qué tan de cerca el modelo sigue el prompt (más alto = más coherente).",
+    "product_image": "Sube la imagen de la escena donde se colocará el producto.",
+    "scene": "Breve descripción de la escena donde aparecerá el producto.",
+    "product_placement": "Explica cómo se debe posicionar el producto en la imagen.",
+    "person_image_url": "Sube la foto de la persona para la prueba virtual.",
+    "clothing_image_url": "Sube la imagen de la prenda que se probará.",
+    "preserve_pose": "Si está activado, mantiene la pose original al cambiar la ropa.",
+    "image_category": "Especifica la categoría (por ejemplo, outfit-generation, background-remove, etc.)."
+  },
+  "form_editor_add_image": {
+  "upload_title": "Arrastra y suelta o haz clic para subir",
+  "upload_subtitle": "JPG, PNG, WEBP – máx. 5 MB",
+  "select_file": "Seleccionar archivo",
+  "or_paste": "o pega la URL de la imagen abajo",
+  "url_placeholder": "Pega el enlace de la imagen aquí",
+  "file_too_large": "Archivo demasiado grande (máx. 5 MB)"
+},
+"form_editor_fields": {
+  "prompt": "Indicador (Prompt)",
+  "image_url": "Imagen Principal",
+  "product_image": "Imagen del Producto",
+  "person_image_url": "Imagen de la Persona",
+  "clothing_image_url": "Imagen de la Ropa",
+  "aspect_ratio": "Relación de Aspecto",
+  "output_format": "Formato de Salida",
+  "target_resolution": "Resolución Objetivo",
+  "safety_tolerance": "Tolerancia de Seguridad",
+  "guidance_scale": "Escala de Guía",
+  "preserve_pose": "Conservar Pose"
+},
+"editor_form_advanced_title": {
+  "title": "Configuración Avanzada",
+  "subtitle": "Configura los ajustes avanzados para personalizar la salida de tu imagen."
+}
+
+
+
 }

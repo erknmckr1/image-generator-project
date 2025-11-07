@@ -18,6 +18,7 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import AddImagesField from "./AddImagesField";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 export default function EditorForm({
   formData,
@@ -31,7 +32,7 @@ export default function EditorForm({
   );
   const visibleFields = CategoryFieldMap[selectedFeature] || [];
   const [error, setError] = useState<string>("");
-
+  const {t} = useTranslation();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -52,7 +53,6 @@ export default function EditorForm({
         },
         body: JSON.stringify(formData),
       });
-      console.log("API Response Status:", response);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -98,7 +98,7 @@ export default function EditorForm({
           {visibleFields.includes("prompt") && (
             <div>
               <div className="flex items-center justify-between w-full">
-                <FieldHeader field="prompt" label="Prompt" />
+                <FieldHeader field="prompt" />
               </div>
 
               <Textarea
@@ -121,17 +121,17 @@ export default function EditorForm({
         {/* Advanced Parameters Section */}
         <div className="space-y-4 mt-4">
           <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-            Advanced Parameters
+            {t("editor_form_advanced_title.title")}
           </h3>
 
           <p className="text-sm text-muted-foreground mb-4">
-            Fine-tune your generation with these advanced settings.
+           {t("editor_form_advanced_title.subtitle")}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Aspect Ratio */}
             {visibleFields.includes("aspect_ratio") && (
               <div className="p-5 rounded-xl border border-border bg-card hover:shadow-md transition-shadow">
-                <FieldHeader field="aspect_ratio" label="Aspect Ratio" />
+                <FieldHeader field="aspect_ratio" />
                 <Select
                   value={
                     formData.aspect_ratio ||
@@ -156,7 +156,7 @@ export default function EditorForm({
             {/* Output Format */}
             {visibleFields.includes("output_format") && (
               <div className="p-5 rounded-xl border border-border bg-card hover:shadow-md transition-shadow">
-                <FieldHeader field="output_format" label="Output Format" />
+                <FieldHeader field="output_format" />
                 <Select
                   value={formData.output_format || "jpg"}
                   onValueChange={(v) => handleChange("output_format", v)}
@@ -177,10 +177,7 @@ export default function EditorForm({
             {/* Safety Tolerance */}
             {visibleFields.includes("safety_tolerance") && (
               <div className="p-5 rounded-xl border border-border bg-card hover:shadow-md transition-shadow">
-                <FieldHeader
-                  field="safety_tolerance"
-                  label="Safety Tolerance"
-                />
+                <FieldHeader field="safety_tolerance" />
                 <Select
                   value={formData.safety_tolerance || "2"}
                   onValueChange={(v) => handleChange("safety_tolerance", v)}
@@ -201,14 +198,11 @@ export default function EditorForm({
             {/* Target Resolution */}
             {visibleFields.includes("target_resolution") && (
               <div className="p-5 rounded-xl border border-border bg-card hover:shadow-md transition-shadow">
-                <FieldHeader
-                  field="target_resolution"
-                  label="Target Resolution"
-                />
+                <FieldHeader field="target_resolution" />
                 <Select
                   value={
                     formData.target_resolution ||
-                    config.target_resolution?.default 
+                    config.target_resolution?.default
                   }
                   onValueChange={(v) => handleChange("target_resolution", v)}
                 >
@@ -230,7 +224,7 @@ export default function EditorForm({
             {/* Guidance Scale */}
             {visibleFields.includes("guidance_scale") && (
               <div className="col-span-full p-5 rounded-xl border border-border bg-card hover:shadow-md transition-shadow">
-                <FieldHeader field="guidance_scale" label="Guidance Scale" />
+                <FieldHeader field="guidance_scale" />
                 <Slider
                   value={[formData.guidance_scale || 3.5]}
                   onValueChange={(v) => handleChange("guidance_scale", v[0])}
@@ -244,7 +238,7 @@ export default function EditorForm({
             {/* Outfit-specific: Preserve Pose */}
             {visibleFields.includes("preserve_pose") && (
               <div className="flex-col items-center justify-between p-5  rounded-xl border border-border bg-card hover:shadow-md transition-shadow">
-                <FieldHeader field="preserve_pose" label="Preserve Pose" />
+                <FieldHeader field="preserve_pose" />
                 <Switch
                   className="mt-4"
                   checked={formData.preserve_pose}

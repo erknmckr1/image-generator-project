@@ -71,8 +71,6 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
     }
   };
 
-  console.log(images)
-
   return (
     <div className="flex flex-col items-center h-full  w-full bg-gradient-to-b from-muted/30 via-background to-muted overflow-auto">
       <div className="w-full max-w-lg">

@@ -7,6 +7,10 @@
     "get_started": "Jetzt starten",
     "my_account": "Mein Konto"
   },
+  "dashboard_navbar": {
+    "generate_image": "Bild generieren",
+    "my_images": "Meine Bilder"
+  },
   "hero": {
     "badge": "Steigere deine Kreativität mit ImageAI",
     "title_part1": "Der",
@@ -290,5 +294,47 @@
       "Bild wird generiert...",
       "Ausgabe wird abgeschlossen..."
     ]
+  },
+  "image_editor_form_info": {
+    "username": "Gibt den Benutzernamen an. Wird zur Identifikation in API-Anfragen verwendet.",
+    "prompt": "Geben Sie eine Beschreibung für das zu erstellende oder zu ändernde Bild ein.",
+    "image_url": "Die URL oder das hochgeladene Bild, das verarbeitet werden soll.",
+    "aspect_ratio": "Legt das Seitenverhältnis des Ausgabebildes fest (z. B. 1:1, 16:9).",
+    "output_format": "Wählen Sie das Ausgabeformat des Bildes (PNG, JPG, WEBP).",
+    "target_resolution": "Legt die Bildauflösung fest (1080p empfohlen).",
+    "safety_tolerance": "Steuert die Empfindlichkeit des Sicherheitsfilters (1 = strengste).",
+    "guidance_scale": "Bestimmt, wie stark das Modell dem Prompt folgt (höher = konsistenter).",
+    "product_image": "Laden Sie das Szenenbild hoch, in dem das Produkt platziert wird.",
+    "scene": "Kurze Beschreibung der Szene, in der das Produkt angezeigt wird.",
+    "product_placement": "Erklären Sie, wie das Produkt im Bild positioniert werden soll.",
+    "person_image_url": "Laden Sie das Foto der Person für den virtuellen Anprobe hoch.",
+    "clothing_image_url": "Laden Sie das Bild des Kleidungsstücks hoch, das ausprobiert werden soll.",
+    "preserve_pose": "Wenn aktiviert, bleibt die ursprüngliche Pose beim Kleiderwechsel erhalten.",
+    "image_category": "Gibt die Kategorie an (z. B. outfit-generation, background-remove usw.)."
+  },
+  "form_editor_add_image": {
+    "upload_title": "Drag & Drop oder klicken zum Hochladen",
+    "upload_subtitle": "JPG, PNG, WEBP – max. 5 MB",
+    "select_file": "Datei auswählen",
+    "or_paste": "oder Bild-URL unten einfügen",
+    "url_placeholder": "Bildlink hier einfügen",
+    "file_too_large": "Datei zu groß (max. 5 MB)"
+  },
+  "form_editor_fields": {
+    "prompt": "Eingabeaufforderung",
+    "image_url": "Hauptbild",
+    "product_image": "Produktbild",
+    "person_image_url": "Personenbild",
+    "clothing_image_url": "Kleidungsbild",
+    "aspect_ratio": "Seitenverhältnis",
+    "output_format": "Ausgabeformat",
+    "target_resolution": "Zielauflösung",
+    "safety_tolerance": "Sicherheitstoleranz",
+    "guidance_scale": "Leitfaktor",
+    "preserve_pose": "Pose beibehalten"
+  },
+  "editor_form_advanced_title": {
+    "title": "Erweiterte Einstellungen",
+    "subtitle": "Konfigurieren Sie erweiterte Einstellungen, um Ihre Bildausgabe anzupassen."
   }
 }

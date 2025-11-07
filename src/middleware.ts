@@ -2,7 +2,29 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+const SUPPORTED_LOCALES = ["en", "tr", "de", "ru", "es", "ko", "ar"];
+const DEFAULT_LOCALE = "en";
+
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  const pathnameHasLocale = SUPPORTED_LOCALES.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
+
+  if (!pathnameHasLocale) {
+    const browserLang = request.headers
+      .get("accept-language")
+      ?.split(",")[0]
+      .split("-")[0];
+
+    const detectedLocale = SUPPORTED_LOCALES.includes(browserLang!)
+      ? browserLang
+      : DEFAULT_LOCALE;
+
+    const redirectUrl = new URL(`/${detectedLocale}${pathname}`, request.url);
+    return NextResponse.redirect(redirectUrl);
+  }
   let supabaseResponse = NextResponse.next({
     request,
   });
@@ -40,17 +62,18 @@ export async function middleware(request: NextRequest) {
     console.error(" Middleware auth error:", error.message);
   }
 
-  // Korumalı sayfalar için kontrol (isteğe bağlı)
-  if (!user && request.nextUrl.pathname.startsWith("/dashboard/generate-image")) {
+  //  Yetki kontrolü — dil path'i koruyarak yönlendirme
+  const localePrefix = pathname.split("/")[1]; // örn: "tr", "en"
+  if (!user && pathname.startsWith(`/${localePrefix}/dashboard`)) {
     const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = "/login";
+    redirectUrl.pathname = `/${localePrefix}/login`;
     return NextResponse.redirect(redirectUrl);
   }
 
-  if(user && request.nextUrl.pathname.startsWith("/login")){
+  if (user && pathname.startsWith(`/${localePrefix}/login`)) {
     const redirectUrl = request.nextUrl.clone();
-     redirectUrl.pathname = "/generate-image";
-     return NextResponse.redirect(redirectUrl);
+    redirectUrl.pathname = `/${localePrefix}/dashboard`;
+    return NextResponse.redirect(redirectUrl);
   }
 
   return supabaseResponse;

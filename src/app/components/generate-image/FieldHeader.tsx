@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 import {
   Tooltip,
   TooltipContent,
@@ -8,17 +9,16 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { CircleAlert } from "lucide-react";
-import { CategoryFieldInfoMap } from "@/lib/types/form";
 
 interface FieldHeaderProps {
   field: string;
-  label: string;
 }
 
-export default function FieldHeader({ field, label }: FieldHeaderProps) {
-  const info = CategoryFieldInfoMap[field];
+export default function FieldHeader({ field }: FieldHeaderProps) {
   const [open, setOpen] = useState(false);
-
+  const {t} = useTranslation();
+  const info = t(`image_editor_form_info.${field}`);
+  const label = t(`form_editor_fields.${field}`);
   return (
     <div className="flex items-center justify-between w-full">
       <Label className="text-sm font-medium text-foreground">{label}</Label>

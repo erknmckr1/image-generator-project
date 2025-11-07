@@ -8,15 +8,19 @@ import Link from "next/link";
 import { AvatarButton } from "./AvatarButton";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 export default function PrivateNavbar() {
   const pathName = usePathname();
   const isActive = (href: string) => pathName === href;
   const [isOpen, setIsOpen] = useState(false);
-
+  const { t } = useTranslation();
   const navLinks = [
-    { href: "/dashboard/generate-image", label: "Generate Image" },
-    { href: "/dashboard/my-images", label: "My Images" },
+    {
+      href: "/dashboard/generate-image",
+      label: t("dashboard_navbar.generate_image"),
+    },
+    { href: "/dashboard/my-images",  label: t("dashboard_navbar.my_images"),},
   ];
 
   return (

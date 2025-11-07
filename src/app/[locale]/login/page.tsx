@@ -4,7 +4,7 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import ImageShowcase from "../components/login/ImageShowcase";
+import ImageShowcase from "@/app/components/login/ImageShowcase";
 import { createClient } from "@/lib/supabase/client";
 import { useState } from "react";
 import Link from "next/link";
@@ -12,13 +12,16 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const supabase = createClient(); // Client component içinde oluştur
 
+  // Tarayıcı URL’sinden aktif dili al (örn: /tr/login → "tr")
+    const locale = window.location.pathname.split("/")[1] || "en";
+
   const handleGoogleLogin = async () => {
     try {
       setLoading(true);
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
+          redirectTo: `${window.location.origin}/${locale}/auth/callback`,
           queryParams: {
             access_type: 'offline',
             prompt: 'consent',

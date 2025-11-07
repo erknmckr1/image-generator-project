@@ -1,26 +1,30 @@
 "use client";
+
+import { useParams } from "next/navigation";
 import en from "@/locales/en.json";
 import tr from "@/locales/tr.json";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/redux/store";
 import ru from "@/locales/ru.json";
 import ar from "@/locales/ar.json";
 import es from "@/locales/es.json";
 import ko from "@/locales/ko.json";
-import de from "@/locales/de.json"
-// JSON yapısı için type tanımla
+import de from "@/locales/de.json";
+
+// JSON türlerini temsil eden tipler
 type TranslationValue =
   | string
   | TranslationObject
   | TranslationArray
   | number
   | boolean;
-type TranslationObject = { [key: string]: TranslationValue }; // json içindeki nesnet object olabilir
-type TranslationArray = Array<TranslationValue>; // json içinde bir array olabilir.
+type TranslationObject = { [key: string]: TranslationValue };
+type TranslationArray = Array<TranslationValue>;
 
 export function useTranslation() {
-  const { language } = useSelector((state: RootState) => state.language);
-  // ---  dil haritası ---
+  //  URL'deki locale parametresini al
+  const params = useParams();
+  const locale = (params?.locale as string) || "en";
+
+  //  Locale'leri eşleştir
   const locales: Record<string, TranslationObject> = {
     en,
     tr,
@@ -28,25 +32,27 @@ export function useTranslation() {
     ar,
     es,
     ko,
-    de
+    de,
   };
-  const translations = locales[language];
 
-  // t fonkisyonu varsayılan olarak string dönsün ama farklı degerlerde dönebilir. generic type 
+  //  Eğer belirtilen locale yoksa fallback olarak İngilizceyi kullan
+  const translations = locales[locale] || locales.en;
+
+  //  Ana çeviri fonksiyonu
   const t = <T = string>(path: string): T => {
     const result = path
       .split(".")
       .reduce<TranslationValue | undefined>((acc, key) => {
-        // type narrowing
         if (acc && typeof acc === "object" && !Array.isArray(acc)) {
           return (acc as TranslationObject)[key];
         }
         return undefined;
       }, translations as TranslationValue);
 
-    // Eğer sonuç bulunamazsa path'i döndür
+    // 🔹 Eğer çeviri bulunamazsa key'i kendisi döndür
     return (result ?? path) as T;
   };
 
-  return { t, language };
+  //  Geri dönen değerler
+  return { t, locale };
 }

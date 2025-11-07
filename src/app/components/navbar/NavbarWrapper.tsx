@@ -7,7 +7,7 @@ import PrivateNavbar from "./PrivateNavbar";
 
 export default function NavbarWrapper({ user }: { user: User | null }) {
   const pathname = usePathname();
-  const isDashboard = pathname.startsWith("/dashboard");
+  const isDashboard = pathname.includes("/dashboard");
 
   if (isDashboard && user) {
     return <PrivateNavbar />;
