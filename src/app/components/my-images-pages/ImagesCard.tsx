@@ -10,6 +10,7 @@ import { Check } from "lucide-react";
 import { Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useRef } from "react";
+import { GenerationStep } from "@/lib/types/my.images.type";
 
 import {
   Dialog,
@@ -19,28 +20,47 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-interface ItemType {
-  id: string;
-  user_id: string;
-  user_prompt: string;
-  refined_prompt: string;
-  original_image_url: string;
-  processed_image_url: string;
-  resolution: string;
-  file_size_kb: number;
-  format: string;
-  status: string;
-  credits_used: number;
-  is_favorite: boolean;
-  user_note: null;
-  created_at: string;
-  updated_at: string;
-  deleted_at: null;
-}
-
 interface ImageCardProps {
   title: string;
-  item: ItemType;
+  item: GenerationStep
+}
+
+function mapGenerationStepToItem(step: GenerationStep) {
+  const imageParams = step.params?.[0]?.image || {};
+
+  return {
+    id: step.id,
+    user_id: step.generations.user_id,
+    user_prompt: step.generations.params.user_prompt,
+    refined_prompt: step.generations.params.refined_prompt,
+    original_image_url: step.generations.params.input_image_url,
+    processed_image_url: step.output_image_url,
+    resolution: step.generations.params.target_resolution || "N/A",
+    file_size_kb: imageParams.file_size || 0,
+    format:
+      step.generations.params.output_format ||
+      imageParams.content_type ||
+      "jpg",
+    status: "completed",
+    credits_used: 1,
+    is_favorite: false,
+    user_note: null,
+    created_at: step.created_at,
+    updated_at: step.created_at,
+    deleted_at: null,
+
+    // Ek olarak component içinde kullanılan alanlar:
+    generations: step.generations,
+    output_image_url: step.output_image_url,
+    input_image_url: step.generations.params.input_image_url,
+    params: step.generations.params,
+    metadata: {
+      file_name: imageParams.file_name,
+      width: imageParams.width,
+      height: imageParams.height,
+      seed: step.params?.[0]?.seed,
+    },
+  };
 }
 
 // Zoom özellikli görsel komponenti
@@ -52,7 +72,7 @@ function ZoomableImage({ src, alt }: { src: string; alt: string }) {
   const containerRef = useRef<HTMLDivElement>(null); // Dış sarmalayıcı div. Zoom penceresinin sınırlarını bu konteyner belirliyor.
   const zoomLevel = 2.5;
   const imageWidth = imageRef.current?.offsetWidth ?? 0;
-const imageHeight = imageRef.current?.offsetHeight ?? 0;
+  const imageHeight = imageRef.current?.offsetHeight ?? 0;
 
   const handleMouseEnter = () => {
     setIsZooming(true);
@@ -69,8 +89,8 @@ const imageHeight = imageRef.current?.offsetHeight ?? 0;
     const containerRect = containerRef.current.getBoundingClientRect(); // dış kapsayıcı div’in boyutu
 
     // Mouse'un görsel üzerindeki pozisyonu
-    const mouseX = e.clientX - rect.left; 
-    const mouseY = e.clientY - rect.top; 
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
 
     // Zoom penceresinin boyutları
     const zoomWindowWidth = 200;
@@ -172,6 +192,9 @@ export function ImageCard({ title, item }: ImageCardProps) {
     }
   };
 
+  const mappedItem = mapGenerationStepToItem(item);
+
+
   const handleDownload = async (url: string) => {
     try {
       const response = await fetch(url);
@@ -204,7 +227,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
             className="absolute top-2 left-2 z-10 bg-lime-400 text-black font-medium"
             variant="secondary"
           >
-            {item.status}
+            {mappedItem.status}
           </Badge>
 
           {/* Favorite icon */}
@@ -219,7 +242,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
 
           <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
             <Image
-              src={item.processed_image_url}
+              src={mappedItem.output_image_url}
               alt={title}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -231,7 +254,10 @@ export function ImageCard({ title, item }: ImageCardProps) {
             <h3 className="font-medium text-sm truncate">{title}</h3>
           </CardContent>
           <CardFooter>
-            <p className="text-xs">{item.user_prompt.slice(0, 30)}...</p>
+            <p className="text-xs">
+             {mappedItem.generations.params?.user_prompt?.slice(0,30) ?? "No prompt"}
+
+            </p>
           </CardFooter>
         </Card>
       </DialogTrigger>
@@ -254,7 +280,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
                   Original Image
                 </p>
                 <ZoomableImage
-                  src={item.original_image_url}
+                  src={mappedItem.input_image_url}
                   alt="Original Image"
                 />
               </div>
@@ -265,7 +291,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
                   Processed Image
                 </p>
                 <ZoomableImage
-                  src={item.processed_image_url}
+                  src={mappedItem.output_image_url}
                   alt="Processed Image"
                 />
                 <div className="p-4 flex gap-3">
@@ -273,14 +299,14 @@ export function ImageCard({ title, item }: ImageCardProps) {
                     variant="outline"
                     size="sm"
                     className="flex-1 rounded-lg border-border hover:bg-muted transition"
-                    onClick={() => handleDownload(item.processed_image_url)}
+                    onClick={() => handleDownload(mappedItem.output_image_url)}
                   >
                     <Download className="mr-2 h-4 w-4" />
                     Download
                   </Button>
 
                   <Button
-                    onClick={() => handleCopyUrl(item.processed_image_url)}
+                    onClick={() => handleCopyUrl(mappedItem.output_image_url)}
                     variant="outline"
                     size="sm"
                     className="flex-1 rounded-lg border-border hover:bg-muted transition"
@@ -311,7 +337,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
                   User Prompt
                 </h4>
                 <div className="p-3 rounded-md bg-muted text-sm leading-relaxed border">
-                  {item.user_prompt}
+                  {mappedItem.generations.params.user_prompt}
                 </div>
               </div>
 
@@ -320,7 +346,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
                   Refined Prompt
                 </h4>
                 <div className="p-3 rounded-md bg-muted text-sm leading-relaxed border">
-                  {item.refined_prompt}
+                  {mappedItem.generations.params.refined_prompt}
                 </div>
               </div>
             </div>
@@ -332,34 +358,38 @@ export function ImageCard({ title, item }: ImageCardProps) {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6 text-sm">
               <div>
                 <span className="text-muted-foreground">Status:</span>
-                <p className="font-medium capitalize">{item.status}</p>
+                <p className="font-medium capitalize">{mappedItem.status}</p>
               </div>
 
               <div>
                 <span className="text-muted-foreground">Credits Used:</span>
-                <p className="font-medium">{item.credits_used}</p>
+                <p className="font-medium">{mappedItem.credits_used}</p>
               </div>
 
               <div>
                 <span className="text-muted-foreground">Resolution:</span>
-                <p className="font-medium">{item.resolution}</p>
+                <p className="font-medium">
+                  {mappedItem.params?.target_resolution || "N/A"}
+                </p>
               </div>
 
               <div>
                 <span className="text-muted-foreground">Format:</span>
-                <p className="font-medium uppercase">{item.format}</p>
+                <p className="font-medium uppercase">
+                  {mappedItem.params?.output_format || "N/A"}
+                </p>
               </div>
 
               <div>
                 <span className="text-muted-foreground">File Size:</span>
                 <p className="font-medium">
-                  {(item.file_size_kb / 1024).toFixed(2)} MB
+                  {(mappedItem.file_size_kb / 1024).toFixed(2)} MB
                 </p>
               </div>
 
               <div>
                 <span className="text-muted-foreground">User Note:</span>
-                <p className="font-medium">{item.user_note || "—"}</p>
+                <p className="font-medium">{mappedItem.user_note || "—"}</p>
               </div>
             </div>
 
@@ -368,11 +398,11 @@ export function ImageCard({ title, item }: ImageCardProps) {
 
             {/* 4️ Date Information */}
             <div className="text-xs text-muted-foreground space-y-1">
-              <p>Created: {new Date(item.created_at).toLocaleString()}</p>
-              <p>Updated: {new Date(item.updated_at).toLocaleString()}</p>
-              {item.deleted_at && (
+              <p>Created: {new Date(mappedItem.created_at).toLocaleString()}</p>
+              <p>Updated: {new Date(mappedItem.updated_at).toLocaleString()}</p>
+              {mappedItem.deleted_at && (
                 <p className="text-red-400">
-                  Deleted: {new Date(item.deleted_at).toLocaleString()}
+                  Deleted: {new Date(mappedItem.deleted_at).toLocaleString()}
                 </p>
               )}
             </div>

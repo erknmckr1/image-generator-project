@@ -1,6 +1,14 @@
 "use client";
 
-import { Download, Copy, Check, Loader2, Sparkles, Wand2, Zap } from "lucide-react";
+import {
+  Download,
+  Copy,
+  Check,
+  Loader2,
+  Sparkles,
+  Wand2,
+  Zap,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -83,7 +91,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
             <p className="text-foreground text-lg font-medium mb-6">
               Generating your image...
             </p>
-            
+
             <div className="space-y-6 text-left">
               {steps.map((step, index) => {
                 const isDone = index < currentStep;
@@ -140,7 +148,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
           <div className="bg-card  rounded-2xl border border-border shadow-md overflow-hidden transition-all hover:shadow-lg">
             <div className="relative aspect-square bg-muted flex items-center justify-center">
               <Image
-                src={images[0].image_url}
+                src={images}
                 alt="Generated"
                 width={512}
                 height={512}
@@ -150,7 +158,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
 
             <div className="p-4 flex gap-3">
               <Button
-                onClick={() => handleDownload(images[0].image_url)}
+                onClick={() => handleDownload(images)}
                 variant="outline"
                 size="sm"
                 className="flex-1 rounded-lg border-border hover:bg-muted transition"
@@ -160,7 +168,7 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
               </Button>
 
               <Button
-                onClick={() => handleCopyUrl(images[0].image_url)}
+                onClick={() => handleCopyUrl(images)}
                 variant="outline"
                 size="sm"
                 className="flex-1 rounded-lg border-border hover:bg-muted transition"
@@ -192,14 +200,14 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
                     <Sparkles className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                
+
                 <div className="relative mt-6">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl blur-lg opacity-50 animate-pulse delay-150" />
                   <div className="relative bg-gradient-to-br from-blue-500 to-cyan-600 p-4 rounded-2xl shadow-lg">
                     <Wand2 className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl blur-lg opacity-50 animate-pulse delay-300" />
                   <div className="relative bg-gradient-to-br from-pink-500 to-rose-600 p-4 rounded-2xl shadow-lg">
@@ -212,9 +220,10 @@ export default function ImagePreview({ images, isLoading }: ImagePreviewProps) {
               <h3 className="text-2xl font-bold text-foreground mb-3 bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text ">
                 Your Canvas Awaits
               </h3>
-              
+
               <p className="text-muted-foreground text-base mb-6 max-w-md mx-auto leading-relaxed">
-                Fill out the form on the left to bring your creative vision to life. 
+                Fill out the form on the left to bring your creative vision to
+                life.
                 <span className="block mt-2 text-sm">
                   ✨ AI-powered • 🎨 High quality • ⚡ Lightning fast
                 </span>

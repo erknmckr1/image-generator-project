@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/store";
 import { FormData, CategoryFieldMap } from "@/lib/types/form";
 import { Textarea } from "@/components/ui/textarea";
 import { CategoryConfigMap } from "@/lib/types/form";
 import FieldHeader from "./FieldHeader";
+import { createClient } from "@/lib/supabase/client";
 import {
   Select,
   SelectContent,
@@ -20,47 +21,121 @@ import { Loader2 } from "lucide-react";
 import AddImagesField from "./AddImagesField";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 
-export default function EditorForm({
-  formData,
-  setFormData,
-  setGeneratedImages,
-  setIsLoading,
-  isLoading,
-}) {
+type ImageFieldKeys =
+  | "image_url"
+  | "product_image"
+  | "person_image_url"
+  | "clothing_image_url";
+
+function EditorForm({ setGeneratedImages, setIsLoading, isLoading }) {
   const { selectedFeature } = useSelector(
     (state: RootState) => state.editorForm
   );
   const visibleFields = CategoryFieldMap[selectedFeature] || [];
   const [error, setError] = useState<string>("");
-  const {t} = useTranslation();
+  const { t } = useTranslation();
+  const [formData, setFormData] = useState<FormData>({
+    image_category: selectedFeature || "general",
+    prompt: "",
+    image_url: "",
+    aspect_ratio: "1:1",
+    output_format: "jpg",
+    target_resolution: "1080p",
+    safety_tolerance: "2",
+    guidance_scale: 3.5,
+    product_image: "",
+    scene: "",
+    product_placement: "",
+    person_image_url: "",
+    clothing_image_url: "",
+    preserve_pose: true,
+  });
+
+  function dataURLtoFile(dataUrl: string, filename: string): File {
+    const arr = dataUrl.split(",");
+    const mime = arr[0].match(/:(.*?);/)?.[1] || "image/png";
+    const bstr = atob(arr[1]);
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n);
+    while (n--) u8arr[n] = bstr.charCodeAt(n);
+    return new File([u8arr], filename, { type: mime });
+  }
+
+  const isBase64Image = (val: unknown): val is string =>
+    typeof val === "string" && val.startsWith("data:image");
+
+  const uploadFields: ImageFieldKeys[] = [
+    "image_url",
+    "product_image",
+    "person_image_url",
+    "clothing_image_url",
+  ];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-
-    // if (!formData.prompt?.trim()) {
-    //   setError("Please describe the change you want to make.");
-    //   return;
-    // }
-
     setIsLoading(true);
     setGeneratedImages(null);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_URL}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const supabase = createClient();
+      const updatedFormData: typeof formData &
+        Partial<Record<ImageFieldKeys, string>> = {
+        ...formData,
+      };
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to generate image");
+      //  Görsel alanlarını kontrol et ve gerekirse upload + signed URL oluştur
+      for (const field of uploadFields) {
+        const val = formData[field];
+        if (isBase64Image(val)) {
+          const file = dataURLtoFile(val, `${field}-${Date.now()}.png`);
+          const filePath = `input_img/${Date.now()}-${field}.png`;
+
+
+          // Supabase'e yükle
+          const { data: uploadData, error: uploadError } =
+            await supabase.storage.from("imageai").upload(filePath, file);
+
+          if (uploadError) {
+            console.error(`❌ Upload error for ${field}:`, uploadError.message);
+            continue;
+          }
+
+          // Private bucket → Signed URL üret
+          const { data: signedData, error: signedError } =
+            await supabase.storage
+              .from("imageai")
+              .createSignedUrl(filePath, 60 * 60 * 24);
+
+          if (signedError) {
+            console.error(
+              `Signed URL error for ${field}:`,
+              signedError.message
+            );
+            continue;
+          }
+          updatedFormData[field] = signedData.signedUrl;
+        }
       }
 
-      const data = await response.json();
-      setGeneratedImages(data);
+      //  n8n API'sine gönder
+      const resp = await fetch(`${window.location.origin}/api/n8n-route`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedFormData),
+      });
+
+      if (!resp.ok) {
+        const errData = await resp.json().catch(() => ({}));
+        throw new Error(errData.error || "Failed to generate image");
+      }
+
+      //  n8n yanıtını işle
+      const data = await resp.json();
+      const parsed =
+        typeof data.data === "string" ? JSON.parse(data.data) : data.data;
+
+      setGeneratedImages(parsed.image_url);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unexpected error occurred"
@@ -69,6 +144,10 @@ export default function EditorForm({
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, image_category: selectedFeature }));
+  }, [selectedFeature]);
 
   // Helper for dynamic value binding
   const handleChange = (
@@ -125,7 +204,7 @@ export default function EditorForm({
           </h3>
 
           <p className="text-sm text-muted-foreground mb-4">
-           {t("editor_form_advanced_title.subtitle")}
+            {t("editor_form_advanced_title.subtitle")}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Aspect Ratio */}
@@ -277,3 +356,5 @@ export default function EditorForm({
     </div>
   );
 }
+
+export default React.memo(EditorForm);

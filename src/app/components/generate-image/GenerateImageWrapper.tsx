@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import ImagePreview from "./ImagePreview";
-import { FormData, ImageData } from "@/lib/types/form";
+import { ImageData } from "@/lib/types/form";
 import { ChevronDown } from "lucide-react";
 import { RootState } from "@/lib/redux/store";
 import { useTranslation } from "@/lib/hooks/useTranslation";
@@ -48,23 +48,6 @@ export default function GenerateImageWrapper() {
   const [generatedImages, setGeneratedImages] = useState<ImageData | null>(
     null
   );
-  const [formData, setFormData] = useState<FormData>({
-    image_category: selectedFeature || "general",
-    username: "",
-    prompt: "",
-    image_url: "",
-    aspect_ratio: "1:1",
-    output_format: "jpg",
-    target_resolution: "1080p",
-    safety_tolerance: "2",
-    guidance_scale: 3.5,
-    product_image: "",
-    scene: "",
-    product_placement: "",
-    person_image_url: "",
-    clothing_image_url: "",
-    preserve_pose: true,
-  });
   const features = t("features") as Record<
     string,
     {
@@ -76,13 +59,11 @@ export default function GenerateImageWrapper() {
 
   const handleFeatureChange = (featureId: string) => {
     dispatch(setSelectedFeature(featureId));
-    setFormData((prev) => ({ ...prev, image_category: featureId }));
     setIsDropdownOpen(false);
   };
-
   const currentFeature = features[selectedFeature];
   const currentMeta = featureMeta[selectedFeature as keyof typeof featureMeta];
-  console.log(currentMeta);
+
   const featuresArray = Object.entries(features).map(([id, data]) => ({
     id,
     name: data.name,
@@ -247,9 +228,7 @@ export default function GenerateImageWrapper() {
         {/* Left Section - Form */}
         <div className="w-full h-full overflow-auto sm:w-1/2 flex items-center justify-center px-4 sm:py-16">
           <EditorForm
-            formData={formData}
             setGeneratedImages={setGeneratedImages}
-            setFormData={setFormData}
             setIsLoading={setIsLoading}
             isLoading={isLoading}
           />

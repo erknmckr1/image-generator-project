@@ -1,6 +1,5 @@
 export interface FormData {
   // Ortak alanlar
-  username?: string;
   prompt?: string;
   image_url?: string;
   aspect_ratio?: string;
@@ -23,14 +22,11 @@ export interface FormData {
   image_category: string;
 }
 
-export interface ImageData {
-  image_url: string;
-}
+export type ImageData = string;
 
 export const CategoryFieldMap: Record<string, (keyof FormData)[]> = {
   // Genel kategori (varsayılan)
   "object-placement": [
-    "username",
     "prompt",
     "image_url",
     "aspect_ratio",
@@ -41,11 +37,10 @@ export const CategoryFieldMap: Record<string, (keyof FormData)[]> = {
   ],
 
   // Çözünürlük artırma
-  resolution: ["username", "image_url", "output_format", "target_resolution"],
+  resolution: ["image_url", "output_format", "target_resolution"],
 
   // Ürün Yerleştirme
   "product-placement": [
-    "username",
     "product_image",
     "prompt",
     "scene",
@@ -56,7 +51,6 @@ export const CategoryFieldMap: Record<string, (keyof FormData)[]> = {
 
   // LinkedIn görseli
   "linkedin-visual": [
-    "username",
     "prompt",
     "image_url",
     "aspect_ratio",
@@ -68,7 +62,6 @@ export const CategoryFieldMap: Record<string, (keyof FormData)[]> = {
 
   // Arka plan çıkarma / değiştirme
   "background-remove": [
-    "username",
     "prompt",
     "image_url",
     "aspect_ratio",
@@ -79,7 +72,6 @@ export const CategoryFieldMap: Record<string, (keyof FormData)[]> = {
 
   // Kıyafet denemesi (outfit)
   "outfit-generation": [
-    "username",
     "person_image_url",
     "clothing_image_url",
     "aspect_ratio",
@@ -90,8 +82,6 @@ export const CategoryFieldMap: Record<string, (keyof FormData)[]> = {
 };
 
 export const CategoryFieldInfoMap: Record<keyof FormData, string> = {
-  username:
-    "Kullanıcı adını belirtir. API çağrılarında kimlik tanımlaması için kullanılır.",
   prompt:
     "Oluşturulacak veya değiştirilecek görselin tanımını girin. Net ve kısa yazın.",
   image_url: "İşlenecek ana görselin bağlantısı veya yüklenen görsel.",
@@ -142,7 +132,7 @@ export const CategoryConfigMap = {
       default: "1080p",
     },
     aspect_ratio: {
-      values: ["16:9", "1:1", "3:2", "4:3", "9:16","16:9"],
+      values: ["16:9", "1:1", "3:2", "4:3", "9:16", "16:9"],
       default: "1:1",
     },
   },
@@ -171,7 +161,7 @@ export const CategoryConfigMap = {
 
   "outfit-generation": {
     aspect_ratio: {
-      values: ["1:1", "4:3", "16:9", "9:16","3:4",],
+      values: ["1:1", "4:3", "16:9", "9:16", "3:4"],
       default: "1:1",
     },
     target_resolution: {

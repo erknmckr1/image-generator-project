@@ -15,22 +15,26 @@ interface AddImagesFieldProps {
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
 }
 
-export default function AddImagesField({ formData, setFormData }: AddImagesFieldProps) {
-  const { selectedFeature } = useSelector((state: RootState) => state.editorForm);
+export default function AddImagesField({
+  formData,
+  setFormData,
+}: AddImagesFieldProps) {
+  const { selectedFeature } = useSelector(
+    (state: RootState) => state.editorForm
+  );
   const visibleFields = CategoryFieldMap[selectedFeature] || [];
   const { t } = useTranslation();
   //  Helper to update dynamic image field
   const handleImageChange = (field: keyof FormData, value: string) => {
     setFormData({ ...formData, [field]: value });
   };
-
   // Helper to render upload area
   const renderUploadField = (field: keyof FormData) => {
     const value = formData[field] as string;
 
     return (
       <div className="space-y-2">
-        <FieldHeader field={field}/>
+        <FieldHeader field={field} />
 
         <div
           className={cn(
@@ -45,7 +49,7 @@ export default function AddImagesField({ formData, setFormData }: AddImagesField
                 {t("form_editor_add_image.upload_title")}
               </p>
               <p className="text-xs text-muted-foreground mb-4">
-               {t("form_editor_add_image.upload_subtitle")}
+                {t("form_editor_add_image.upload_subtitle")}
               </p>
 
               <Input
@@ -80,7 +84,7 @@ export default function AddImagesField({ formData, setFormData }: AddImagesField
               </Label>
 
               <div className="mt-4 text-xs text-muted-foreground">
-                 {t("form_editor_add_image.or_paste")}
+                {t("form_editor_add_image.or_paste")}
               </div>
 
               <Input
@@ -119,9 +123,12 @@ export default function AddImagesField({ formData, setFormData }: AddImagesField
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {/* Dinamik olarak hangi image alanları varsa onları render eder */}
       {visibleFields.includes("image_url") && renderUploadField("image_url")}
-      {visibleFields.includes("product_image") && renderUploadField("product_image")}
-      {visibleFields.includes("person_image_url") && renderUploadField("person_image_url")}
-      {visibleFields.includes("clothing_image_url") && renderUploadField("clothing_image_url")}
+      {visibleFields.includes("product_image") &&
+        renderUploadField("product_image")}
+      {visibleFields.includes("person_image_url") &&
+        renderUploadField("person_image_url")}
+      {visibleFields.includes("clothing_image_url") &&
+        renderUploadField("clothing_image_url")}
     </div>
   );
 }

@@ -12,15 +12,20 @@ import { useTranslation } from "@/lib/hooks/useTranslation";
 
 export default function PrivateNavbar() {
   const pathName = usePathname();
+  const lang = pathName.split("/")[1] || "en";
   const isActive = (href: string) => pathName === href;
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
+
   const navLinks = [
     {
-      href: "/dashboard/generate-image",
+      href: `/${lang}/dashboard/generate-image`,
       label: t("dashboard_navbar.generate_image"),
     },
-    { href: "/dashboard/my-images",  label: t("dashboard_navbar.my_images"),},
+    {
+      href: `/${lang}/dashboard/my-images`,
+      label: t("dashboard_navbar.my_images"),
+    },
   ];
 
   return (

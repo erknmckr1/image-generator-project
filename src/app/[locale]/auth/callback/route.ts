@@ -22,7 +22,6 @@ export async function GET(request: Request) {
       );
     }
 
-    console.log("✅ Session başarıyla oluşturuldu");
   }
 
   // Başarılı girişten sonra yönlendirme (dil korumalı)

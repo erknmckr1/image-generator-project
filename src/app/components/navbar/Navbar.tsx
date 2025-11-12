@@ -19,7 +19,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const isActive = (href: string) => pathName === href;
   const { t,locale } = useTranslation();
-
+  
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string

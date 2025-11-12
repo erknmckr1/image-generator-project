@@ -1,4 +1,4 @@
-// middleware.ts (projenizin ROOT dizininde - app klasörünün dışında!)
+// middleware.ts
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
@@ -7,6 +7,11 @@ const DEFAULT_LOCALE = "en";
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // ✅ API route'larını direkt geçir - locale yönlendirmesi yapma
+  if (pathname.startsWith('/api/')) {
+    return NextResponse.next();
+  }
 
   const pathnameHasLocale = SUPPORTED_LOCALES.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
@@ -25,6 +30,7 @@ export async function middleware(request: NextRequest) {
     const redirectUrl = new URL(`/${detectedLocale}${pathname}`, request.url);
     return NextResponse.redirect(redirectUrl);
   }
+
   let supabaseResponse = NextResponse.next({
     request,
   });
@@ -52,17 +58,17 @@ export async function middleware(request: NextRequest) {
     }
   );
 
-  // ÖNEMLI: Session'ı yenilemek için getUser çağrısı
+  // Session'ı yenilemek için getUser çağrısı
   const {
     data: { user },
     error,
   } = await supabase.auth.getUser();
 
   if (error) {
-    console.error(" Middleware auth error:", error.message);
+    console.error("Middleware auth error:", error.message);
   }
 
-  //  Yetki kontrolü — dil path'i koruyarak yönlendirme
+  // Yetki kontrolü — dil path'i koruyarak yönlendirme
   const localePrefix = pathname.split("/")[1]; // örn: "tr", "en"
   if (!user && pathname.startsWith(`/${localePrefix}/dashboard`)) {
     const redirectUrl = request.nextUrl.clone();
@@ -82,12 +88,8 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     /*
-     * Şunlar HARİÇ tüm route'ları yakala:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public klasöründeki dosyalar (*.svg, *.png, etc.)
+     * API route'larını matcher'dan çıkar
      */
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };

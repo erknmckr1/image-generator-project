@@ -12,25 +12,26 @@ export async function POST(request: Request) {
     if (!user) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
-    // kullanıcının creditlerini çek
-    // const { data: credit } = await supabase
-    //   .from("user_credits")
-    //   .select("credits_remaining,credits_total_used")
-    //   .eq("user_id", user.id)
-    //   .single();
+    //  kullanıcının creditlerini çek
+    const { data: credit } = await supabase
+      .from("user_credits")
+      .select("credits_remaining,credits_total_used")
+      .eq("user_id", user.id)
+      .single();
 
-    // console.log(credit);
+    if (credit?.credits_remaining < 1) {
+      Response.json({ error: "Not enough credits" }, { status: 403 });
+      return;
+    }
 
-    // if (credit?.credits_remaining <= 0) {
-    //   return Response.json({ error: "Not enough credits" }, { status: 403 });
-    // }
     const body = await request.json();
     const newData = { ...body, user_id: user.id };
-    const response = await fetch(`${process.env.NEXT_PUBLIC_N8N_PROD_URL}`, {
+    console.log(newData)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_URL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: process.env.NEXT_PUBLIC_N8N_PROD_URL || "",
+        Authorization: process.env.NEXT_PUBLIC_PROD_URL || "",
       },
       body: JSON.stringify(newData),
     });
