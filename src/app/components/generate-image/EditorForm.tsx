@@ -51,16 +51,18 @@ function EditorForm({ setGeneratedImages, setIsLoading, isLoading }) {
     preserve_pose: true,
   });
 
+  // **Ne yapar?** Base64 formatındaki veriyi (data URL) gerçek bir `File` nesnesine dönüştürür.
   function dataURLtoFile(dataUrl: string, filename: string): File {
     const arr = dataUrl.split(",");
     const mime = arr[0].match(/:(.*?);/)?.[1] || "image/png";
-    const bstr = atob(arr[1]);
+    const bstr = atob(arr[1]); // `atob()` ile Base64'ü binary string'e çevirir
     let n = bstr.length;
-    const u8arr = new Uint8Array(n);
+    const u8arr = new Uint8Array(n); //  Binary string'i byte dizisine (`Uint8Array`) dönüştürür
     while (n--) u8arr[n] = bstr.charCodeAt(n);
     return new File([u8arr], filename, { type: mime });
   }
 
+  // Bir değerin Base64 resim olup olmadığını kontrol eder. TypeScript'e "bu string aslında Base64 resim verisi" diyerek tip güvenliği sağlar.
   const isBase64Image = (val: unknown): val is string =>
     typeof val === "string" && val.startsWith("data:image");
 
@@ -90,7 +92,6 @@ function EditorForm({ setGeneratedImages, setIsLoading, isLoading }) {
         if (isBase64Image(val)) {
           const file = dataURLtoFile(val, `${field}-${Date.now()}.png`);
           const filePath = `input_img/${Date.now()}-${field}.png`;
-
 
           // Supabase'e yükle
           const { data: uploadData, error: uploadError } =

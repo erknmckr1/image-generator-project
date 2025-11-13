@@ -1,9 +1,15 @@
 import { createRouteHandlerClient } from "@/lib/supabase/server";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req: Request) {
   const supabase = await createRouteHandlerClient();
 
+  // ---- Pagination params ----
+  const { searchParams } = new URL(req.url);
+  const limit = Number(searchParams.get("limit") ?? 10);
+  const offset = Number(searchParams.get("offset") ?? 0);
+
+  // Auth
   const {
     data: { user },
     error: userError,
@@ -30,21 +36,27 @@ export async function GET() {
 
   const generationIds = generations.map((g) => g.id);
 
-  // id'lere ait final step'leri çek
+  // ---- Final steps (paged) ----
   const { data, error } = await supabase
     .from("generation_steps")
-    .select(`
-      output_image_url,
-      input_image_url,
-      params,
-      status,
-      model,
-      created_at,
-      generation_id
-    `)
+    .select(
+      `
+       id,
+    model,
+    output_image_url,
+    created_at,
+    params,
+    generations!inner (
+      id,
+      user_id,
+      params
+    )
+    `
+    )
     .in("generation_id", generationIds)
     .eq("is_final", true)
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .range(offset, offset + limit - 1);
 
   if (error) {
     console.error("Supabase stepsError:", error.message);
@@ -52,5 +64,13 @@ export async function GET() {
   }
 
   console.log(" My Images fetched:", data?.length || 0);
-  return NextResponse.json(data || [], { status: 200 });
+  return NextResponse.json(
+    {
+      items: data || [],
+      offset,
+      limit,
+      hasMore: data && data.length === limit, // devam var mı kontrolü
+    },
+    { status: 200 }
+  );
 }

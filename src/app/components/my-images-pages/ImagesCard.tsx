@@ -194,6 +194,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
 
   const mappedItem = mapGenerationStepToItem(item);
 
+  console.log("Mapped Item:", mappedItem);
 
   const handleDownload = async (url: string) => {
     try {
@@ -217,7 +218,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
       <DialogTrigger asChild>
         <Card
           className={cn(
-            "group relative overflow-hidden cursor-pointer border-border transition-all hover:shadow-lg hover:scale-[1.02]",
+            "group relative overflow-hidden py-0 cursor-pointer border-border transition-all hover:shadow-lg hover:scale-[1.02]",
             "bg-card text-card-foreground"
           )}
         >
@@ -254,7 +255,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
             <h3 className="font-medium text-sm truncate">{title}</h3>
           </CardContent>
           <CardFooter>
-            <p className="text-xs">
+            <p className="text-xs pb-2 text-muted-foreground truncate">
              {mappedItem.generations.params?.user_prompt?.slice(0,30) ?? "No prompt"}
 
             </p>

@@ -149,7 +149,7 @@ export default function GenerateImageWrapper() {
                 <button
                   key={feature.id}
                   onClick={() => handleFeatureChange(feature.id)}
-                  className={`relative p-5 rounded-xl transition-all duration-300 ${
+                  className={`relative p-3 rounded-xl transition-all duration-300 ${
                     isSelected
                       ? "bg-primary/10 border-2 border-primary/50 shadow-lg shadow-primary/20 scale-105"
                       : "bg-card border-2 border-border hover:border-primary/30 hover:bg-muted/50"
@@ -159,7 +159,7 @@ export default function GenerateImageWrapper() {
                     <div
                       className={`p-3.5 rounded-xl bg-gradient-to-br ${feature.gradient} shadow-lg`}
                     >
-                      <FeatureIcon className="w-7 h-7 text-white" />
+                      <FeatureIcon className="w-5 h-5 text-white" />
                     </div>
                     <span className="font-semibold text-sm text-center leading-tight">
                       {feature.name}
