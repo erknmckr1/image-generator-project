@@ -75,7 +75,7 @@ export default function ImagesInfinite() {
   const fixedData = items?.map((step) => ({
     ...step,
     generations: Array.isArray(step.generations)
-      ? step.generations[0]
+      ? step.generations[1]
       : step.generations,
   }));
 

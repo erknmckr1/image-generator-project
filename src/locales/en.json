@@ -338,5 +338,72 @@
   "editor_form_advanced_title": {
     "title": "Advanced Settings",
     "subtitle": "Configure advanced settings to customize your image output."
+  },
+   "account_page": {
+    "header": {
+      "welcome": "Welcome to your account ",
+      "description": "Manage your plan, billing, profile information and security settings."
+    },
+    "your_plan": {
+      "title": "Your Plan",
+      "badge": "{plan}",
+      "description": "View and manage your current ImageAI subscription.",
+      "credits_remaining": "Credits Remaining",
+      "plan_card_label": "Mini Video.",
+      "features": {
+        "feature1": "High-quality AI image generations",
+        "feature2": "High-quality AI image generations",
+        "feature3": "High-quality AI image generations"
+      },
+      "button_manage": "Manage plan",
+      "button_upgrade": "Upgrade to Pro",
+      "included_title": "Included in your plan",
+      "included_items": {
+        "item1": "Access to all current image features",
+        "item2": "Access to all current image features",
+        "item3": "Access to all current image features",
+        "item4": "Access to all current image features"
+      },
+      "coming_soon": "Coming Soon:",
+      "coming_soon_label": "Webhooks & API credits",
+      "access_tools": "Access your apps and tools"
+    },
+    "billing": {
+      "title": "Billing & Payment",
+      "card_details": "MasterCard ending •••• {last4}",
+      "next_payment": "Next payment on",
+      "next_payment_date": "{date}",
+      "edit_billing": "Edit billing & payment",
+      "billing_history": "View billing history"
+    },
+    "included_account": {
+      "title": "Included with your account",
+      "description": "Features and tools that every ImageAI account can use."
+    },
+    "account_features": {
+      "my_images_title": "My Images",
+      "my_images_desc": "Access all of your generated images in one place.",
+      "go_my_images": "Go to My Images",
+
+      "credits_title": "Credits",
+      "credits_desc": "Top up your balance whenever you need more generations.",
+      "buy_credits": "Buy Credits"
+    },
+    "sidebar": {
+      "account": "account",
+      "profile_title": "Profile",
+      "profile_desc": "Update your basic profile information.",
+      "edit_profile": "Edit profile",
+
+      "security": "Security",
+      "manage_security": "Manage social sign-in",
+
+      "danger_zone": "Dangerous zone",
+      "delete_account": "Delete account"
+    },
+    "footer": {
+      "help_text": "Need help with your account?",
+      "contact_support": "Contact support"
+    }
   }
 }

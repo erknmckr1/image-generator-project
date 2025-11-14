@@ -336,5 +336,72 @@
   "editor_form_advanced_title": {
     "title": "Erweiterte Einstellungen",
     "subtitle": "Konfigurieren Sie erweiterte Einstellungen, um Ihre Bildausgabe anzupassen."
+  },
+  "account_page": {
+    "header": {
+      "welcome": "Willkommen in deinem Konto",
+      "description": "Verwalte deinen Plan, Rechnungen, Profilinformationen und Sicherheitseinstellungen."
+    },
+    "your_plan": {
+      "title": "Dein Plan",
+      "badge": "{plan}",
+      "description": "Sieh dir dein aktuelles ImageAI-Abonnement an und verwalte es.",
+      "credits_remaining": "Verbleibende Credits",
+      "plan_card_label": "Mini Video.",
+      "features": {
+        "feature1": "Hochwertige KI-Bildgenerierungen",
+        "feature2": "Hochwertige KI-Bildgenerierungen",
+        "feature3": "Hochwertige KI-Bildgenerierungen"
+      },
+      "button_manage": "Plan verwalten",
+      "button_upgrade": "Auf Pro upgraden",
+      "included_title": "In deinem Plan enthalten",
+      "included_items": {
+        "item1": "Zugriff auf alle aktuellen Bildfunktionen",
+        "item2": "Zugriff auf alle aktuellen Bildfunktionen",
+        "item3": "Zugriff auf alle aktuellen Bildfunktionen",
+        "item4": "Zugriff auf alle aktuellen Bildfunktionen"
+      },
+      "coming_soon": "Demnächst:",
+      "coming_soon_label": "Webhooks & API-Credits",
+      "access_tools": "Zugriff auf deine Apps und Tools"
+    },
+    "billing": {
+      "title": "Abrechnung & Zahlung",
+      "card_details": "MasterCard endet mit •••• {last4}",
+      "next_payment": "Nächste Zahlung am",
+      "next_payment_date": "{date}",
+      "edit_billing": "Abrechnung & Zahlung bearbeiten",
+      "billing_history": "Abrechnungshistorie anzeigen"
+    },
+    "included_account": {
+      "title": "In deinem Konto enthalten",
+      "description": "Funktionen und Tools, die jedes ImageAI-Konto nutzen kann."
+    },
+    "account_features": {
+      "my_images_title": "Meine Bilder",
+      "my_images_desc": "Greife an einem Ort auf alle generierten Bilder zu.",
+      "go_my_images": "Zu Meine Bilder",
+
+      "credits_title": "Credits",
+      "credits_desc": "Lade Guthaben auf, wann immer du mehr Generierungen benötigst.",
+      "buy_credits": "Credits kaufen"
+    },
+    "sidebar": {
+      "account": "Konto",
+      "profile_title": "Profil",
+      "profile_desc": "Aktualisiere deine grundlegenden Profilinformationen.",
+      "edit_profile": "Profil bearbeiten",
+
+      "security": "Sicherheit",
+      "manage_security": "Social-Login verwalten",
+
+      "danger_zone": "Gefahrenzone",
+      "delete_account": "Konto löschen"
+    },
+    "footer": {
+      "help_text": "Brauchst du Hilfe mit deinem Konto?",
+      "contact_support": "Support kontaktieren"
+    }
   }
 }

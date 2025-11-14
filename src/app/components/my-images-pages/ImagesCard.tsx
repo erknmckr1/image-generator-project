@@ -22,18 +22,22 @@ import {
 
 interface ImageCardProps {
   title: string;
-  item: GenerationStep
+  item: GenerationStep;
 }
 
 function mapGenerationStepToItem(step: GenerationStep) {
   const imageParams = step.params?.[0]?.image || {};
+  const inputImageUrl =
+    step.generations.params.feature === "outfit-generation"
+      ? step.generations.params.person_image_url
+      : step.generations.params.input_image_url;
 
   return {
     id: step.id,
     user_id: step.generations.user_id,
     user_prompt: step.generations.params.user_prompt,
     refined_prompt: step.generations.params.refined_prompt,
-    original_image_url: step.generations.params.input_image_url,
+    original_image_url: inputImageUrl,  //  Burada da aynı değer
     processed_image_url: step.output_image_url,
     resolution: step.generations.params.target_resolution || "N/A",
     file_size_kb: imageParams.file_size || 0,
@@ -49,10 +53,10 @@ function mapGenerationStepToItem(step: GenerationStep) {
     updated_at: step.created_at,
     deleted_at: null,
 
-    // Ek olarak component içinde kullanılan alanlar:
+    // Component içinde kullanılan alanlar:
     generations: step.generations,
     output_image_url: step.output_image_url,
-    input_image_url: step.generations.params.input_image_url,
+    input_image_url: inputImageUrl, 
     params: step.generations.params,
     metadata: {
       file_name: imageParams.file_name,
@@ -138,7 +142,15 @@ function ZoomableImage({ src, alt }: { src: string; alt: string }) {
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
       >
-        <Image src={src} alt={alt} fill className="object-cover" />
+        {src ? (
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-cover"
+            style={{ position: "absolute" }}
+          />
+        ) : null}
       </div>
 
       {/* Zoom Penceresi */}
@@ -166,13 +178,15 @@ function ZoomableImage({ src, alt }: { src: string; alt: string }) {
               height: `${imageHeight * zoomLevel}px`,
             }}
           >
-            <Image
-              src={src}
-              alt={alt}
-              fill
-              className="object-cover"
-              style={{ position: "absolute" }}
-            />
+            {src && (
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                className="object-cover"
+                style={{ position: "absolute" }}
+              />
+            )}
           </div>
         </div>
       )}
@@ -193,9 +207,6 @@ export function ImageCard({ title, item }: ImageCardProps) {
   };
 
   const mappedItem = mapGenerationStepToItem(item);
-
-  console.log("Mapped Item:", mappedItem);
-
   const handleDownload = async (url: string) => {
     try {
       const response = await fetch(url);
@@ -256,8 +267,8 @@ export function ImageCard({ title, item }: ImageCardProps) {
           </CardContent>
           <CardFooter>
             <p className="text-xs pb-2 text-muted-foreground truncate">
-             {mappedItem.generations.params?.user_prompt?.slice(0,30) ?? "No prompt"}
-
+              {mappedItem.generations.params?.user_prompt?.slice(0, 30) ??
+                "No prompt"}
             </p>
           </CardFooter>
         </Card>
@@ -281,7 +292,7 @@ export function ImageCard({ title, item }: ImageCardProps) {
                   Original Image
                 </p>
                 <ZoomableImage
-                  src={mappedItem.input_image_url}
+                  src={mappedItem.input_image_url || mappedItem.params?.person_image_url || ''}
                   alt="Original Image"
                 />
               </div>

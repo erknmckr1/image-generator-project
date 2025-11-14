@@ -339,5 +339,75 @@
   "editor_form_advanced_title": {
     "title": "الإعدادات المتقدمة",
     "subtitle": "قم بتكوين الإعدادات المتقدمة لتخصيص مخرجات الصورة الخاصة بك."
+  },
+  
+  "account_page": {
+    "header": {
+      "welcome": "مرحبًا بك في حسابك",
+      "description": "قم بإدارة خطتك، الفوترة، معلومات ملفك الشخصي وإعدادات الأمان."
+    },
+    "your_plan": {
+      "title": "خطتك",
+      "badge": "{plan}",
+      "description": "اعرض وادِر اشتراكك الحالي في ImageAI.",
+      "credits_remaining": "الأرصدة المتبقية",
+      "plan_card_label": "فيديو قصير.",
+      "features": {
+        "feature1": "توليد صور عالية الجودة بالذكاء الاصطناعي",
+        "feature2": "توليد صور عالية الجودة بالذكاء الاصطناعي",
+        "feature3": "توليد صور عالية الجودة بالذكاء الاصطناعي"
+      },
+      "button_manage": "إدارة الخطة",
+      "button_upgrade": "الترقية إلى برو",
+      "included_title": "المتضمن في خطتك",
+      "included_items": {
+        "item1": "الوصول إلى جميع ميزات الصور الحالية",
+        "item2": "الوصول إلى جميع ميزات الصور الحالية",
+        "item3": "الوصول إلى جميع ميزات الصور الحالية",
+        "item4": "الوصول إلى جميع ميزات الصور الحالية"
+      },
+      "coming_soon": "قريبًا:",
+      "coming_soon_label": "Webhooks و أرصدة API",
+      "access_tools": "الوصول إلى تطبيقاتك وأدواتك"
+    },
+    "billing": {
+      "title": "الفوترة والدفع",
+      "card_details": "ماستركارد تنتهي بـ •••• {last4}",
+      "next_payment": "الدفع القادم في",
+      "next_payment_date": "{date}",
+      "edit_billing": "تعديل الفوترة والدفع",
+      "billing_history": "عرض سجل الفوترة"
+    },
+    "included_account": {
+      "title": "المتضمن مع حسابك",
+      "description": "ميزات وأدوات يمكن استخدامها من قبل جميع حسابات ImageAI."
+    },
+    "account_features": {
+      "my_images_title": "صوري",
+      "my_images_desc": "الوصول إلى جميع الصور التي تم إنشاؤها في مكان واحد.",
+      "go_my_images": "الذهاب إلى صوري",
+
+      "credits_title": "الأرصدة",
+      "credits_desc": "أضف رصيدًا كلما احتجت إلى المزيد من التوليدات.",
+      "buy_credits": "شراء أرصدة"
+    },
+    "sidebar": {
+      "account": "حساب",
+      "profile_title": "الملف الشخصي",
+      "profile_desc": "تحديث معلومات ملفك الشخصي الأساسية.",
+      "edit_profile": "تعديل الملف الشخصي",
+
+      "security": "الأمان",
+      "manage_security": "إدارة تسجيل الدخول الاجتماعي",
+
+      "danger_zone": "منطقة الخطر",
+      "delete_account": "حذف الحساب"
+    },
+    "footer": {
+      "help_text": "هل تحتاج مساعدة في حسابك؟",
+      "contact_support": "تواصل مع الدعم"
+    }
   }
+
+
 }

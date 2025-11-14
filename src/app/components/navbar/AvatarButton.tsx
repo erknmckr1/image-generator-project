@@ -43,18 +43,43 @@ export function AvatarButton() {
       </PopoverTrigger>
       <PopoverContent className="w-48 p-2">
         <div className="flex flex-col space-y-2">
-          <div className="text-sm font-medium text-foreground px-2">
-            {user_metadata?.name || "User"}
-          </div>
-          <div className="text-sm font-medium text-foreground px-2">
-            <span className="text-xs text-foreground font-semibold">
-              Kalan Kredi:
-            </span>{" "}
-            {credits_remaining && credits_remaining}
-          </div>
-          <span className="text-sm text-foreground px-2 hover:underline-offset-3 hover:underline">
-            <Link href={"/dashboard"}>Account</Link>
-          </span>
+           {/* HEADER */}
+        <div className="px-4 py-3 bg-muted/30 border-b">
+          <p className="text-sm font-semibold text-foreground">
+            {user_metadata?.name}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {user_metadata?.email || ""}
+          </p>
+
+          <p className="text-xs mt-1 font-medium">
+            ⭐ Credits: <span className="text-primary">{credits_remaining}</span>
+          </p>
+        </div>
+
+        {/* MENU */}
+        <div className="flex flex-col py-2 text-sm">
+          <Link
+            className="px-4 py-2 hover:bg-muted hover:underline hover:underline-offset-4 transition"
+            href="/account"
+          >
+            Account Settings
+          </Link>
+
+          <Link
+            className="px-4 py-2 hover:bg-muted hover:underline hover:underline-offset-4 transition"
+            href="/account/billing"
+          >
+           Billing & Credits
+          </Link>
+
+          <Link
+            className="px-4 py-2 hover:bg-muted hover:underline hover:underline-offset-4 transition-all"
+            href="/dashboard/my-images"
+          >
+             My Images
+          </Link>
+        </div>
           <Button onClick={handleLogout} className="w-full text-sm">
             Logout
           </Button>

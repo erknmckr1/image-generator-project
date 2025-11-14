@@ -8,13 +8,13 @@ import PrivateNavbar from "./PrivateNavbar";
 export default function NavbarWrapper({ user }: { user: User | null }) {
   const pathname = usePathname();
   const isDashboard = pathname.includes("/dashboard");
+  const isAccount = pathname.includes("/account");
 
-  if (isDashboard && user) {
+  if ((isDashboard || isAccount) && user) {
     return <PrivateNavbar />;
   }
 
-  if (!isDashboard) {
+  if (!isDashboard && !isAccount) {
     return <Navbar />;
   }
-
 }

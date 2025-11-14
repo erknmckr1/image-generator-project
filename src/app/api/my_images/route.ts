@@ -49,7 +49,8 @@ export async function GET(req: Request) {
     generations!inner (
       id,
       user_id,
-      params
+      params,
+      feature
     )
     `
     )
@@ -63,7 +64,6 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  console.log(" My Images fetched:", data?.length || 0);
   return NextResponse.json(
     {
       items: data || [],

@@ -343,7 +343,74 @@
 "editor_form_advanced_title": {
   "title": "Configuración Avanzada",
   "subtitle": "Configura los ajustes avanzados para personalizar la salida de tu imagen."
-}
+},
+ "account_page": {
+    "header": {
+      "welcome": "Bienvenido a tu cuenta",
+      "description": "Administra tu plan, facturación, información del perfil y ajustes de seguridad."
+    },
+    "your_plan": {
+      "title": "Tu Plan",
+      "badge": "{plan}",
+      "description": "Consulta y administra tu suscripción actual de ImageAI.",
+      "credits_remaining": "Créditos restantes",
+      "plan_card_label": "Mini Video.",
+      "features": {
+        "feature1": "Generaciones de imágenes de alta calidad con IA",
+        "feature2": "Generaciones de imágenes de alta calidad con IA",
+        "feature3": "Generaciones de imágenes de alta calidad con IA"
+      },
+      "button_manage": "Administrar plan",
+      "button_upgrade": "Actualizar a Pro",
+      "included_title": "Incluido en tu plan",
+      "included_items": {
+        "item1": "Acceso a todas las funciones actuales de imágenes",
+        "item2": "Acceso a todas las funciones actuales de imágenes",
+        "item3": "Acceso a todas las funciones actuales de imágenes",
+        "item4": "Acceso a todas las funciones actuales de imágenes"
+      },
+      "coming_soon": "Próximamente:",
+      "coming_soon_label": "Webhooks y créditos de API",
+      "access_tools": "Acceder a tus aplicaciones y herramientas"
+    },
+    "billing": {
+      "title": "Facturación y Pago",
+      "card_details": "MasterCard terminada en •••• {last4}",
+      "next_payment": "Próximo pago el",
+      "next_payment_date": "{date}",
+      "edit_billing": "Editar facturación y pago",
+      "billing_history": "Ver historial de facturación"
+    },
+    "included_account": {
+      "title": "Incluido con tu cuenta",
+      "description": "Funciones y herramientas disponibles para todas las cuentas de ImageAI."
+    },
+    "account_features": {
+      "my_images_title": "Mis Imágenes",
+      "my_images_desc": "Accede a todas tus imágenes generadas en un solo lugar.",
+      "go_my_images": "Ir a Mis Imágenes",
+
+      "credits_title": "Créditos",
+      "credits_desc": "Recarga tu saldo cuando necesites más generaciones.",
+      "buy_credits": "Comprar Créditos"
+    },
+    "sidebar": {
+      "account": "cuenta",
+      "profile_title": "Perfil",
+      "profile_desc": "Actualiza tu información básica del perfil.",
+      "edit_profile": "Editar perfil",
+
+      "security": "Seguridad",
+      "manage_security": "Administrar inicio de sesión social",
+
+      "danger_zone": "Zona de peligro",
+      "delete_account": "Eliminar cuenta"
+    },
+    "footer": {
+      "help_text": "¿Necesitas ayuda con tu cuenta?",
+      "contact_support": "Contactar soporte"
+    }
+  }
 
 
 

@@ -337,7 +337,74 @@
 "editor_form_advanced_title": {
   "title": "고급 설정",
   "subtitle": "이미지 출력을 사용자 정의하기 위해 고급 설정을 구성하세요."
-}
+},
+"account_page": {
+    "header": {
+      "welcome": "님, 계정에 오신 것을 환영합니다",
+      "description": "요금제, 결제, 프로필 정보 및 보안 설정을 관리하세요."
+    },
+    "your_plan": {
+      "title": "내 요금제",
+      "badge": "{plan}",
+      "description": "현재 ImageAI 구독을 확인하고 관리하세요.",
+      "credits_remaining": "남은 크레딧",
+      "plan_card_label": "미니 비디오.",
+      "features": {
+        "feature1": "고품질 AI 이미지 생성",
+        "feature2": "고품질 AI 이미지 생성",
+        "feature3": "고품질 AI 이미지 생성"
+      },
+      "button_manage": "요금제 관리",
+      "button_upgrade": "Pro로 업그레이드",
+      "included_title": "요금제에 포함됨",
+      "included_items": {
+        "item1": "모든 이미지 기능에 대한 액세스",
+        "item2": "모든 이미지 기능에 대한 액세스",
+        "item3": "모든 이미지 기능에 대한 액세스",
+        "item4": "모든 이미지 기능에 대한 액세스"
+      },
+      "coming_soon": "곧 제공:",
+      "coming_soon_label": "Webhook & API 크레딧",
+      "access_tools": "앱 및 도구에 액세스하기"
+    },
+    "billing": {
+      "title": "결제 및 청구",
+      "card_details": "•••• {last4}번으로 끝나는 마스터카드",
+      "next_payment": "다음 결제일:",
+      "next_payment_date": "{date}",
+      "edit_billing": "결제 및 청구 정보 수정",
+      "billing_history": "청구 내역 보기"
+    },
+    "included_account": {
+      "title": "계정에 포함된 기능",
+      "description": "모든 ImageAI 계정이 사용할 수 있는 기능 및 도구입니다."
+    },
+    "account_features": {
+      "my_images_title": "내 이미지",
+      "my_images_desc": "생성된 모든 이미지를 한 곳에서 확인하세요.",
+      "go_my_images": "내 이미지로 이동",
+
+      "credits_title": "크레딧",
+      "credits_desc": "더 많은 생성이 필요할 때 크레딧을 충전하세요.",
+      "buy_credits": "크레딧 구매"
+    },
+    "sidebar": {
+      "account": "계정",
+      "profile_title": "프로필",
+      "profile_desc": "기본 프로필 정보를 업데이트하세요.",
+      "edit_profile": "프로필 수정",
+
+      "security": "보안",
+      "manage_security": "소셜 로그인 관리",
+
+      "danger_zone": "위험 구역",
+      "delete_account": "계정 삭제"
+    },
+    "footer": {
+      "help_text": "계정 관련 도움이 필요하신가요?",
+      "contact_support": "지원팀에 문의"
+    }
+  }
 
 
 

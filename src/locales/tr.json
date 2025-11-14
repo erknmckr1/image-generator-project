@@ -333,8 +333,85 @@
     "guidance_scale": "Yönlendirme Ölçeği",
     "preserve_pose": "Pozu Koru"
   },
-  "editor_form_advanced_title":{
-    "title":"Gelişmiş Ayarlar",
-    "subtitle":"Görsel çıktınızı özelleştirmek için gelişmiş ayarları yapılandırın."
+  "editor_form_advanced_title": {
+    "title": "Gelişmiş Ayarlar",
+    "subtitle": "Görsel çıktınızı özelleştirmek için gelişmiş ayarları yapılandırın."
+  },
+  "account_page": {
+    "header": {
+      "welcome": "Hesabınıza hoş geldiniz",
+      "description": "Planınızı, faturalandırma ayarlarınızı, profil bilgilerinizi ve güvenlik seçeneklerinizi yönetin."
+    },
+
+    "your_plan": {
+      "title": "Planınız",
+      "badge": "{plan}",
+      "description": "Mevcut ImageAI aboneliğinizi görüntüleyin ve yönetin.",
+      "credits_remaining": "Kalan Krediler",
+      "plan_card_label": "Mini Video.",
+      "features": {
+        "feature1": "Yüksek kaliteli yapay zekâ görsel üretimi",
+        "feature2": "Yüksek kaliteli yapay zekâ görsel üretimi",
+        "feature3": "Yüksek kaliteli yapay zekâ görsel üretimi"
+      },
+      "button_manage": "Planı Yönet",
+      "button_upgrade": "Pro'ya Yükselt",
+      "included_title": "Planınıza Dahil Olanlar",
+      "included_items": {
+        "item1": "Tüm mevcut görsel özelliklerine erişim",
+        "item2": "Tüm mevcut görsel özelliklerine erişim",
+        "item3": "Tüm mevcut görsel özelliklerine erişim",
+        "item4": "Tüm mevcut görsel özelliklerine erişim"
+      },
+      "coming_soon": "Yakında:",
+      "coming_soon_label": "Webhooklar & API Kredileri",
+      "access_tools": "Uygulamalara ve Araçlara Eriş"
+    },
+
+    "billing": {
+      "title": "Faturalandırma ve Ödeme",
+      "card_details": "MasterCard •••• {last4}",
+      "next_payment": "Sonraki ödeme tarihi",
+      "next_payment_date": "{date}",
+      "edit_billing": "Fatura ve Ödemeyi Düzenle",
+      "billing_history": "Fatura Geçmişini Görüntüle"
+    },
+
+    "included_account": {
+      "title": "Hesabınıza Dahil Olan Özellikler",
+      "description": "Her ImageAI hesabının kullanabileceği özellikler ve araçlar."
+    },
+
+    "account_features": {
+      "my_images_title": "Görsellerim",
+      "my_images_desc": "Oluşturduğunuz tüm görsellere tek bir yerden erişin.",
+      "go_my_images": "Görsellerime Git",
+
+      "credits_title": "Krediler",
+      "credits_desc": "Daha fazla görsel oluşturmak için kredilerinizi artırın.",
+      "buy_credits": "Kredi Satın Al",
+
+      "tools_title": "Araçlar",
+      "tools_desc": "Tüm oluşturma araçlarına hızlı erişim.",
+      "go_tools": "Araçlara Git"
+    },
+
+    "sidebar": {
+      "profile_title": "Profil",
+      "profile_desc": "Temel profil bilgilerinizi güncelleyin.",
+      "edit_profile": "Profili Düzenle",
+
+      "security": "Güvenlik",
+      "security_desc": "Sosyal giriş ve güvenlik ayarlarını yönetin.",
+      "manage_security": "Sosyal giriş ayarlarını yönet",
+
+      "danger_zone": "Tehlikeli Alan",
+      "delete_account": "Hesabı Sil"
+    },
+
+    "footer": {
+      "help_text": "Hesabınızla ilgili yardıma mı ihtiyacınız var?",
+      "contact_support": "Destek ile iletişime geçin"
+    }
   }
 }

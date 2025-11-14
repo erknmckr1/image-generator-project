@@ -25,6 +25,8 @@ export interface GenerationParams {
   guidance_scale?: number;
   safety_tolerance?: string;
   image_category?: string;
+  feature?:string;
+  person_image_url?:string;
 }
 
 // generations tablosu join edilmiş haliyle

@@ -81,6 +81,8 @@ function EditorForm({ setGeneratedImages, setIsLoading, isLoading }) {
 
     try {
       const supabase = createClient();
+      //!  Form verilerini kopyala ve gerekirse güncelle Partial değerleri opsiyonel hale getiriyor. formData sadece gerektiginde guncellenecek.
+      //! intersection '&' operatoru ile iki tipi birlestiriyor. Hem formdata tipini koruyor hem de belirli alanlari opsiyonel yapiyor.
       const updatedFormData: typeof formData &
         Partial<Record<ImageFieldKeys, string>> = {
         ...formData,
@@ -98,8 +100,9 @@ function EditorForm({ setGeneratedImages, setIsLoading, isLoading }) {
             await supabase.storage.from("imageai").upload(filePath, file);
 
           if (uploadError) {
-            console.error(`❌ Upload error for ${field}:`, uploadError.message);
-            continue;
+            throw new Error(
+              `Upload failed for ${field}: ${uploadError.message}`
+            );
           }
 
           // Private bucket → Signed URL üret
@@ -109,11 +112,9 @@ function EditorForm({ setGeneratedImages, setIsLoading, isLoading }) {
               .createSignedUrl(filePath, 60 * 60 * 24);
 
           if (signedError) {
-            console.error(
-              `Signed URL error for ${field}:`,
-              signedError.message
+            throw new Error(
+              `Signed URL failed for ${field}: ${signedError.message}`
             );
-            continue;
           }
           updatedFormData[field] = signedData.signedUrl;
         }
@@ -135,7 +136,7 @@ function EditorForm({ setGeneratedImages, setIsLoading, isLoading }) {
       const data = await resp.json();
       const parsed =
         typeof data.data === "string" ? JSON.parse(data.data) : data.data;
-
+      console.log(parsed);
       setGeneratedImages(parsed.image_url);
     } catch (err) {
       setError(
