@@ -403,5 +403,57 @@
       "help_text": "Brauchst du Hilfe mit deinem Konto?",
       "contact_support": "Support kontaktieren"
     }
+
+ 
+},
+ "credits_page": {
+    "header": {
+      "title": "Credits",
+      "description": "Sehen Sie Ihr Credit-Guthaben und Ihren Nutzungsverlauf ein."
+    },
+
+    "summary": {
+      "title": "Credits Übersicht",
+      "description": "Ihr aktuelles verbleibendes und verwendetes Guthaben.",
+      "remaining": "Verbleibend",
+      "used": "Verwendet"
+    },
+
+    "history": {
+      "title": "Nutzungsverlauf",
+      "description": "Alle Bildgenerierungen und Credit-Verbräuche.",
+      "empty": "Keine Credit-Nutzung gefunden.",
+      "note": "Nur erfolgreiche Generierungsversuche werden angezeigt."
+    },
+
+    "table": {
+      "id": "Id",
+      "date": "Datum",
+      "credits": "Credits",
+      "status": "Status",
+      "feature": "Funktion"
+    },
+
+    "status": {
+      "succeeded": "Erfolgreich",
+      "failed": "Fehlgeschlagen",
+      "running": "Läuft"
+    },
+
+    "right_section": {
+      "buy_credits": {
+        "title": "Credits Kaufen",
+        "description": "Kaufen Sie jederzeit weitere Credits.",
+        "button": "Credits Kaufen"
+      },
+      "billing": {
+        "title": "Abrechnung",
+        "description": "Greifen Sie auf Ihre Rechnungen und Zahlungsmethoden zu.",
+        "button": "Zur Abrechnung"
+      }
+    },
+
+    "loading": "Lädt..."
   }
+
 }

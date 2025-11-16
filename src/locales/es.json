@@ -8,10 +8,9 @@
     "my_account": "Mi cuenta"
   },
   "dashboard_navbar": {
-  "generate_image": "Generar Imagen",
-  "my_images": "Mis Imágenes"
-}
-,
+    "generate_image": "Generar Imagen",
+    "my_images": "Mis Imágenes"
+  },
   "hero": {
     "badge": "Aumenta tu creatividad con ImageAI",
     "title_part1": "El generador de imágenes con IA más",
@@ -320,31 +319,31 @@
     "image_category": "Especifica la categoría (por ejemplo, outfit-generation, background-remove, etc.)."
   },
   "form_editor_add_image": {
-  "upload_title": "Arrastra y suelta o haz clic para subir",
-  "upload_subtitle": "JPG, PNG, WEBP – máx. 5 MB",
-  "select_file": "Seleccionar archivo",
-  "or_paste": "o pega la URL de la imagen abajo",
-  "url_placeholder": "Pega el enlace de la imagen aquí",
-  "file_too_large": "Archivo demasiado grande (máx. 5 MB)"
-},
-"form_editor_fields": {
-  "prompt": "Indicador (Prompt)",
-  "image_url": "Imagen Principal",
-  "product_image": "Imagen del Producto",
-  "person_image_url": "Imagen de la Persona",
-  "clothing_image_url": "Imagen de la Ropa",
-  "aspect_ratio": "Relación de Aspecto",
-  "output_format": "Formato de Salida",
-  "target_resolution": "Resolución Objetivo",
-  "safety_tolerance": "Tolerancia de Seguridad",
-  "guidance_scale": "Escala de Guía",
-  "preserve_pose": "Conservar Pose"
-},
-"editor_form_advanced_title": {
-  "title": "Configuración Avanzada",
-  "subtitle": "Configura los ajustes avanzados para personalizar la salida de tu imagen."
-},
- "account_page": {
+    "upload_title": "Arrastra y suelta o haz clic para subir",
+    "upload_subtitle": "JPG, PNG, WEBP – máx. 5 MB",
+    "select_file": "Seleccionar archivo",
+    "or_paste": "o pega la URL de la imagen abajo",
+    "url_placeholder": "Pega el enlace de la imagen aquí",
+    "file_too_large": "Archivo demasiado grande (máx. 5 MB)"
+  },
+  "form_editor_fields": {
+    "prompt": "Indicador (Prompt)",
+    "image_url": "Imagen Principal",
+    "product_image": "Imagen del Producto",
+    "person_image_url": "Imagen de la Persona",
+    "clothing_image_url": "Imagen de la Ropa",
+    "aspect_ratio": "Relación de Aspecto",
+    "output_format": "Formato de Salida",
+    "target_resolution": "Resolución Objetivo",
+    "safety_tolerance": "Tolerancia de Seguridad",
+    "guidance_scale": "Escala de Guía",
+    "preserve_pose": "Conservar Pose"
+  },
+  "editor_form_advanced_title": {
+    "title": "Configuración Avanzada",
+    "subtitle": "Configura los ajustes avanzados para personalizar la salida de tu imagen."
+  },
+  "account_page": {
     "header": {
       "welcome": "Bienvenido a tu cuenta",
       "description": "Administra tu plan, facturación, información del perfil y ajustes de seguridad."
@@ -410,8 +409,55 @@
       "help_text": "¿Necesitas ayuda con tu cuenta?",
       "contact_support": "Contactar soporte"
     }
+  },
+
+  "credits_page": {
+    "header": {
+      "title": "Créditos",
+      "description": "Consulta tu saldo de créditos y tu historial de uso."
+    },
+
+    "summary": {
+      "title": "Resumen de Créditos",
+      "description": "Tus créditos restantes y usados.",
+      "remaining": "Restantes",
+      "used": "Usados"
+    },
+
+    "history": {
+      "title": "Historial de Uso",
+      "description": "Todas las generaciones de imágenes y créditos gastados.",
+      "empty": "No se encontró historial de créditos.",
+      "note": "Solo se muestran los intentos de generación exitosos."
+    },
+
+    "table": {
+      "id": "Id",
+      "date": "Fecha",
+      "credits": "Créditos",
+      "status": "Estado",
+      "feature": "Función"
+    },
+
+    "status": {
+      "succeeded": "Completado",
+      "failed": "Fallido",
+      "running": "En progreso"
+    },
+
+    "right_section": {
+      "buy_credits": {
+        "title": "Comprar Créditos",
+        "description": "Compra más créditos en cualquier momento.",
+        "button": "Comprar Créditos"
+      },
+      "billing": {
+        "title": "Facturación",
+        "description": "Accede a tus facturas y métodos de pago.",
+        "button": "Ir a Facturación"
+      }
+    },
+
+    "loading": "Cargando..."
   }
-
-
-
 }

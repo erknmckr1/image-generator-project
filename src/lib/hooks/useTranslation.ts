@@ -38,20 +38,29 @@ export function useTranslation() {
   //  Eğer belirtilen locale yoksa fallback olarak İngilizceyi kullan
   const translations = locales[locale] || locales.en;
 
-  //  Ana çeviri fonksiyonu
-  const t = <T = string>(path: string): T => {
-    const result = path
-      .split(".")
-      .reduce<TranslationValue | undefined>((acc, key) => {
-        if (acc && typeof acc === "object" && !Array.isArray(acc)) {
-          return (acc as TranslationObject)[key];
-        }
-        return undefined;
-      }, translations as TranslationValue);
+//  Ana çeviri fonksiyonu (placeholder destekli)
+const t = <T = string>(path: string, vars?: Record<string, any>): T => {
+  const result = path
+    .split(".")
+    .reduce<TranslationValue | undefined>((acc, key) => {
+      if (acc && typeof acc === "object" && !Array.isArray(acc)) {
+        return (acc as TranslationObject)[key];
+      }
+      return undefined;
+    }, translations as TranslationValue);
 
-    // 🔹 Eğer çeviri bulunamazsa key'i kendisi döndür
-    return (result ?? path) as T;
-  };
+  let value = (result ?? path) as string;
+
+  //  Vars parametresi varsa, string içinde replace et
+  if (typeof value === "string" && vars) {
+    Object.entries(vars).forEach(([key, val]) => {
+      value = value.replace(new RegExp(`{${key}}`, "g"), String(val));
+    });
+  }
+
+  return value as T;
+};
+
 
   //  Geri dönen değerler
   return { t, locale };

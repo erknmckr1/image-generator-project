@@ -413,5 +413,104 @@
       "help_text": "Hesabınızla ilgili yardıma mı ihtiyacınız var?",
       "contact_support": "Destek ile iletişime geçin"
     }
+  },
+  "billing_page": {
+    "header": {
+      "title": "Faturalandırma ve Ödeme",
+      "description": "Aboneliğinizi, ödeme yöntemlerinizi ve fatura geçmişinizi yönetin."
+    },
+    "plan": {
+      "title": "Mevcut Planınız",
+      "badge": "{plan}",
+      "description": "Mevcut ImageAI aboneliğinizi görüntüleyin ve yönetin.",
+      "price": "{price} {currency} / ay",
+      "interval_monthly": "Aylık faturalandırma",
+      "interval_yearly": "Yıllık faturalandırma",
+      "next_payment": "Sonraki ödeme tarihi:",
+      "next_payment_date": "{date}",
+      "change_plan": "Planı Değiştir",
+      "cancel_plan": "Aboneliği İptal Et",
+      "included_title": "Planınıza dahil olanlar",
+      "included_items": {
+        "item1": "Tüm mevcut görsel özelliklerine erişim",
+        "item2": "Yüksek kaliteli yapay zekâ görsel üretimi",
+        "item3": "Ticari kullanım lisansı (planınıza bağlı olarak)"
+      }
+    },
+    "payment": {
+      "title": "Ödeme Yöntemi",
+      "description": "Aboneliğiniz için kullanılan kartı görüntüleyin ve güncelleyin.",
+      "card_details": "MasterCard •••• {last4}",
+      "primary": "Varsayılan",
+      "update_card": "Kartı Güncelle",
+      "add_method": "Yeni ödeme yöntemi ekle",
+      "info_text": "Stripe hesabınız bağlandığında burada kart ekleyip güncelleyebileceksiniz. Şu anda bu alan önizleme amaçlıdır."
+    },
+    "invoices": {
+      "title": "Fatura Geçmişi",
+      "description": "Geçmiş ödeme kayıtlarınızı ve faturalarınızı görüntüleyin.",
+      "empty": "Henüz oluşturulmuş bir faturanız bulunmuyor.",
+      "table": {
+        "date": "Tarih",
+        "amount": "Tutar",
+        "status": "Durum",
+        "actions": "İşlemler"
+      },
+      "status_paid": "Ödendi",
+      "status_pending": "Beklemede",
+      "note_placeholder": "Stripe entegrasyonu tamamlandığında; tutarlar, para birimi, ödeme durumu ve faturaya ait PDF dosyası burada görülebilir olacak."
+    },
+    "dev_note": {
+      "stripe_missing": "Stripe hesabınız henüz bağlı değil. UI hazır; Stripe anahtarlarını ekledikten sonra sadece ödeme akışını bağlamanız yeterli olacak."
+    }
+  },
+  "credits_page": {
+    "header": {
+      "title": "Krediler",
+      "description": "Kredi bakiyenizi ve kullanım geçmişinizi görüntüleyin."
+    },
+
+    "summary": {
+      "title": "Kredi Özeti",
+      "description": "Mevcut kalan ve kullanılan kredileriniz.",
+      "remaining": "Kalan",
+      "used": "Kullanılan"
+    },
+
+    "history": {
+      "title": "Kullanım Geçmişi",
+      "description": "Tüm görsel üretimleri ve kredi harcamaları burada listelenir.",
+      "empty": "Herhangi bir kredi kullanımı bulunamadı.",
+      "note": "Sadece başarılı görsel üretimleri burada gösterilir."
+    },
+
+    "table": {
+      "id": "Id",
+      "date": "Tarih",
+      "credits": "Kredi",
+      "status": "Durum",
+      "feature": "Özellik"
+    },
+
+    "status": {
+      "succeeded": "Başarılı",
+      "failed": "Hatalı",
+      "running": "Devam Ediyor"
+    },
+
+    "right_section": {
+      "buy_credits": {
+        "title": "Kredi Satın Al",
+        "description": "İstediğiniz zaman yeni kredi satın alabilirsiniz.",
+        "button": "Kredi Satın Al"
+      },
+      "billing": {
+        "title": "Faturalandırma",
+        "description": "Faturalarınıza ve ödeme yöntemlerinize erişin.",
+        "button": "Faturalandırmaya Git"
+      }
+    },
+
+    "loading": "Yükleniyor..."
   }
 }

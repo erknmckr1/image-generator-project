@@ -405,5 +405,54 @@
       "help_text": "Need help with your account?",
       "contact_support": "Contact support"
     }
+  },
+  "credits_page": {
+    "header": {
+      "title": "Credits",
+      "description": "View your credit balance and usage history."
+    },
+
+    "summary": {
+      "title": "Credits Summary",
+      "description": "Your current remaining and used credits.",
+      "remaining": "Remaining",
+      "used": "Used"
+    },
+
+    "history": {
+      "title": "Usage History",
+      "description": "All image generations and credit spending are listed here.",
+      "empty": "No credit usage found.",
+      "note": "Only successful generation attempts are included here."
+    },
+
+    "table": {
+      "id": "Id",
+      "date": "Date",
+      "credits": "Credits",
+      "status": "Status",
+      "feature": "Feature"
+    },
+
+    "status": {
+      "succeeded": "Succeeded",
+      "failed": "Failed",
+      "running": "Running"
+    },
+
+    "right_section": {
+      "buy_credits": {
+        "title": "Buy Credits",
+        "description": "Get more generation credits at any time.",
+        "button": "Buy Credits"
+      },
+      "billing": {
+        "title": "Billing",
+        "description": "Access your invoices and payment methods.",
+        "button": "Go to Billing"
+      }
+    },
+
+    "loading": "Loading..."
   }
 }

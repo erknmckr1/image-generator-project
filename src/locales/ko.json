@@ -404,6 +404,55 @@
       "help_text": "계정 관련 도움이 필요하신가요?",
       "contact_support": "지원팀에 문의"
     }
+  },
+  "credits_page": {
+    "header": {
+      "title": "크레딧",
+      "description": "크레딧 잔액과 사용 내역을 확인하세요."
+    },
+
+    "summary": {
+      "title": "크레딧 요약",
+      "description": "현재 남은 크레딧과 사용된 크레딧입니다.",
+      "remaining": "남은 크레딧",
+      "used": "사용된 크레딧"
+    },
+
+    "history": {
+      "title": "사용 내역",
+      "description": "모든 이미지 생성 기록과 크레딧 사용 내역입니다.",
+      "empty": "크레딧 사용 내역이 없습니다.",
+      "note": "성공한 생성 기록만 표시됩니다."
+    },
+
+    "table": {
+      "id": "ID",
+      "date": "날짜",
+      "credits": "크레딧",
+      "status": "상태",
+      "feature": "기능"
+    },
+
+    "status": {
+      "succeeded": "성공",
+      "failed": "실패",
+      "running": "진행 중"
+    },
+
+    "right_section": {
+      "buy_credits": {
+        "title": "크레딧 구매",
+        "description": "언제든지 크레딧을 추가로 구매하세요.",
+        "button": "크레딧 구매"
+      },
+      "billing": {
+        "title": "결제 정보",
+        "description": "청구서 및 결제 수단을 확인하세요.",
+        "button": "결제 페이지로 이동"
+      }
+    },
+
+    "loading": "로딩 중..."
   }
 
 

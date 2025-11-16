@@ -295,7 +295,7 @@ function AccountPage({ name, email, avatar, plan, credits }) {
               <CardDescription>{email}</CardDescription>
 
               <Badge variant="outline" className="mt-2 text-xs">
-                {plan} {t("account_page.sidebar.account")}
+                {plan}
               </Badge>
             </CardHeader>
 
